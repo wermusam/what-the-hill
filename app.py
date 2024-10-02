@@ -11,10 +11,20 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
 
-# Initial Dash application
-app = Dash()
+class App():
+
+    def __init__(self):
+        # initial dash app
+        self._app = Dash()
+
+    def run(self):
+        """Runs the application"""
+        self._app.run(debug=True)
+    
+
 
 # Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app = App()
+    app.run()
 
