@@ -1,0 +1,17 @@
+[
+    {
+        "name": "test",
+        "description": "start and end",
+        "length": 5,
+        "vertical": 50,
+        "strava_link": "/page1"
+    },
+
+    {
+        "name": "more",
+        "description": "start and go here",
+        "length": 5,
+        "vertical": 50,
+        "strava_link": "/page1"
+    }
+]
