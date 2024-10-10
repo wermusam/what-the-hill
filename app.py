@@ -24,6 +24,7 @@ class App():
     def create_data_table(self):
         """Data Table that reads the json file and displays info on the website"""
         table = DataTable(
+            data = self.load_json(),
             columns = [
                 {"name": "Name", "id": "name"},
                 {"name": "Description", "id": "description"},
@@ -31,10 +32,9 @@ class App():
                 {"name": "Vertical", "id": "vertical"},
                 {"name": "Link", "id": "link", "presentation": "markdown"},
             ],
-            data = [
-                {**item, "link": f"[Link]({item['link']})"} for item in self.load_json()
-            ],
-            style_cell = {'textAlign': 'left'},
+            style_table={"width": '100%'},
+            style_cell = {'textAlign': 'left', 'padding': '10px'},
+            style_header={'backgroundColor': 'rgb(30,30,30)', 'color': 'white'},
         )
         return table
 
