@@ -30,7 +30,7 @@ class App():
                 {"name": "Description", "id": "description"},
                 {"name": "Length", "id": "length"},
                 {"name": "Vertical", "id": "vertical"},
-                {"name": "Link", "id": "link", "presentation": "markdown"},
+                {"name": "Link", "id": "strava_link", "presentation": "markdown"},
             ],
             style_table={"width": '100%'},
             style_cell = {'textAlign': 'left', 'padding': '10px'},
