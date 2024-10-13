@@ -26,14 +26,13 @@ class App():
         data = self.load_json()
         return dbc.Table(
             # Table header
-            [html.Thead(html.Tr([html.Th('Name'), html.Th('Description'), html.Th('Length'), html.Th('Vertical'), html.Th('Strava Link')])),
+            [html.Thead(html.Tr([html.Th('Name'), html.Th('Description'), html.Th('Length (Miles)'), html.Th('Vertical (Feet)'), html.Th('Strava Link')])),
                 html.Tbody([
                     html.Tr([
                         html.Td(item.get('name', 'N/A')),
                         html.Td(item.get('description', 'N/A')),
                         html.Td(item.get('length', 'N/A')),
                         html.Td(item.get('vertical', 'N/A')),
-                        # html.Td(html.A('Go to Page', href=item.get('strava_link', '#'), target="_blank"))
                         html.Td(html.A(item.get('strava_link', '#'), href=item.get('strava_link', '#'), target="_blank"))
                 ]) for item in data
                 ])
