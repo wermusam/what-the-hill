@@ -1,17 +1,59 @@
 [
     {
-        "name": "test",
+        "name": "Across The Greek",
         "description": "start and end",
-        "length": 5,
+        "length": 0.11,
         "vertical": 50,
-        "strava_link": "https://strava.app.link/jGN93rZcANb"
+        "strava_link": "https://strava.app.link/7FwNTtGOFNb"
+        
     },
 
     {
-        "name": "more",
+        "name": "Berlin Forest",
         "description": "start and go here",
-        "length": 5,
+        "length": 0.11,
         "vertical": 50,
-        "strava_link": "/page1"
+        "strava_link": "https://strava.app.link/ahKfVQLOFNb"
+    },
+
+    {
+        "name": "Bench To Observatory",
+        "description": "start and go here",
+        "length": 0.18,
+        "vertical": 50,
+        "strava_link": "https://strava.app.link/gxDndRQOFNb"
+    },
+
+    {
+        "name": "Bin To Bench",
+        "description": "start and go here",
+        "length": 0.17,
+        "vertical": 50,
+        "strava_link": "https://strava.app.link/73De5lPOFNb"
+    },
+
+    {
+        "name": "Griffith's Nasty Hill",
+        "description": "start and go here",
+        "length": 0.16,
+        "vertical": 50,
+        "strava_link": "https://strava.app.link/0UaIahKOFNb"
+    },
+
+    {
+        "name": "Griffth's S-Curve",
+        "description": "start and go here",
+        "length": 0.10,
+        "vertical": 50,
+        "strava_link": "https://strava.app.link/cEfjydIOFNb"
+    },
+
+    {
+        "name": "Sign to Bench",
+        "description": "start and go here",
+        "length": 0.17,
+        "vertical": 50,
+        "strava_link": "https://strava.app.link/JwqetTNOFNb"
     }
+
 ]
