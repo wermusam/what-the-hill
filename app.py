@@ -21,28 +21,31 @@ class App():
         self.load_json()
         self._app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-    def create_data_table(self):
+    def generate_table(self, data=None):
         """Data Table that reads the json file and displays info on the website"""
-        table = DataTable(
-            data = self.load_json(),
-            columns = [
-                {"name": "Name", "id": "name"},
-                {"name": "Description", "id": "description"},
-                {"name": "Length", "id": "length"},
-                {"name": "Vertical", "id": "vertical"},
-                {"name": "Link", "id": "strava_link", "presentation": "markdown"},
+        data = self.load_json()
+        return dbc.Table(
+            # Table header
+            [html.Thead(html.Tr([html.Th('Name'), html.Th('Description'), html.Th('Length'), html.Th('Vertical'), html.Th('Strava Link')])),
+                html.Tbody([
+                    html.Tr([
+                        html.Td(item.get('name', 'N/A')),
+                        html.Td(item.get('description', 'N/A')),
+                        html.Td(item.get('length', 'N/A')),
+                        html.Td(item.get('vertical', 'N/A')),
+                        # html.Td(html.A('Go to Page', href=item.get('strava_link', '#'), target="_blank"))
+                        html.Td(html.A(item.get('strava_link', '#'), href=item.get('strava_link', '#'), target="_blank"))
+                ]) for item in data
+                ])
             ],
-            style_table={"width": '100%'},
-            style_cell = {'textAlign': 'left', 'padding': '10px'},
-            style_header={'backgroundColor': 'rgb(30,30,30)', 'color': 'white'},
+            bordered=True, striped=True, hover=True, responsive=True, className="table-class"
         )
-        return table
 
     def create_layout(self):
-        self._app.layout = html.Div([
-            html.H1("What The Hill Table"),
-            self.create_data_table()
-        ])
+        self._app.layout = dbc.Container([
+            html.H1("What The Hill Data Table"),
+            self.generate_table(),
+        ], fluid=True)
 
     def load_json(self, file_path=None):
         """Loads hill data json file
