@@ -14,6 +14,7 @@ from dash.dash_table import DataTable
 from dash.dependencies import Input, Output, State
 from pathlib import Path
 import dash_bootstrap_components as dbc
+import dash_leaflet as dl
 
 class Application():
 
@@ -33,8 +34,16 @@ class Application():
             # Divider
             html.Hr(),
 
+            # Map of Locations
+            html.H2("Map of All Hill Locations", className='text-center mt-4'),
+            html.P("This map shows all of the locations for the challenge", className='text-center'),
+            self.create_map(),
+
+            # Divider
+            html.Hr(),
+
              # Submission Form
-            html.H2("Hill Submission Form", style={"textAlign": "center"}),    
+            html.H3("Hill Submission Form", style={"textAlign": "center"}),    
             self.layout_submission_form(),
 
             # Output Container For Results
@@ -44,6 +53,31 @@ class Application():
 
         # Form Submission Response
         self.submission_form_response()
+
+    def create_map(self, locations=None):
+        locations = [
+            {"name": "Across The Greek", "lat": 34.1217740, "lon": -118.296690},
+            {"name": "Griffith Observatory", "lat": 34.1015, "lon": -118.3004},
+            {"name": "Santa Monica Pier", "lat": 34.0092, "lon": -118.49770},
+            {"name": "LAX", "lat": 33.9416, "lon": -118.4085},
+        ]
+        markers = [dl.Marker(position=[loc["lat"], loc["lon"]],
+                             children=[
+                                dl.Tooltip(loc["name"]),
+                                dl.Popup(html.A(
+                                    "Open in Google Maps",
+                                    href=f"https://www.google.com/maps?q={loc['lat']}, {loc['lon']}",
+                                    target="_blank",
+                                    style={"color": "blue", "text-decoration": "underline"}
+                                )) 
+                             ]
+                             ) for loc in locations
+                ]
+
+        return dl.Map(center=[34.0522, -118.2437], zoom=10, children=[
+            dl.TileLayer(), # Base map layer
+            *markers
+        ], style={'width': '100%', 'height': '500px'})
         
 
 
