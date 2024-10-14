@@ -96,7 +96,7 @@ class Application():
             if not (name and email and selected_item and num_repetitions):
                 return html.Div("Please fill out all required fields.", style={"color": "red"})
 
-            # Validaate number of repetitions
+            # Validate number of repetitions
             if not isinstance(num_repetitions, int) or num_repetitions <= 0:
                 return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
             
