@@ -11,10 +11,11 @@ import os
 import sys
 from dash import dcc, html
 from dash.dash_table import DataTable
+from dash.dependencies import Input, Output, State
 from pathlib import Path
 import dash_bootstrap_components as dbc
 
-class App():
+class Application():
 
     def __init__(self):
         # initial dash app
@@ -41,6 +42,11 @@ class App():
 
         ], fluid=True)
 
+        # Form Submission Response
+        self.submission_form_response()
+        
+
+
     def dropdown_name_options(self, data=None):
         """Returns the dropdown options from the json data"""
         data = self.load_json()
@@ -65,12 +71,55 @@ class App():
             bordered=True, striped=True, hover=True, responsive=True, className="table-class"
         )
 
-    def layout_hill_data_table(self):
-        """layout for hill data table"""
-        return dbc.Container([
-            html.H2("What The Hill Data Table", style={"textAlign": "center"}),
-            self.generate_hill_table(),
-        ], fluid=True)
+    def get_vertical_value(self, name=""):
+        """Calculates the vertical feet by multiplying reps and feet"""
+        data = self.load_json()
+        for item in data:
+            if item["name"] == name:
+                return item["vertical"]
+        return 0
+
+    def submission_form_response(self):
+        """Handles submission form response"""
+        @self._app.callback(
+            Output("output-container","children"),
+            Input("submit-button", "n_clicks"),
+            State("name", "value"),
+            State("email", "value"),
+            State("item-dropdown", "value"),
+            State("num-repetitions", "value"),
+            State("optional-link", "value"),
+            prevent_initial_call=True
+        )
+        def handle_submission_form(n_clicks, name, email, selected_item, num_repetitions, optional_link):
+            # Check if all required fields are filled
+            if not (name and email and selected_item and num_repetitions):
+                return html.Div("Please fill out all required fields.", style={"color": "red"})
+
+            # Validaate number of repetitions
+            if not isinstance(num_repetitions, int) or num_repetitions <= 0:
+                return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
+            
+            # Get the vertical value from the selected item
+            vertical_value = self.get_vertical_value(selected_item)
+
+            # Calculate the results
+            total_submitted_feet = num_repetitions * vertical_value
+
+            # Optional link handling
+            link_text = optional_link if optional_link else "No link provided"
+
+            result = html.Div([
+                html.H4("Form Submission Results"),
+                html.P(f"Name: {name}"),
+                html.P(f"Email: {email}"),
+                html.P(f"Selected Item: {selected_item}"),
+                html.P(f"Number of Repetitions:  {num_repetitions}"),
+                html.P(f"Vertical Value: {vertical_value}"),
+                html.P(f"Total Feet: {total_submitted_feet}"),
+                html.P(f"Optional Link: {link_text}")
+            ])
+            return result
 
     def layout_submission_form(self):
         """layout for the submission form"""
@@ -150,7 +199,7 @@ class App():
 
 # Run the app
 if __name__ == "__main__":
-    app = App()
-    app.create_layout()
-    app.run()
+    run_app = Application()
+    run_app.create_layout()
+    run_app.run()
 
