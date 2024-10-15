@@ -29,6 +29,16 @@
         "lon": -118.1642010
     },
 
+    {
+        "name": "Baxter and Glendale to the top of the street",
+        "description": "At the intersection of Baxter and Glendale, head to the top of the street",
+        "length": 0.10,
+        "vertical": 76,
+        "strava_link": "https://strava.app.link/6sCYNpEGHNb",
+        "lat": 34.0934210,
+        "lon": -118.2591600
+    },
+
 
     {
         "name": "Berlin Forest",
@@ -79,6 +89,57 @@
         "lat": 34.020390,
         "lon": -118.3823680
     },
+
+    {
+        "name": "Duane and Silver Lake to Duane and Apex",
+        "description": "At the intersection of Duane and Silver Lake, head to Duane and Apex.",
+        "length": 0.12,
+        "vertical": 100,
+        "strava_link": "https://strava.app.link/lQxRtdIGHNb",
+        "lat": 34.0920670,
+        "lon": -118.2638830
+    },
+
+    {
+        "name": "Earl Street to Bancroft",
+        "description": "At the intersection of Allesandro and Loma Vista, head up Loma Vista steps to Glendale.",
+        "length": 0.1,
+        "vertical": 127,
+        "strava_link": "https://strava.app.link/BDRcW8hHHNb",
+        "lat": 34.0961470,
+        "lon": -118.2591620
+    },
+
+    {
+        "name": "Earl to Glendale",
+        "description": "Off Bancroft is a set of stairs. Go through there on Earl Steet to Glendale Blvd.",
+        "length": 0.1,
+        "vertical": 127,
+        "strava_link": "https://strava.app.link/dCU3uAyHHNb",
+        "lat": 34.0962250,
+        "lon": -118.2562780
+    },
+
+    {
+        "name": "Edendale Stairs",
+        "description": "At the top of Edendale street is a set of stairs. Go up the stairs.",
+        "length": 0.06,
+        "vertical": 86,
+        "strava_link": "https://strava.app.link/2wakyoPGHNb",
+        "lat": 34.0947370,
+        "lon": -118.2564690
+    },
+
+    {
+        "name": "Edendale Street",
+        "description": "At the intersection of Edendale and Glendale, head up the street.",
+        "length": 0.10,
+        "vertical": 86,
+        "strava_link": "https://strava.app.link/Rcfx06LGHNb",
+        "lat": 34.0950970,
+        "lon": -118.2591460
+    },
+
 
     {
         "name": "Entrada Steps to Mabery",
@@ -182,6 +243,36 @@
     },
 
     {
+        "name": "Loma Vista Steps to Allesandro Way",
+        "description": "At the intersection of Glendale and Loma Vista, head up Loma Vista and up the steps to Allesandro Way.",
+        "length": 0.23,
+        "vertical": 132,
+        "strava_link": "https://strava.app.link/sfynypRGHNb",
+        "lat": 34.0956300,
+        "lon": -118.2591130
+    },
+
+    {
+        "name": "Loma Vista Steps to Glendale",
+        "description": "At the intersection of Allesandro and Loma Vista, head up Loma Vista steps to Glendale.",
+        "length": 0.23,
+        "vertical": 158,
+        "strava_link": "https://strava.app.link/62iba3eHHNb",
+        "lat": 34.0948390,
+        "lon": -118.2552870
+    },
+
+    {
+        "name": "Mattachine Steps",
+        "description:": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps.",
+        "length": 0.15,
+        "vertical": 98,
+        "strava_link": "https://strava.app.link/EFnVmD3FHNb",
+        "lat":34.0956540,
+        "lon": -118.2618400
+    },
+
+    {
         "name": "Montana Steps",
         "description": "Near the Santa Monica Beach Path and California Incline is a circular ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
         "length": 0.12,
@@ -199,6 +290,16 @@
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
         "lat": 34.1076380,
         "lon": -118.3390160
+    },
+
+    {
+        "name": "Rockford and Baxter to the Top",
+        "description": "At the intersection of Rockford and Baxter, head to the top of the hill",
+        "length": 0.10,
+        "vertical": 88,
+        "strava_link": "https://strava.app.link/ybqq3C6FHNb",
+        "lat": 34.0946930,
+        "lon": -118.2622610
     },
 
     {
@@ -269,6 +370,16 @@
         "strava_link": "https://strava.app.link/JwqetTNOFNb",
         "lat": 34.117620,
         "lon": -118.3024400
+    },
+
+    {
+        "name": "Swan Stairway (Parts 1, 2, & 3)",
+        "description": "Start at the intersection of Swan and W Silver Lake. Go up all 3 sets of stairs.",
+        "length": 0.11,
+        "vertical": 142,
+        "strava_link": "https://strava.app.link/gtmad8BHHNb",
+        "lat": 34.0912530,
+        "lon": -118.2678440
     }
 
 ]
