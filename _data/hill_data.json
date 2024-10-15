@@ -1,5 +1,15 @@
 [
     {
+        "name": "4th Street Stairs",
+        "description": "Near the Entrada and Ocean bus stop is the 4th Street Stairs. Go up to Adelaide Drive.",
+        "length": 0.05,
+        "vertical": 31,
+        "strava_link": "https://strava.app.link/1osWpBVFHNb",
+        "lat": 34.0306970,
+        "lon": -118.5127590
+    },
+
+    {
         "name": "Across The Greek",
         "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
         "length": 0.11,
@@ -51,6 +61,16 @@
     },
 
     {
+        "name": "California Incline",
+        "description": "A Santa Monica classic. Start by the sign near the stairs and head up the California Incline.",
+        "length": 0.21,
+        "vertical": 55,
+        "strava_link": "https://strava.app.link/4Pu33hwFHNb",
+        "lat": 34.0197510,
+        "lon": -118.5056650
+    },
+
+    {
         "name": "Culver City Stairs",
         "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or up the Hillside Trail.",
         "length": 0.31,
@@ -58,6 +78,16 @@
         "strava_link": "https://strava.app.link/hrarP5EvHNb",
         "lat": 34.020390,
         "lon": -118.3823680
+    },
+
+    {
+        "name": "Entrada Steps to Mabery",
+        "description": "Near the intersection of Entrada and Mesa is a staircase. Go up that to Mabery.",
+        "length": 0.05,
+        "vertical": 31,
+        "strava_link": "https://strava.app.link/bg0SfwPFHNb",
+        "lat": 34.0298080,
+        "lon": -118.5154050
     },
 
     {
@@ -122,6 +152,16 @@
     },
 
     {
+        "name": "Idaho Steps and Incline",
+        "description": "Near the Santa Monica Beach Path and California Incline is a circular base ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
+        "length": 0.21,
+        "vertical": 88,
+        "strava_link": "https://strava.app.link/SIr7d6CFHNb",
+        "lat": 34.0192940,
+        "lon": -118.5060710
+    },
+
+    {
         "name": "La Loma to Cherry Steps to Top of Sequoia Light Post",
         "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
         "length": 0.21,
@@ -142,13 +182,63 @@
     },
 
     {
+        "name": "Montana Steps",
+        "description": "Near the Santa Monica Beach Path and California Incline is a circular ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
+        "length": 0.12,
+        "vertical": 72,
+        "strava_link": "https://strava.app.link/4cUBDLLFHNb",
+        "lat": 34.0211770,
+        "lon": -118.5081590
+    },
+
+    {
         "name": "Paramount Stairway",
-        "description": "",
+        "description": "Near the Hollywood Bowl, go up the steps to the top",
         "length": 0.19,
         "vertical": 131,
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
         "lat": 34.1076380,
         "lon": -118.3390160
+    },
+
+    {
+        "name": "Santa Monica Beach Path to Cannon Steps",
+        "description": "Off the Santa Monica Beach Path is a set of steps. Go up it until you see the Cannon. Don't fire the cannon.",
+        "length": 0.07,
+        "vertical": 31,
+        "strava_link": "https://strava.app.link/CKsVpJhFHNb",
+        "lat": 34.0125790,
+        "lon": -118.4981480
+    },
+
+    {
+        "name": "Santa Monica Pier Ramp",
+        "description": "At the base of the Santa Monica Pier ramp, head up.",
+        "length": 0.11,
+        "vertical": 31,
+        "strava_link": "https://strava.app.link/gYuR39eFHNb",
+        "lat": 34.0101190,
+        "lon": -118.49640
+    },
+
+    {
+        "name": "Santa Monica Stairs",
+        "description": "At the intersection of Amalfi and Entrada is the Santa Monica Stairs. Go up to Adelaide Drive.",
+        "length": 0.11,
+        "vertical": 89,
+        "strava_link": "https://strava.app.link/yLKtGgYFHNb",
+        "lat": 34.0323590,
+        "lon": -118.5110690
+    },
+
+    {
+        "name": "Steps to Arizona and Ocean",
+        "description": "Off the Santa Monica Beach Path closer to the freeway is a set of steps. Go up the steps to the top.",
+        "length": 0.09,
+        "vertical": 35,
+        "strava_link": "https://strava.app.link/254sniqFHNb",
+        "lat": 34.0149150,
+        "lon": -118.500280
     },
 
     {
