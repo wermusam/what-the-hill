@@ -9,6 +9,15 @@
     },
 
     {
+        "name": "Arbor Hill",
+        "description": "Start at the intersection of Arbor St and California Terrace. Go to the top of Arbor and Grand.",
+        "length": 0.14,
+        "vertical": 89,
+        "strava_link": "https://strava.app.link/KEOhCdZqHNb"
+    },
+
+
+    {
         "name": "Berlin Forest",
         "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest'",
         "length": 0.11,
@@ -33,6 +42,14 @@
     },
 
     {
+        "name": "Culver City Stairs",
+        "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or up the Hillside Trail.",
+        "length": 0.31,
+        "vertical": 299,
+        "strava_link": "https://strava.app.link/hrarP5EvHNb"
+    },
+
+    {
         "name": "Griffith's Nasty Hill",
         "description": "Off W Observatory road and accross the S-Curve, from the road go up the steep climb To Mt. Hollywood Trail",
         "length": 0.16,
@@ -46,6 +63,38 @@
         "length": 0.10,
         "vertical": 66,
         "strava_link": "https://strava.app.link/cEfjydIOFNb"
+    },
+
+    {
+        "name": "La Loma to Cherry Steps to Top of Sequoia Light Post",
+        "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
+        "length": 0.21,
+        "vertical": 161,
+        "strava_link": "https://strava.app.link/GYugSr7qHNb"
+    },
+
+    {
+        "name": "La Loma to Evergreen Steps",
+        "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to Evergreen Drive.",
+        "length": 0.05,
+        "vertical": 39,
+        "strava_link": "https://strava.app.link/LzatS79qHNb"
+    },
+
+    {
+        "name": "Secret Stairs of Pasadena (Option A)",
+        "description": "Near the intersection of Elmwood Drive and Laurel Bay Drive is a staircase. Go through the Elmwood Secret Stairs until you get to Cherry Drive.",
+        "length": 0.20,
+        "vertical": 161,
+        "strava_link": "https://strava.app.link/CKR6fQ2qHNb"
+    },
+
+    {
+        "name": "Secret Stairs of Pasadena (Option B)",
+        "description": "This is the reverse of Secret Stairs of Pasadena (Option A). Start at Cherry Drive, go through the Elmwood Secret Stairs until you get to Elmwood Drive.",
+        "length": 0.20,
+        "vertical": 52,
+        "strava_link": "https://strava.app.link/be8WFh5qHNb"
     },
 
     {
