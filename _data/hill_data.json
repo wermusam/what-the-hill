@@ -81,6 +81,47 @@
     },
 
     {
+        "name": "Hollywood Bowl Entrance up the steps to the tree",
+        "description": "At the base of the steps by the tunnel, head up the steps until you make it to the tree in front of the store.",
+        "length": 0.10,
+        "vertical": 32,
+        "strava_link": "https://strava.app.link/thblo6eyHNb",
+        "lat": 34.1113380,
+        "lon": -118.3364270
+    },
+
+    {
+
+        "name": "Hollywood Bowl B Parking Lot B1-B7-B1",
+        "description": "In the Hollywood Bowl B parking lot, go to either side of B1, head up to B7 and back to B1. It'll be a U shape. You can start from either side of B1 and head to the other side as 1 rep.",
+        "length": 0.26,
+        "vertical": 62,
+        "strava_link": "https://strava.app.link/twEauGgyHNb",
+        "lat": 34.1111120,
+        "lon": -118.3364270
+    },
+
+    {
+        "name": "Hollywood Bowl Picnic Area 3",
+        "description": "In the Hollywood Bowl A parking lot is a hill that goes up to Picnic Area 3. Go up that hill.",
+        "length": 0.05,
+        "vertical": 108,
+        "strava_link": "https://strava.app.link/twEauGgyHNb",
+        "lat": 34.1130180,
+        "lon": -118.3379280
+    },
+
+    {
+        "name": "Hollywood Bowl Walkway to Lot A Upper Terrace",
+        "description": "Towards the corner of the Hollywood Bowl A lot is an upper walkway. Go up the walkway to Lot A Upper Terrace.",
+        "length": 0.13,
+        "vertical": 43,
+        "strava_link": "https://strava.app.link/nlIIZamyHNb",
+        "lat": 34.1134090,
+        "lon": -118.3392650
+    },
+
+    {
         "name": "La Loma to Cherry Steps to Top of Sequoia Light Post",
         "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
         "length": 0.21,
@@ -98,6 +139,16 @@
         "strava_link": "https://strava.app.link/LzatS79qHNb",
         "lat": 34.1326140,
         "lon": -118.1809090
+    },
+
+    {
+        "name": "Paramount Stairway",
+        "description": "",
+        "length": 0.19,
+        "vertical": 131,
+        "strava_link": "https://strava.app.link/0E5rTppyHNb",
+        "lat": 34.1076380,
+        "lon": -118.3390160
     },
 
     {
