@@ -4,8 +4,9 @@
         "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
         "length": 0.11,
         "vertical": 66,
-        "strava_link": "https://strava.app.link/7FwNTtGOFNb"
-        
+        "strava_link": "https://strava.app.link/7FwNTtGOFNb",
+        "lat": 34.1218740,
+        "lon": -118.2966790
     },
 
     {
@@ -13,7 +14,9 @@
         "description": "Start at the intersection of Arbor St and California Terrace. Go to the top of Arbor and Grand.",
         "length": 0.14,
         "vertical": 89,
-        "strava_link": "https://strava.app.link/KEOhCdZqHNb"
+        "strava_link": "https://strava.app.link/KEOhCdZqHNb",
+        "lat": 34.1398990,
+        "lon": -118.1642010
     },
 
 
@@ -22,7 +25,9 @@
         "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest'",
         "length": 0.11,
         "vertical": 39,
-        "strava_link": "https://strava.app.link/ahKfVQLOFNb"
+        "strava_link": "https://strava.app.link/ahKfVQLOFNb",
+        "lat": 34.120950,
+        "lon": -118.3003600
     },
 
     {
@@ -30,7 +35,9 @@
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. When you make it to the bench, that is the starting point. Go up from the bench to the observatory.",
         "length": 0.18,
         "vertical": 131,
-        "strava_link": "https://strava.app.link/gxDndRQOFNb"
+        "strava_link": "https://strava.app.link/gxDndRQOFNb",
+        "lat": 34.116270,
+        "lon": -118.3004390
     },
 
     {
@@ -38,7 +45,9 @@
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. From here, go up back to the bench. This is part of the Boy Scout Trail",
         "length": 0.17,
         "vertical": 49,
-        "strava_link": "https://strava.app.link/73De5lPOFNb"
+        "strava_link": "https://strava.app.link/73De5lPOFNb",
+        "lat": 34.11779150,
+        "lon": -118.2989270
     },
 
     {
@@ -46,7 +55,9 @@
         "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or up the Hillside Trail.",
         "length": 0.31,
         "vertical": 299,
-        "strava_link": "https://strava.app.link/hrarP5EvHNb"
+        "strava_link": "https://strava.app.link/hrarP5EvHNb",
+        "lat": 34.020390,
+        "lon": -118.3823680
     },
 
     {
@@ -54,7 +65,9 @@
         "description": "Off W Observatory road and accross the S-Curve, from the road go up the steep climb To Mt. Hollywood Trail",
         "length": 0.16,
         "vertical": 164,
-        "strava_link": "https://strava.app.link/0UaIahKOFNb"
+        "strava_link": "https://strava.app.link/0UaIahKOFNb",
+        "lat": 34.1229510,
+        "lon": -118.3027710
     },
 
     {
@@ -62,7 +75,9 @@
         "description": "On the W trail, start at a tree on a little bridge and head up the S curve towards the road. If you keep going from the road, you'll start the Nasty Hill section.",
         "length": 0.10,
         "vertical": 66,
-        "strava_link": "https://strava.app.link/cEfjydIOFNb"
+        "strava_link": "https://strava.app.link/cEfjydIOFNb",
+        "lat": 34.1235430,
+        "lon": -118.3034120
     },
 
     {
@@ -70,7 +85,9 @@
         "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
         "length": 0.21,
         "vertical": 161,
-        "strava_link": "https://strava.app.link/GYugSr7qHNb"
+        "strava_link": "https://strava.app.link/GYugSr7qHNb",
+        "lat": 34.1331450,
+        "lon": -118.1812770
     },
 
     {
@@ -78,7 +95,9 @@
         "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to Evergreen Drive.",
         "length": 0.05,
         "vertical": 39,
-        "strava_link": "https://strava.app.link/LzatS79qHNb"
+        "strava_link": "https://strava.app.link/LzatS79qHNb",
+        "lat": 34.1326140,
+        "lon": -118.1809090
     },
 
     {
@@ -86,7 +105,9 @@
         "description": "Near the intersection of Elmwood Drive and Laurel Bay Drive is a staircase. Go through the Elmwood Secret Stairs until you get to Cherry Drive.",
         "length": 0.20,
         "vertical": 161,
-        "strava_link": "https://strava.app.link/CKR6fQ2qHNb"
+        "strava_link": "https://strava.app.link/CKR6fQ2qHNb",
+        "lat": 34.1362540,
+        "lon": -118.1833810
     },
 
     {
@@ -94,7 +115,9 @@
         "description": "This is the reverse of Secret Stairs of Pasadena (Option A). Start at Cherry Drive, go through the Elmwood Secret Stairs until you get to Elmwood Drive.",
         "length": 0.20,
         "vertical": 52,
-        "strava_link": "https://strava.app.link/be8WFh5qHNb"
+        "strava_link": "https://strava.app.link/be8WFh5qHNb",
+        "lat": 34.1350280,
+        "lon": -118.1805790
     },
 
     {
@@ -102,7 +125,9 @@
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then right until you see a sign. For this segment, go up until you make it back to the bench.",
         "length": 0.17,
         "vertical": 120,
-        "strava_link": "https://strava.app.link/JwqetTNOFNb"
+        "strava_link": "https://strava.app.link/JwqetTNOFNb",
+        "lat": 34.117620,
+        "lon": -118.3024400
     }
 
 ]

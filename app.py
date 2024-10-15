@@ -55,12 +55,9 @@ class Application():
         self.submission_form_response()
 
     def create_map(self, locations=None):
-        locations = [
-            {"name": "Across The Greek", "lat": 34.1217740, "lon": -118.296690},
-            {"name": "Griffith Observatory", "lat": 34.1015, "lon": -118.3004},
-            {"name": "Santa Monica Pier", "lat": 34.0092, "lon": -118.49770},
-            {"name": "LAX", "lat": 33.9416, "lon": -118.4085},
-        ]
+        """Filter hill data json and create a map"""
+        data = self.load_json()
+        locations = [{'name': item['name'], 'lat': item['lat'], 'lon': item['lon']} for item in data]
         markers = [dl.Marker(position=[loc["lat"], loc["lon"]],
                              children=[
                                 dl.Tooltip(loc["name"]),
