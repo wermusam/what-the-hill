@@ -140,6 +140,16 @@
         "lon": -118.2591460
     },
 
+    {
+        "name": "Eldred Street and Steps",
+        "description": "Start at the intersection of Avenue 50 and Eldred Steet. Go up the steep street and then go up the steps to the top. Congratulations you warrior.",
+        "length": 0.28,
+        "vertical": 208,
+        "strava_link": "https://strava.app.link/TCj1Xv3HHNb",
+        "lat": 34.109630,
+        "lon": -118.2057150
+    },
+
 
     {
         "name": "Entrada Steps to Mabery",
