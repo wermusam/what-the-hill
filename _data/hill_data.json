@@ -263,6 +263,16 @@
     },
 
     {
+        "name": "Los Feliz Heights",
+        "description": "Near Cromwell and North Berendo Street is a staircase. Go up the staircase. Keep going up a hill on Bonvue Avenue until you see a staircase on your left before Glendower Avenue. Go up the staircase to Bryn Mawr Road. Go up another staircase to Glendower Ave.",
+        "length": 0.26,
+        "vertical": 222,
+        "strava_link": "https://strava.app.link/xs3hDlEHHNb",
+        "lat": 34.1123700,
+        "lon": -118.29448480
+    },
+
+    {
         "name": "Mattachine Steps",
         "description:": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps.",
         "length": 0.15,
@@ -290,6 +300,26 @@
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
         "lat": 34.1076380,
         "lon": -118.3390160
+    },
+
+    {
+        "name": "Prospect Stairs",
+        "description": "On Prospect Ave is the Prospect Walk. Go up all 3 sets of staircases.",
+        "length": 0.26,
+        "vertical": 222,
+        "strava_link": "https://strava.app.link/6DO7SyHHHNb",
+        "lat": 34.1019570,
+        "lon": -118.2775570
+    },
+
+    {
+        "name": "Radio Walk Steps",
+        "description": "At the intersection of Deloz Avenue and Prospect Avenue is the Radio walk steps. Go up all the way passed Hollyvista Avenue to Franklin.",
+        "length": 0.06,
+        "vertical": 61,
+        "strava_link": "https://strava.app.link/eLTlMiKHHNb",
+        "lat": 34.1031180,
+        "lon": -118.2773030
     },
 
     {
