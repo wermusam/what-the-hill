@@ -353,16 +353,6 @@
     },
 
     {
-        "name": "Larissa Steps to Descanso",
-        "description:": "Near the intersection of Larissa Drive and Descanso Drive is a set of steps. Go up them to Descanso Drive.",
-        "length": 0.08,
-        "vertical": 57,
-        "strava_link": "https://strava.app.link/PvI730dIHNb",
-        "lat": 34.0851470,
-        "lon": -118.2756920
-    },
-
-    {
         "name": "Loma Vista Steps to Allesandro Way",
         "description": "At the intersection of Glendale and Loma Vista, head up Loma Vista and up the steps to Allesandro Way.",
         "length": 0.23,
@@ -394,7 +384,7 @@
 
     {
         "name": "Mattachine Steps",
-        "description:": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps.",
+        "description": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps.",
         "length": 0.15,
         "vertical": 98,
         "strava_link": "https://strava.app.link/EFnVmD3FHNb",
@@ -404,7 +394,7 @@
 
     {
         "name": "Micheltorena and Berkeley up to 1923 on your left",
-        "description:": "Start at the intersection of Micheltorena and Berkeley. Go up the steep street all the way to the top until you see 1923 on your left.",
+        "description": "Start at the intersection of Micheltorena and Berkeley. Go up the steep street all the way to the top until you see 1923 on your left.",
         "length": 0.15,
         "vertical": 98,
         "strava_link": "https://strava.app.link/Q1SSgI5HHNb",
@@ -414,7 +404,7 @@
 
     {
         "name": "Micheltorena Steps",
-        "description:": "Start at the intersection of Micheltorena and West Sunset. Go up the steps.",
+        "description": "Start at the intersection of Micheltorena and West Sunset. Go up the steps.",
         "length": 0.10,
         "vertical": 98,
         "strava_link": "https://strava.app.link/MlNjBv7HHNb",
@@ -454,7 +444,7 @@
 
     {
         "name": "Piano Steps",
-        "description:": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way.",
+        "description": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way.",
         "length": 0.08,
         "vertical": 57,
         "strava_link": "https://strava.app.link/l9ZtMcaIHNb",
