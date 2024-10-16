@@ -30,6 +30,16 @@
     },
 
     {
+        "name": "Avalon Street Steps",
+        "description": "At the intersection of Echo Park and Avalon is your staircase to go up.",
+        "length": 0.12,
+        "vertical": 56,
+        "strava_link": "https://strava.app.link/kFd7uuuIHNb",
+        "lat": 34.0861220,
+        "lon": -118.2517820
+    },
+
+    {
         "name": "Baxter and Glendale to the top of the street",
         "description": "At the intersection of Baxter and Glendale, head to the top of the street",
         "length": 0.10,
@@ -37,6 +47,36 @@
         "strava_link": "https://strava.app.link/6sCYNpEGHNb",
         "lat": 34.0934210,
         "lon": -118.2591600
+    },
+
+    {
+        "name": "Baxter Street Stairs",
+        "description": "At the intersection of Baxter and Valentine Street, go up to Park Drive at Elysian Park.",
+        "length": 0.17,
+        "vertical": 173,
+        "strava_link": "https://strava.app.link/kFd7uuuIHNb",
+        "lat": 34.0886740,
+        "lon": -118.2485960
+    },
+
+    {
+        "name": "Baxter Double Hill",
+        "description": "At the intersection of Baxter and Echo Park, go up both hills to North Alvarado.",
+        "length": 0.33,
+        "vertical": 198,
+        "strava_link": "https://strava.app.link/URqPhZxIHNb",
+        "lat": 34.0893850,
+        "lon": -118.2499640
+    },
+
+    {
+        "name": "Baxter Street",
+        "description": "At the intersection of Baxter and North Alvarado, go down and then up to Lemoyne Street. Turn around and head back to where you came. That is one. It's a November Project LAX classic.",
+        "length": 0.33,
+        "vertical": 198,
+        "strava_link": "https://strava.app.link/1uNsJEzIHNb",
+        "lat": 34.0915440,
+        "lon": -118.2550920
     },
 
 
@@ -88,6 +128,16 @@
         "strava_link": "https://strava.app.link/hrarP5EvHNb",
         "lat": 34.020390,
         "lon": -118.3823680
+    },
+
+    {
+        "name": "Delta Street Steps",
+        "description": "At the intersection of Echo Park and Morton Avenue is your staircase to go up.",
+        "length": 0.12,
+        "vertical": 56,
+        "strava_link": "https://strava.app.link/ll96YbrIHNb",
+        "lat": 34.0815250,
+        "lon": -118.2546450
     },
 
     {
@@ -182,6 +232,36 @@
     },
 
     {
+        "name": "Hidden Stairways of Silver Lake (Option A)",
+        "description": "There are 3 hidden stairways in this spot of Silver Lake. Start at Silver Lake Blvf net to Botanica Restaurant, go up the steps to N Occidental Blvd, turn right. On your left go up the steps past Easterly Tier to Silverwood Tier.",
+        "length": 0.10,
+        "vertical": 82,
+        "strava_link": "https://strava.app.link/Yagr87lIHNb",
+        "lat": 34.0883200,
+        "lon": -118.2690470
+    },
+
+    {
+        "name": "Hidden Stairways of Silver Lake (Option B)",
+        "description": "There are 3 hidden stairways in this spot of Silver Lake. From N Occidental Blvd, go up the steps to past Easterly Tier to Silverwood Tier.",
+        "length": 0.10,
+        "vertical": 65,
+        "strava_link": "https://strava.app.link/Yagr87lIHNb",
+        "lat": 34.0859870,
+        "lon": -118.2693730
+    },
+
+    {
+        "name": "Hidden Stairways of Silver Lake (Option C)",
+        "description": "There are 3 hidden stairways in this spot of Silver Lake. At the intersection of Scott Pl and Angelus Avenue is the third staircase to go up.",
+        "length": 0.10,
+        "vertical": 56,
+        "strava_link": "https://strava.app.link/Yagr87lIHNb",
+        "lat": 34.0849340,
+        "lon": -118.2688270
+    },
+
+    {
         "name": "Hollywood Bowl Entrance up the steps to the tree",
         "description": "At the base of the steps by the tunnel, head up the steps until you make it to the tree in front of the store.",
         "length": 0.10,
@@ -273,6 +353,16 @@
     },
 
     {
+        "name": "Larissa Steps to Descanso",
+        "description:": "Near the intersection of Larissa Drive and Descanso Drive is a set of steps. Go up them to Descanso Drive.",
+        "length": 0.08,
+        "vertical": 57,
+        "strava_link": "https://strava.app.link/PvI730dIHNb",
+        "lat": 34.0851470,
+        "lon": -118.2756920
+    },
+
+    {
         "name": "Loma Vista Steps to Allesandro Way",
         "description": "At the intersection of Glendale and Loma Vista, head up Loma Vista and up the steps to Allesandro Way.",
         "length": 0.23,
@@ -313,6 +403,26 @@
     },
 
     {
+        "name": "Micheltorena and Berkeley up to 1923 on your left",
+        "description:": "Start at the intersection of Micheltorena and Berkeley. Go up the steep street all the way to the top until you see 1923 on your left.",
+        "length": 0.15,
+        "vertical": 98,
+        "strava_link": "https://strava.app.link/Q1SSgI5HHNb",
+        "lat":34.0898730,
+        "lon": -118.2743150
+    },
+
+    {
+        "name": "Micheltorena Steps",
+        "description:": "Start at the intersection of Micheltorena and West Sunset. Go up the steps.",
+        "length": 0.10,
+        "vertical": 98,
+        "strava_link": "https://strava.app.link/MlNjBv7HHNb",
+        "lat":34.0873810,
+        "lon": -118.2759500
+    },
+
+    {
         "name": "Montana Steps",
         "description": "Near the Santa Monica Beach Path and California Incline is a circular ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
         "length": 0.12,
@@ -323,6 +433,16 @@
     },
 
     {
+        "name": "Music Box Steps",
+        "description": "Near Laurel and Hardy Park is the Music Box steps. Go up those steps to Descanso Drive.",
+        "length": 0.05,
+        "vertical": 72,
+        "strava_link": "https://strava.app.link/4cUBDLLFHNb",
+        "lat": 34.0830540,
+        "lon": -118.2751610
+    },
+
+    {
         "name": "Paramount Stairway",
         "description": "Near the Hollywood Bowl, go up the steps to the top",
         "length": 0.19,
@@ -330,6 +450,16 @@
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
         "lat": 34.1076380,
         "lon": -118.3390160
+    },
+
+    {
+        "name": "Piano Steps",
+        "description:": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way.",
+        "length": 0.08,
+        "vertical": 57,
+        "strava_link": "https://strava.app.link/l9ZtMcaIHNb",
+        "lat":34.0863060,
+        "lon": -118.2751290
     },
 
     {
