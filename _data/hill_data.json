@@ -193,6 +193,16 @@
     },
 
     {
+        "name": "Hollywood Bowl Entrance to Picnic Area 7",
+        "description": "At the entrance to the Hollywood Bowl, instead of going inside the bowl, you'll go up as if you were heading to the top. Keep going up until you see a sign that says Picnic Area 7 on your right. You'll end there.",
+        "length": 0.17,
+        "vertical": 67,
+        "strava_link": "https://strava.app.link/sCel7MUHHNb",
+        "lat": 34.1128240,
+        "lon": -118.3381600
+    },
+
+    {
         "name": "Hollywood Bowl Picnic Area 3",
         "description": "In the Hollywood Bowl A parking lot is a hill that goes up to Picnic Area 3. Go up that hill.",
         "length": 0.05,
@@ -200,6 +210,16 @@
         "strava_link": "https://strava.app.link/twEauGgyHNb",
         "lat": 34.1130180,
         "lon": -118.3379280
+    },
+
+    {
+        "name": "Hollywood Bowl Steps",
+        "description": "Inside the Hollywood Bowl, head up the steps. Alternatively, if you go all the way to the other side, you can go up that hill to the top of the Bowl.",
+        "length": 0.11,
+        "vertical": 108,
+        "strava_link": "https://strava.app.link/qxDMTUNHHNb",
+        "lat": 34.1124080,
+        "lon": -118.3385970
     },
 
     {
