@@ -8,6 +8,7 @@ Initial web app using dash
 import json
 import dash
 import os
+import pymongo
 import sys
 from dash import dcc, html
 from dash.dash_table import DataTable
@@ -15,6 +16,17 @@ from dash.dependencies import Input, Output, State
 from pathlib import Path
 import dash_bootstrap_components as dbc
 import dash_leaflet as dl
+
+# Tentative mongo test
+"""
+import sys
+client = pymongo.MongoClient("mongodb://localhost:27017/") # localhost-reconsider for Atlas
+db = client["hill_tracker"] # Database name
+submissions_collection = db["submissions"] #collection name
+print(f"Client {client}")
+print(f"db {db}")
+print(f"submssions collection {submissions_collection}");sys.exit(0)
+"""
 
 class Application():
 

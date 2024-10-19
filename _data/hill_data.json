@@ -304,6 +304,16 @@
     },
 
     {
+        "name": "La Cienega and Santa Monica to Sunset",
+        "description": "In Weho, start at North Doheny and Santa Monica Blvd. Go up to Sunset.",
+        "length": 0.32,
+        "vertical": 146,
+        "strava_link": "https://strava.app.link/fFSxmvrmONb",
+        "lat": 34.0897580,
+        "lon": -118.3761260
+    },
+
+    {
         "name": "La Loma to Cherry Steps to Top of Sequoia Light Post",
         "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
         "length": 0.21,
@@ -404,6 +414,16 @@
     },
 
     {
+        "name": "North Doheny and Santa Monica to Sunset",
+        "description": "In Weho, start at North Doheny and Santa Monica Blvd. Go up to Sunset.",
+        "length": 0.64,
+        "vertical": 167,
+        "strava_link": "https://strava.app.link/beLRS7nmONb",
+        "lat": 34.0813250,
+        "lon": -118.3896750
+    },
+
+    {
         "name": "Paramount Stairway",
         "description": "Near the Hollywood Bowl, go up the steps to the top",
         "length": 0.19,
@@ -451,6 +471,16 @@
         "strava_link": "https://strava.app.link/ybqq3C6FHNb",
         "lat": 34.0946930,
         "lon": -118.2622610
+    },
+
+    {
+        "name": "San Vicente and Santa Monica to Sunset",
+        "description": "In Weho, start at San Vicente and Santa Monica Blvd. Go up to Sunset.",
+        "length": 0.39,
+        "vertical": 127,
+        "strava_link": "https://strava.app.link/ZhqRVxqmONb",
+        "lat": 34.0850870,
+        "lon": -118.3841020
     },
 
     {
