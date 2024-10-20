@@ -154,26 +154,48 @@ class Application:
             if not isinstance(num_repetitions, int) or num_repetitions <= 0:
                 return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
 
-            
-            # Get the vertical value from the selected item
+            # Get the vertical value from the selected location and date
             vertical_value = self.get_vertical_value(location)
-
-            # Calculate the results
             total_submitted_feet = num_repetitions * vertical_value
 
-            # Optional link handling
+            # Date
+            date = pd.Timestamp.now().strftime("%Y-%m-%d")
+
+            # Handle optional link
             link_text = optional_link if optional_link else "No link provided"
 
-            result = html.Div([
-                html.H4("Form Submission Results"),
-                html.P(f"Name: {name}"),
-                html.P(f"Email: {email}"),
-                html.P(f"Location: {location}"),
-                html.P(f"Number of Repetitions:  {num_repetitions}"),
-                html.P(f"Vertical Value: {vertical_value}"),
-                html.P(f"Total Feet: {total_submitted_feet}"),
-                html.P(f"Optional Link: {link_text}")
-            ])
+            # submission data
+            submission_data = {
+                "name": name,
+                "email": email,
+                "location": location,
+                "repetitions": num_repetitions,
+                "vertical_gain": vertical_value,
+                "strava_link": link_text,
+                "date": date,
+            }
+
+            result = html.Div(
+                [
+                    html.H4("Form Submission Results"),
+                    html.P(f"Name: {submission_data['name']}"),
+                    html.P(f"Email: {submission_data['email']}"),
+                    html.P(f"Location: {submission_data['location']}"),
+                    html.P(f"Number of Repetitions:  {submission_data['repetitions']}"),
+                    html.P(f"Vertical Value: {vertical_value}"),
+                    html.P(f"Total Feet: {total_submitted_feet}"),
+                    html.P(f"Optional Link: {submission_data['strava_link']}"),
+                
+                ],
+                style={
+                    "display": 'flex',
+                    'flexDirection': 'column',
+                    'justifyContent': 'center',
+                    'alignItems': 'center',
+                    'textAlign': 'center',
+
+                }
+            )
             return result
 
     def layout_submission_form(self):
@@ -227,7 +249,7 @@ class Application:
                         dbc.Row([
                             dbc.Col([
                                 dbc.Button("Submit", id="submit-button", color="primary", className="mt-3"),
-                            ])
+                            ], width={"size": 6, "offset": 3}, className="text-center")
                         ])
                 ], id="input-form"),
             ], xs=12, sm=10, md=8, lg=6, xl=6, className="mx-auto") # Set the width and use "mx-auto" for centering
