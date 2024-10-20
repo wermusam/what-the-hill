@@ -33,6 +33,7 @@ class Application:
     def __init__(self):
         # initial dash app
         self.load_json()
+        self.db = mongo_setup.Mongo()
         self._app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     def create_layout(self):
@@ -164,7 +165,7 @@ class Application:
             # Handle optional link
             link_text = optional_link if optional_link else "No link provided"
 
-            # submission data
+            # submission data to insert to database
             submission_data = {
                 "name": name,
                 "email": email,
@@ -267,7 +268,7 @@ class Application:
             data = json.load(_file)
         return data
 
-    def visualizaton(self):
+    def visualizaton(self, new_entry):
         pass
 
 

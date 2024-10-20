@@ -18,6 +18,14 @@ class Mongo():
     def __init__(self):
 
         self._client = pymongo.MongoClient(CONNECTION)
-        self._db_test = self._client[DB_TEST_NAME]
+        self.db_test = self._client[DB_TEST_NAME]
         # self._db = client[DB_NAME]
-        self._collection_test = self._db_test[COLLECTION_NAME]
+        self.collection_test = self.db_test[COLLECTION_NAME]
+
+    def insert_submitted_data(self, submission_data):
+        "insert the submitted data into MongoDB"
+        self.collection_test.insert_one(submission_data)
+
+    def retrieve_data(self):
+        """retrieve data from mongoDB"""
+        return list(self.self.collection_test.find())
