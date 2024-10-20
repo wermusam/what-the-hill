@@ -14,6 +14,7 @@ from pathlib import Path
 import dash
 import dash_bootstrap_components as dbc
 import dash_leaflet as dl
+import pandas as pd
 import pymongo
 from dash import dcc, html
 from dash.dash_table import DataTable
@@ -122,25 +123,37 @@ class Application:
         return 0
 
     def submission_form_response(self):
-        """Handles submission form response"""
+        """Handles submission form response, updating data, and visualization"""
         @self._app.callback(
             Output("output-container","children"),
-            Input("submit-button", "n_clicks"),
-            State("name", "value"),
+           [Input("submit-button", "n_clicks")],
+            [State("name", "value"),
             State("email", "value"),
-            State("item-dropdown", "value"),
+            State("location-dropdown", "value"),
             State("num-repetitions", "value"),
-            State("optional-link", "value"),
+            State("optional-link", "value")],
             prevent_initial_call=True
         )
         def handle_submission_form(n_clicks, name, email, location, num_repetitions, optional_link):
-            # Check if all required fields are filled
+            
+            # Check each field individually
+            if not name:
+                return html.Div("Please enter a name!", style={"color": "red", 'textAlign': 'center'})
+            if not email:
+                return html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'})
+            if not location:
+                return html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'})
+            if not num_repetitions:
+                return html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'})
+            
+            # Check if any fields were missed (might be redundant)
             if not (name and email and location and num_repetitions):
                 return html.Div("Please fill out all required fields.", style={"color": "red"})
 
             # Validate number of repetitions
             if not isinstance(num_repetitions, int) or num_repetitions <= 0:
                 return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
+
             
             # Get the vertical value from the selected item
             vertical_value = self.get_vertical_value(location)
@@ -190,7 +203,7 @@ class Application:
                         dbc.Row([
                             dbc.Col([
                                 dbc.Label("Select Location"),
-                                dcc.Dropdown(id="item-dropdown", options=dropdown_options, placeholder="Select Location"),
+                                dcc.Dropdown(id="location-dropdown", options=dropdown_options, placeholder="Select Location"),
                                 ])
                         ], className="mb-3"),
 
@@ -231,6 +244,10 @@ class Application:
         with open(hill_data_file, "r") as _file:
             data = json.load(_file)
         return data
+
+    def visualizaton(self):
+        pass
+
 
     def run(self):
         """Runs the application"""
