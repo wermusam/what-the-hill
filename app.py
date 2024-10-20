@@ -133,9 +133,9 @@ class Application:
             State("optional-link", "value"),
             prevent_initial_call=True
         )
-        def handle_submission_form(n_clicks, name, email, selected_item, num_repetitions, optional_link):
+        def handle_submission_form(n_clicks, name, email, location, num_repetitions, optional_link):
             # Check if all required fields are filled
-            if not (name and email and selected_item and num_repetitions):
+            if not (name and email and location and num_repetitions):
                 return html.Div("Please fill out all required fields.", style={"color": "red"})
 
             # Validate number of repetitions
@@ -143,7 +143,7 @@ class Application:
                 return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
             
             # Get the vertical value from the selected item
-            vertical_value = self.get_vertical_value(selected_item)
+            vertical_value = self.get_vertical_value(location)
 
             # Calculate the results
             total_submitted_feet = num_repetitions * vertical_value
@@ -155,7 +155,7 @@ class Application:
                 html.H4("Form Submission Results"),
                 html.P(f"Name: {name}"),
                 html.P(f"Email: {email}"),
-                html.P(f"Selected Item: {selected_item}"),
+                html.P(f"Location: {location}"),
                 html.P(f"Number of Repetitions:  {num_repetitions}"),
                 html.P(f"Vertical Value: {vertical_value}"),
                 html.P(f"Total Feet: {total_submitted_feet}"),
@@ -189,8 +189,8 @@ class Application:
                         # Dropdown for Hill Name Selection
                         dbc.Row([
                             dbc.Col([
-                                dbc.Label("Select Item"),
-                                dcc.Dropdown(id="item-dropdown", options=dropdown_options, placeholder="Select an item"),
+                                dbc.Label("Select Location"),
+                                dcc.Dropdown(id="item-dropdown", options=dropdown_options, placeholder="Select Location"),
                                 ])
                         ], className="mb-3"),
 
