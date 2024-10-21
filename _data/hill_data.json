@@ -30,16 +30,6 @@
     },
 
     {
-        "name": "Avalon Street Steps",
-        "description": "At the intersection of Echo Park and Avalon is your staircase to go up.",
-        "length": 0.12,
-        "vertical": 56,
-        "strava_link": "https://strava.app.link/kFd7uuuIHNb",
-        "lat": 34.0861220,
-        "lon": -118.2517820
-    },
-
-    {
         "name": "Baxter Street Stairs",
         "description": "At the intersection of Baxter and Valentine Street, go up to Park Drive at Elysian Park.",
         "length": 0.17,
@@ -47,16 +37,6 @@
         "strava_link": "https://strava.app.link/kFd7uuuIHNb",
         "lat": 34.0886740,
         "lon": -118.2485960
-    },
-
-    {
-        "name": "Baxter Double Hill",
-        "description": "At the intersection of Baxter and Echo Park, go up both hills to North Alvarado.",
-        "length": 0.33,
-        "vertical": 198,
-        "strava_link": "https://strava.app.link/URqPhZxIHNb",
-        "lat": 34.0893850,
-        "lon": -118.2499640
     },
 
     {
@@ -121,16 +101,6 @@
     },
 
     {
-        "name": "Delta Street Steps",
-        "description": "At the intersection of Echo Park and Morton Avenue is your staircase to go up.",
-        "length": 0.12,
-        "vertical": 56,
-        "strava_link": "https://strava.app.link/ll96YbrIHNb",
-        "lat": 34.0815250,
-        "lon": -118.2546450
-    },
-
-    {
         "name": "Duane and Silver Lake to Duane and Apex",
         "description": "At the intersection of Duane and Silver Lake, head to Duane and Apex.",
         "length": 0.12,
@@ -141,27 +111,6 @@
     },
 
     {
-        "name": "Earl Street to Bancroft",
-        "description": "At the intersection of Allesandro and Loma Vista, head up Loma Vista steps to Glendale.",
-        "length": 0.1,
-        "vertical": 127,
-        "strava_link": "https://strava.app.link/BDRcW8hHHNb",
-        "lat": 34.0961470,
-        "lon": -118.2591620
-    },
-
-    {
-        "name": "Earl to Glendale",
-        "description": "Off Bancroft is a set of stairs. Go through there on Earl Steet to Glendale Blvd.",
-        "length": 0.1,
-        "vertical": 127,
-        "strava_link": "https://strava.app.link/dCU3uAyHHNb",
-        "lat": 34.0962250,
-        "lon": -118.2562780
-    },
-
-
-    {
         "name": "Eldred Street and Steps",
         "description": "Start at the intersection of Avenue 50 and Eldred Steet. Go up the steep street and then go up the steps to the top. Congratulations you warrior.",
         "length": 0.28,
@@ -169,17 +118,6 @@
         "strava_link": "https://strava.app.link/TCj1Xv3HHNb",
         "lat": 34.109630,
         "lon": -118.2057150
-    },
-
-
-    {
-        "name": "Entrada Steps to Mabery",
-        "description": "Near the intersection of Entrada and Mesa is a staircase. Go up that to Mabery.",
-        "length": 0.05,
-        "vertical": 31,
-        "strava_link": "https://strava.app.link/bg0SfwPFHNb",
-        "lat": 34.0298080,
-        "lon": -118.5154050
     },
 
     {
@@ -203,43 +141,13 @@
     },
 
     {
-        "name": "Hidden Stairways of Silver Lake (Option A)",
+        "name": "Hidden Stairways of Silver Lake",
         "description": "There are 3 hidden stairways in this spot of Silver Lake. Start at Silver Lake Blvf net to Botanica Restaurant, go up the steps to N Occidental Blvd, turn right. On your left go up the steps past Easterly Tier to Silverwood Tier.",
         "length": 0.10,
         "vertical": 82,
         "strava_link": "https://strava.app.link/Yagr87lIHNb",
         "lat": 34.0883200,
         "lon": -118.2690470
-    },
-
-    {
-        "name": "Hidden Stairways of Silver Lake (Option B)",
-        "description": "There are 3 hidden stairways in this spot of Silver Lake. From N Occidental Blvd, go up the steps to past Easterly Tier to Silverwood Tier.",
-        "length": 0.10,
-        "vertical": 65,
-        "strava_link": "https://strava.app.link/Yagr87lIHNb",
-        "lat": 34.0859870,
-        "lon": -118.2693730
-    },
-
-    {
-        "name": "Hidden Stairways of Silver Lake (Option C)",
-        "description": "There are 3 hidden stairways in this spot of Silver Lake. At the intersection of Scott Pl and Angelus Avenue is the third staircase to go up.",
-        "length": 0.10,
-        "vertical": 56,
-        "strava_link": "https://strava.app.link/Yagr87lIHNb",
-        "lat": 34.0849340,
-        "lon": -118.2688270
-    },
-
-    {
-        "name": "Hollywood Bowl Entrance up the steps to the tree",
-        "description": "At the base of the steps by the tunnel, head up the steps until you make it to the tree in front of the store.",
-        "length": 0.10,
-        "vertical": 32,
-        "strava_link": "https://strava.app.link/thblo6eyHNb",
-        "lat": 34.1113380,
-        "lon": -118.3364270
     },
 
     {
@@ -261,16 +169,6 @@
         "strava_link": "https://strava.app.link/sCel7MUHHNb",
         "lat": 34.1128240,
         "lon": -118.3381600
-    },
-
-    {
-        "name": "Hollywood Bowl Picnic Area 3",
-        "description": "In the Hollywood Bowl A parking lot is a hill that goes up to Picnic Area 3. Go up that hill.",
-        "length": 0.05,
-        "vertical": 108,
-        "strava_link": "https://strava.app.link/twEauGgyHNb",
-        "lat": 34.1130180,
-        "lon": -118.3379280
     },
 
     {
@@ -321,36 +219,6 @@
         "strava_link": "https://strava.app.link/GYugSr7qHNb",
         "lat": 34.1331450,
         "lon": -118.1812770
-    },
-
-    {
-        "name": "La Loma to Evergreen Steps",
-        "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to Evergreen Drive.",
-        "length": 0.05,
-        "vertical": 39,
-        "strava_link": "https://strava.app.link/LzatS79qHNb",
-        "lat": 34.1326140,
-        "lon": -118.1809090
-    },
-
-    {
-        "name": "Loma Vista Steps to Allesandro Way",
-        "description": "At the intersection of Glendale and Loma Vista, head up Loma Vista and up the steps to Allesandro Way.",
-        "length": 0.23,
-        "vertical": 132,
-        "strava_link": "https://strava.app.link/sfynypRGHNb",
-        "lat": 34.0956300,
-        "lon": -118.2591130
-    },
-
-    {
-        "name": "Loma Vista Steps to Glendale",
-        "description": "At the intersection of Allesandro and Loma Vista, head up Loma Vista steps to Glendale.",
-        "length": 0.23,
-        "vertical": 158,
-        "strava_link": "https://strava.app.link/62iba3eHHNb",
-        "lat": 34.0948390,
-        "lon": -118.2552870
     },
 
     {
@@ -464,16 +332,6 @@
     },
 
     {
-        "name": "Rockford and Baxter to the Top",
-        "description": "At the intersection of Rockford and Baxter, head to the top of the hill",
-        "length": 0.10,
-        "vertical": 88,
-        "strava_link": "https://strava.app.link/ybqq3C6FHNb",
-        "lat": 34.0946930,
-        "lon": -118.2622610
-    },
-
-    {
         "name": "San Vicente and Santa Monica to Sunset",
         "description": "In Weho, start at San Vicente and Santa Monica Blvd. Go up to Sunset.",
         "length": 0.39,
@@ -514,23 +372,13 @@
     },
 
     {
-        "name": "Secret Stairs of Pasadena (Option A)",
+        "name": "Secret Stairs of Pasadena",
         "description": "Near the intersection of Elmwood Drive and Laurel Bay Drive is a staircase. Go through the Elmwood Secret Stairs until you get to Cherry Drive.",
         "length": 0.20,
         "vertical": 161,
         "strava_link": "https://strava.app.link/CKR6fQ2qHNb",
         "lat": 34.1362540,
         "lon": -118.1833810
-    },
-
-    {
-        "name": "Secret Stairs of Pasadena (Option B)",
-        "description": "This is the reverse of Secret Stairs of Pasadena (Option A). Start at Cherry Drive, go through the Elmwood Secret Stairs until you get to Elmwood Drive.",
-        "length": 0.20,
-        "vertical": 52,
-        "strava_link": "https://strava.app.link/be8WFh5qHNb",
-        "lat": 34.1350280,
-        "lon": -118.1805790
     },
 
     {
