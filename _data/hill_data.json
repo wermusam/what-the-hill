@@ -10,16 +10,6 @@
     },
 
     {
-        "name": "Across The Greek",
-        "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
-        "length": 0.11,
-        "vertical": 66,
-        "strava_link": "https://strava.app.link/7FwNTtGOFNb",
-        "lat": 34.1218740,
-        "lon": -118.2966790
-    },
-
-    {
         "name": "Arbor Hill",
         "description": "Start at the intersection of Arbor St and California Terrace. Go to the top of Arbor and Grand.",
         "length": 0.14,
@@ -49,36 +39,6 @@
         "lon": -118.2550920
     },
 
-
-    {
-        "name": "Berlin Forest",
-        "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest'",
-        "length": 0.11,
-        "vertical": 39,
-        "strava_link": "https://strava.app.link/ahKfVQLOFNb",
-        "lat": 34.120950,
-        "lon": -118.3003600
-    },
-
-    {
-        "name": "Bench To Observatory",
-        "description": "Go down the path near the Griffith observatory entrance for 3 hills. When you make it to the bench, that is the starting point. Go up from the bench to the observatory.",
-        "length": 0.18,
-        "vertical": 131,
-        "strava_link": "https://strava.app.link/gxDndRQOFNb",
-        "lat": 34.116270,
-        "lon": -118.3004390
-    },
-
-    {
-        "name": "Bin To Bench",
-        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. From here, go up back to the bench. This is part of the Boy Scout Trail",
-        "length": 0.17,
-        "vertical": 49,
-        "strava_link": "https://strava.app.link/73De5lPOFNb",
-        "lat": 34.11779150,
-        "lon": -118.2989270
-    },
 
     {
         "name": "California Incline",
@@ -121,7 +81,47 @@
     },
 
     {
-        "name": "Griffith's Nasty Hill",
+        "name": "Griffith Across The Greek",
+        "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
+        "length": 0.11,
+        "vertical": 66,
+        "strava_link": "https://strava.app.link/7FwNTtGOFNb",
+        "lat": 34.1218740,
+        "lon": -118.2966790
+    },
+
+    {
+        "name": "Griffith Bench To Observatory",
+        "description": "Go down the path near the Griffith observatory entrance for 3 hills. When you make it to the bench, that is the starting point. Go up from the bench to the observatory.",
+        "length": 0.18,
+        "vertical": 131,
+        "strava_link": "https://strava.app.link/gxDndRQOFNb",
+        "lat": 34.116270,
+        "lon": -118.3004390
+    },
+
+    {
+        "name": "Griffith Berlin Forest",
+        "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest'",
+        "length": 0.11,
+        "vertical": 39,
+        "strava_link": "https://strava.app.link/ahKfVQLOFNb",
+        "lat": 34.120950,
+        "lon": -118.3003600
+    },
+
+    {
+        "name": "Griffith Bin To Bench",
+        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. From here, go up back to the bench. This is part of the Boy Scout Trail",
+        "length": 0.17,
+        "vertical": 49,
+        "strava_link": "https://strava.app.link/73De5lPOFNb",
+        "lat": 34.11779150,
+        "lon": -118.2989270
+    },
+    
+    {
+        "name": "Griffith Nasty Hill",
         "description": "Off W Observatory road and accross the S-Curve, from the road go up the steep climb To Mt. Hollywood Trail",
         "length": 0.16,
         "vertical": 164,
@@ -131,13 +131,23 @@
     },
 
     {
-        "name": "Griffth's S-Curve",
+        "name": "Griffth S-Curve",
         "description": "On the W trail, start at a tree on a little bridge and head up the S curve towards the road. If you keep going from the road, you'll start the Nasty Hill section.",
         "length": 0.10,
         "vertical": 66,
         "strava_link": "https://strava.app.link/cEfjydIOFNb",
         "lat": 34.1235430,
         "lon": -118.3034120
+    },
+
+    {
+        "name": "Griffith Sign to Bench",
+        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then right until you see a sign. For this segment, go up until you make it back to the bench.",
+        "length": 0.17,
+        "vertical": 120,
+        "strava_link": "https://strava.app.link/JwqetTNOFNb",
+        "lat": 34.117620,
+        "lon": -118.3024400
     },
 
     {
@@ -156,7 +166,7 @@
         "description": "In the Hollywood Bowl B parking lot, go to either side of B1, head up to B7 and back to B1. It'll be a U shape. You can start from either side of B1 and head to the other side as 1 rep.",
         "length": 0.26,
         "vertical": 62,
-        "strava_link": "https://strava.app.link/twEauGgyHNb",
+        "strava_link": "https://strava.app.link/sZj4xnxyRNb",
         "lat": 34.1111120,
         "lon": -118.3364270
     },
@@ -276,7 +286,7 @@
         "description": "Near Laurel and Hardy Park is the Music Box steps. Go up those steps to Descanso Drive.",
         "length": 0.05,
         "vertical": 72,
-        "strava_link": "https://strava.app.link/4cUBDLLFHNb",
+        "strava_link": "https://strava.app.link/pKLZs2IyRNb",
         "lat": 34.0830540,
         "lon": -118.2751610
     },
@@ -379,16 +389,6 @@
         "strava_link": "https://strava.app.link/CKR6fQ2qHNb",
         "lat": 34.1362540,
         "lon": -118.1833810
-    },
-
-    {
-        "name": "Sign to Bench",
-        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then right until you see a sign. For this segment, go up until you make it back to the bench.",
-        "length": 0.17,
-        "vertical": 120,
-        "strava_link": "https://strava.app.link/JwqetTNOFNb",
-        "lat": 34.117620,
-        "lon": -118.3024400
     },
 
     {
