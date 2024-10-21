@@ -176,6 +176,9 @@ class Application:
                 "date": date,
             }
 
+            # insert the submission data into MongoDB
+            self.db.insert_submitted_data(submission_data)
+
             result = html.Div(
                 [
                     html.H4("Form Submission Results"),
