@@ -25,7 +25,7 @@ import plotly.graph_objs as go
 
 
 # other scripts import
-import mongo_setup
+import robo_adam
 
 
 class Application:
@@ -33,7 +33,7 @@ class Application:
     def __init__(self):
         # initial dash app
         self.load_json()
-        self.db = mongo_setup.Mongo()
+        self.db = robo_adam.RoboAdam()
         self._app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     def create_layout(self):
