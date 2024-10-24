@@ -48,29 +48,54 @@ class Application:
             html.Hr(),
 
             # Rules
-            dbc.Row(dbc.Col(self.paragraph_rules(), width={"size": 8, "offset": 2})),
+            dbc.Row(
+                dbc.Col(
+                        self.paragraph_rules(), width={"size": 8, "offset": 2}
+                       )
+                    ),
 
             # Divider
             html.Hr(),
 
             # Data Table
-            html.H1("What The Hill Locations and Descriptions", style={"textAlign": "center"}),
-            self.generate_hill_table(),
-            
+            dbc.Row(
+                dbc.Col(
+                    [
+                        html.H1("What The Hill Locations and Descriptions", style={"textAlign": "center"}),
+                        self.generate_hill_table(),
+                    ],
+                    width={"size": 8, "offset": 2}
+                )
+            ),
+
             # Divider
             html.Hr(),
 
             # Map of Locations
-            html.H2("Map of All Hill Locations", className='text-center mt-4'),
-            html.P("This map shows all of the locations for the challenge", className='text-center'),
-            self.create_map(),
+            dbc.Row(
+                dbc.Col(
+                    [
+                        html.H2("Map of All Hill Locations", className='text-center mt-4'),
+                        html.P("This map shows all of the locations for the challenge", className='text-center'),
+                        self.create_map(),
+                    ],
+                    width={"size": 8, "offset":2}
+                )
+            ),
 
             # Divider
             html.Hr(),
 
              # Submission Form
-            html.H3("Hill Submission Form", style={"textAlign": "center"}),    
-            self.layout_submission_form(),
+            dbc.Row(
+                dbc.Col(
+                    [                    
+                        html.H3("Hill Submission Form", style={"textAlign": "center"}),    
+                        self.layout_submission_form(),
+                    ],
+                    width={"size": 8, "offset":2}
+                )
+            ),
 
             # Output Container For Results
             html.Div(id="output-container", className="mt-4"),
@@ -99,8 +124,7 @@ class Application:
         return dl.Map(center=[34.0522, -118.2437], zoom=10, children=[
             dl.TileLayer(), # Base map layer
             *markers
-        ], style={'width': '100%', 'height': '500px'})
-        
+        ],style={'width': '100%', 'height': '500px'})
 
     def dropdown_name_options(self, data=None):
         """Returns the dropdown options from the json data"""
@@ -137,7 +161,74 @@ class Application:
             style={"width": "100%", "max-width": "300px"}
         )
 
-    
+    def layout_submission_form(self):
+        """layout for the submission form"""
+        dropdown_options = self.dropdown_name_options()
+        return dbc.Row([
+                dbc.Col([
+                    dbc.Form([
+                        # Name Input
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Name"),
+                                dbc.Input(id="name", type="text", placeholder="Enter your name", required=True),
+                            ])
+                        ], className="mb-3"), # adds margin-bottom for spacing
+
+                        # Email Input
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Email"),
+                                dbc.Input(id="email", type="email", placeholder="Enter your e-mail", required=True),  
+                            ])
+                        ], className="mb-3"),
+
+                        # Dropdown for Hill Name Selection
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Select Location"),
+                                dcc.Dropdown(id="location-dropdown", options=dropdown_options, placeholder="Select Location"),
+                                ])
+                        ], className="mb-3"),
+
+                        # Number of Repetitions Input
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Number of Repetitions"),
+                                dbc.Input(id="num-repetitions", type="number", min=1, placeholder="Enter number of repetitions", required=True),
+                            ])
+                        ], className="mb-3"),
+
+                        # Optional Link Input
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Optional Strava Link"),
+                                dbc.Input(id='optional-link', type="url", placeholder="Enter optional strava link"),
+                            ])
+                        ], className="mb-3"),
+
+                        # Submit Button
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Button("Submit", id="submit-button", color="primary", className="mt-3"),
+                            ], width={"size": 6, "offset": 3}, className="text-center")
+                        ])
+                ], id="input-form"),
+            ], xs=12, sm=10, md=8, lg=6, xl=6, className="mx-auto") # Set the width and use "mx-auto" for centering
+        ]) 
+
+    def load_json(self, file_path=None):
+        """Loads hill data json file
+
+        Returns:
+            hill data json file
+        """
+        file_directory = Path(os.path.dirname(os.path.realpath(__file__)))
+        hill_data_file = file_directory / Path("_data/hill_data.json")
+        with open(hill_data_file, "r") as _file:
+            data = json.load(_file)
+        return data
+
     def paragraph_rules(self):
         # Paragraph explaining the rules
         return [
@@ -281,77 +372,6 @@ class Application:
             )
             return result
 
-    def layout_submission_form(self):
-        """layout for the submission form"""
-        dropdown_options = self.dropdown_name_options()
-        return dbc.Row([
-                dbc.Col([
-                    dbc.Form([
-
-                        # Name Input
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Name"),
-                                dbc.Input(id="name", type="text", placeholder="Enter your name", required=True),
-                            ])
-                        ], className="mb-3"), # adds margin-bottom for spacing
-
-                        # Email Input
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Email"),
-                                dbc.Input(id="email", type="email", placeholder="Enter your e-mail", required=True),  
-                            ])
-                        ], className="mb-3"),
-
-                        # Dropdown for Hill Name Selection
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Select Location"),
-                                dcc.Dropdown(id="location-dropdown", options=dropdown_options, placeholder="Select Location"),
-                                ])
-                        ], className="mb-3"),
-
-                        # Number of Repetitions Input
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Number of Repetitions"),
-                                dbc.Input(id="num-repetitions", type="number", min=1, placeholder="Enter number of repetitions", required=True),
-                            ])
-                        ], className="mb-3"),
-
-                        # Optional Link Input
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Optional Strava Link"),
-                                dbc.Input(id='optional-link', type="url", placeholder="Enter optional strava link"),
-                            ])
-                        ], className="mb-3"),
-
-                        # Submit Button
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Button("Submit", id="submit-button", color="primary", className="mt-3"),
-                            ], width={"size": 6, "offset": 3}, className="text-center")
-                        ])
-                ], id="input-form"),
-            ], xs=12, sm=10, md=8, lg=6, xl=6, className="mx-auto") # Set the width and use "mx-auto" for centering
-        ]) 
-
-    def load_json(self, file_path=None):
-        """Loads hill data json file
-
-        Returns:
-            hill data json file
-        """
-        file_directory = Path(os.path.dirname(os.path.realpath(__file__)))
-        hill_data_file = file_directory / Path("_data/hill_data.json")
-        with open(hill_data_file, "r") as _file:
-            data = json.load(_file)
-        return data
-
-    def visualizaton(self, new_entry):
-        pass
 
 
     def run(self):
