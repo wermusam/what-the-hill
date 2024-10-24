@@ -32,7 +32,7 @@ class Application:
 
     def __init__(self):
         # initial dash app
-        self.load_json()
+        self.hill_data_loader = self.load_json()
         self.db = robo_adam.RoboAdam()
         self._app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -69,8 +69,7 @@ class Application:
 
     def create_map(self, locations=None):
         """Filter hill data json and create a map"""
-        data = self.load_json()
-        locations = [{'name': item['name'], 'lat': item['lat'], 'lon': item['lon']} for item in data]
+        locations = [{'name': item['name'], 'lat': item['lat'], 'lon': item['lon']} for item in self.hill_data_loader]
         markers = [dl.Marker(position=[loc["lat"], loc["lon"]],
                              children=[
                                 dl.Tooltip(loc["name"]),
@@ -93,12 +92,10 @@ class Application:
 
     def dropdown_name_options(self, data=None):
         """Returns the dropdown options from the json data"""
-        data = self.load_json()
-        return [{'label': item["name"], 'value': item['name']} for item in data]
+        return [{'label': item["name"], 'value': item['name']} for item in self.hill_data_loader]
 
-    def generate_hill_table(self, data=None):
+    def generate_hill_table(self):
         """Data Table that reads the json file and displays info on the website"""
-        data = self.load_json()
         return dbc.Table(
             # Table header
             [html.Thead(html.Tr([html.Th('Name'), html.Th('Description'), html.Th('Length (Miles)'), html.Th('Vertical (Feet)'), html.Th('Strava Link')])),
@@ -109,7 +106,7 @@ class Application:
                         html.Td(item.get('length', 'N/A')),
                         html.Td(item.get('vertical', 'N/A')),
                         html.Td(html.A(item.get('strava_link', '#'), href=item.get('strava_link', '#'), target="_blank"))
-                ]) for item in data
+                ]) for item in self.hill_data_loader
                 ])
             ],
             bordered=True, striped=True, hover=True, responsive=True, className="table-class"
@@ -117,11 +114,9 @@ class Application:
 
     def get_vertical_value(self, name=""):
         """Calculates the vertical feet by multiplying reps and feet"""
-        data = self.load_json()
-        for item in data:
+        for item in self.hill_data_loader:
             if item["name"] == name:
                 return item["vertical"]
-        return 0
 
     def submission_form_response(self):
         """Handles submission form response, updating data, and visualization"""
