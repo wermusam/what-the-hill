@@ -40,6 +40,22 @@ class Application:
         dropdown_options = self.dropdown_name_options()
         self._app.layout = dbc.Container([
 
+            dcc.Location(id="url", refresh=False),
+
+            # Navigation Bar
+            dbc.NavbarSimple(
+                children=[
+                    dbc.NavItem(dbc.NavLink("What The Hill Locations and Descriptions", href="#locations")),
+                    dbc.NavItem(dbc.NavLink("Map of All Hill Locations", href="#map")),
+                    dbc.NavItem(dbc.NavLink("Hill Submission Form", href="#form")),
+
+                ],
+                brand="Fitness Challenge",
+                brand_href="#",
+                color="primary",
+                dark=True,
+            ),
+
             # Header and Subtitle
             dbc.Row(dbc.Col(html.H1("Hill Yeah Hillvember!!!"), width={"size": 8, "offset": 2})),
             dbc.Row(dbc.Col(html.H2("November Project's Hill, Steps, and Steep Street Exploration Challenge Across LA"), width={"size": 8, "offset": 2})),
@@ -61,8 +77,11 @@ class Application:
             dbc.Row(
                 dbc.Col(
                     [
-                        html.H1("What The Hill Locations and Descriptions", style={"textAlign": "center"}),
-                        self.generate_hill_table(),
+                        html.Div(id="locations", children=[
+                            html.H1("What The Hill Locations and Descriptions"),
+                            self.generate_hill_table(),
+                    ],style={"marginTop": "100px","textAlign": "center"}),
+                        
                     ],
                     width={"size": 8, "offset": 2}
                 )
@@ -75,6 +94,7 @@ class Application:
             dbc.Row(
                 dbc.Col(
                     [
+                        html.Div(id="map"),
                         html.H2("Map of All Hill Locations", className='text-center mt-4'),
                         html.P("This map shows all of the locations for the challenge", className='text-center'),
                         self.create_map(),
@@ -89,7 +109,8 @@ class Application:
              # Submission Form
             dbc.Row(
                 dbc.Col(
-                    [                    
+                    [
+                        html.Div(id="form"),                    
                         html.H3("Hill Submission Form", style={"textAlign": "center"}),    
                         self.layout_submission_form(),
                     ],
