@@ -84,7 +84,7 @@
         "name": "Griffith Across The Greek",
         "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
         "length": 0.11,
-        "vertical": 66,
+        "vertical": 69,
         "strava_link": "https://strava.app.link/7FwNTtGOFNb",
         "lat": 34.1218740,
         "lon": -118.2966790
@@ -94,7 +94,7 @@
         "name": "Griffith Bench To Observatory",
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. When you make it to the bench, that is the starting point. Go up from the bench to the observatory.",
         "length": 0.18,
-        "vertical": 131,
+        "vertical": 105,
         "strava_link": "https://strava.app.link/gxDndRQOFNb",
         "lat": 34.1164270,
         "lon": -118.3004390
@@ -113,8 +113,8 @@
     {
         "name": "Griffith Bin To Bench",
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. From here, go up back to the bench. This is part of the Boy Scout Trail",
-        "length": 0.17,
-        "vertical": 49,
+        "length": 0.20,
+        "vertical": 72,
         "strava_link": "https://strava.app.link/73De5lPOFNb",
         "lat": 34.1179150,
         "lon": -118.2989270
@@ -124,7 +124,7 @@
         "name": "Griffith Nasty Hill",
         "description": "Off W Observatory road and accross the S-Curve, from the road go up the steep climb To Mt. Hollywood Trail",
         "length": 0.16,
-        "vertical": 164,
+        "vertical": 108,
         "strava_link": "https://strava.app.link/0UaIahKOFNb",
         "lat": 34.1229510,
         "lon": -118.3027710
@@ -133,8 +133,8 @@
     {
         "name": "Griffth S-Curve",
         "description": "On the W trail, start at a tree on a little bridge and head up the S curve towards the road. If you keep going from the road, you'll start the Nasty Hill section.",
-        "length": 0.10,
-        "vertical": 66,
+        "length": 0.09,
+        "vertical": 58,
         "strava_link": "https://strava.app.link/cEfjydIOFNb",
         "lat": 34.1235430,
         "lon": -118.3034120
@@ -144,7 +144,7 @@
         "name": "Griffith Sign to Bench",
         "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then right until you see a sign. For this segment, go up until you make it back to the bench.",
         "length": 0.17,
-        "vertical": 120,
+        "vertical": 138,
         "strava_link": "https://strava.app.link/JwqetTNOFNb",
         "lat": 34.1176280,
         "lon": -118.3024400
