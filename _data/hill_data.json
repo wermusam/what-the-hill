@@ -2,8 +2,8 @@
     {
         "name": "4th Street Stairs",
         "description": "Near the Entrada and Ocean bus stop is the 4th Street Stairs. Go up to Adelaide Drive.",
-        "length": 0.05,
-        "vertical": 31,
+        "length": 0.04,
+        "vertical": 108,
         "strava_link": "https://strava.app.link/1osWpBVFHNb",
         "lat": 34.0306970,
         "lon": -118.5127590
@@ -12,7 +12,7 @@
     {
         "name": "Arbor Hill",
         "description": "Start at the intersection of Arbor St and California Terrace. Go to the top of Arbor and Grand.",
-        "length": 0.14,
+        "length": 0.10,
         "vertical": 89,
         "strava_link": "https://strava.app.link/KEOhCdZqHNb",
         "lat": 34.1398990,
@@ -22,8 +22,8 @@
     {
         "name": "Baxter Street Stairs",
         "description": "At the intersection of Baxter and Valentine Street, go up to Park Drive at Elysian Park.",
-        "length": 0.17,
-        "vertical": 173,
+        "length": 0.20,
+        "vertical": 190,
         "strava_link": "https://strava.app.link/kFd7uuuIHNb",
         "lat": 34.0886740,
         "lon": -118.2485960
@@ -33,7 +33,7 @@
         "name": "Baxter Street",
         "description": "At the intersection of Baxter and North Alvarado, go down and then up to Lemoyne Street. Turn around and head back to where you came. That is one. It's a November Project LAX classic.",
         "length": 0.33,
-        "vertical": 198,
+        "vertical": 174,
         "strava_link": "https://strava.app.link/1uNsJEzIHNb",
         "lat": 34.0915440,
         "lon": -118.2550920
@@ -44,7 +44,7 @@
         "name": "California Incline",
         "description": "A Santa Monica classic. Start by the sign near the stairs and head up the California Incline.",
         "length": 0.21,
-        "vertical": 55,
+        "vertical": 56,
         "strava_link": "https://strava.app.link/4Pu33hwFHNb",
         "lat": 34.0197510,
         "lon": -118.5056650
@@ -54,7 +54,7 @@
         "name": "Culver City Stairs",
         "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or up the Hillside Trail.",
         "length": 0.31,
-        "vertical": 299,
+        "vertical": 289,
         "strava_link": "https://strava.app.link/hrarP5EvHNb",
         "lat": 34.0204390,
         "lon": -118.3823680
@@ -64,7 +64,7 @@
         "name": "Duane and Silver Lake to Duane and Apex",
         "description": "At the intersection of Duane and Silver Lake, head to Duane and Apex.",
         "length": 0.12,
-        "vertical": 100,
+        "vertical": 118,
         "strava_link": "https://strava.app.link/lQxRtdIGHNb",
         "lat": 34.0920670,
         "lon": -118.2638830
@@ -74,7 +74,7 @@
         "name": "Eldred Street Steps",
         "description": "Start at the intersection of Avenue 50 and Eldred Steet. Go up the steep street and then go up the steps to the top. Congratulations you warrior.",
         "length": 0.28,
-        "vertical": 208,
+        "vertical": 223,
         "strava_link": "https://strava.app.link/TCj1Xv3HHNb",
         "lat": 34.1097630,
         "lon": -118.2057150
