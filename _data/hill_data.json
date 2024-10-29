@@ -295,7 +295,7 @@
         "name": "North Doheny and Santa Monica to Sunset",
         "description": "In Weho, start at North Doheny and Santa Monica Blvd. Go up to Sunset.",
         "length": 0.64,
-        "vertical": 167,
+        "vertical": 174,
         "strava_link": "https://strava.app.link/beLRS7nmONb",
         "lat": 34.0813250,
         "lon": -118.3896750
@@ -304,8 +304,8 @@
     {
         "name": "Paramount Stairway",
         "description": "Near the Hollywood Bowl, go up the steps to the top",
-        "length": 0.19,
-        "vertical": 131,
+        "length": 0.07,
+        "vertical": 108,
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
         "lat": 34.1076380,
         "lon": -118.3390160
@@ -314,18 +314,18 @@
     {
         "name": "Piano Steps",
         "description": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way.",
-        "length": 0.08,
-        "vertical": 57,
+        "length": 0.04,
+        "vertical": 49,
         "strava_link": "https://strava.app.link/l9ZtMcaIHNb",
-        "lat":34.0863060,
+        "lat": 34.0863060,
         "lon": -118.2751290
     },
 
     {
         "name": "Prospect Stairs",
         "description": "On Prospect Ave is the Prospect Walk. Go up all 3 sets of staircases.",
-        "length": 0.26,
-        "vertical": 222,
+        "length": 0.11,
+        "vertical": 164,
         "strava_link": "https://strava.app.link/6DO7SyHHHNb",
         "lat": 34.1019570,
         "lon": -118.2775570
@@ -334,8 +334,8 @@
     {
         "name": "Radio Walk Steps",
         "description": "At the intersection of Deloz Avenue and Prospect Avenue is the Radio walk steps. Go up all the way passed Hollyvista Avenue to Franklin.",
-        "length": 0.06,
-        "vertical": 61,
+        "length": 0.07,
+        "vertical": 118,
         "strava_link": "https://strava.app.link/eLTlMiKHHNb",
         "lat": 34.1031180,
         "lon": -118.2773030
@@ -345,7 +345,7 @@
         "name": "San Vicente and Santa Monica to Sunset",
         "description": "In Weho, start at San Vicente and Santa Monica Blvd. Go up to Sunset.",
         "length": 0.39,
-        "vertical": 127,
+        "vertical": 138,
         "strava_link": "https://strava.app.link/ZhqRVxqmONb",
         "lat": 34.0850870,
         "lon": -118.3841020
@@ -355,7 +355,7 @@
         "name": "Santa Monica Beach Path to Cannon Steps",
         "description": "Off the Santa Monica Beach Path is a set of steps. Go up it until you see the Cannon. Don't fire the cannon.",
         "length": 0.07,
-        "vertical": 31,
+        "vertical": 49,
         "strava_link": "https://strava.app.link/CKsVpJhFHNb",
         "lat": 34.0125790,
         "lon": -118.4981480
@@ -365,7 +365,7 @@
         "name": "Santa Monica Pier Ramp",
         "description": "At the base of the Santa Monica Pier ramp, head up.",
         "length": 0.11,
-        "vertical": 31,
+        "vertical": 39,
         "strava_link": "https://strava.app.link/gYuR39eFHNb",
         "lat": 34.0101150,
         "lon": -118.4964640
@@ -374,8 +374,8 @@
     {
         "name": "Santa Monica Stairs",
         "description": "At the intersection of Amalfi and Entrada is the Santa Monica Stairs. Go up to Adelaide Drive.",
-        "length": 0.11,
-        "vertical": 89,
+        "length": 0.05,
+        "vertical": 102,
         "strava_link": "https://strava.app.link/yLKtGgYFHNb",
         "lat": 34.0323590,
         "lon": -118.5110690
@@ -395,7 +395,7 @@
         "name": "Swan Stairway (Parts 1, 2, & 3)",
         "description": "Start at the intersection of Swan and W Silver Lake. Go up all 3 sets of stairs.",
         "length": 0.11,
-        "vertical": 142,
+        "vertical": 157,
         "strava_link": "https://strava.app.link/gtmad8BHHNb",
         "lat": 34.0912530,
         "lon": -118.2678440
