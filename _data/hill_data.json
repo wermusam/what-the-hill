@@ -1,7 +1,7 @@
 [
     {
         "name": "4th Street Stairs",
-        "description": "Near the Entrada and Ocean bus stop is the 4th Street Stairs. Go up to Adelaide Drive.",
+        "description": "Near the Entrada and Ocean bus stop is the 4th Street Stairs. Go up the stairs to Adelaide Drive.",
         "length": 0.04,
         "vertical": 108,
         "strava_link": "https://strava.app.link/1osWpBVFHNb",
@@ -11,7 +11,7 @@
 
     {
         "name": "Arbor Hill",
-        "description": "Start at the intersection of Arbor St and California Terrace. Go to the top of Arbor and Grand.",
+        "description": "Start at the intersection of Arbor St and California Terrace. Go up the street to the top of Arbor and Grand.",
         "length": 0.10,
         "vertical": 89,
         "strava_link": "https://strava.app.link/KEOhCdZqHNb",
@@ -21,7 +21,7 @@
 
     {
         "name": "Baxter Street Stairs",
-        "description": "At the intersection of Baxter and Valentine Street, go up to Park Drive at Elysian Park.",
+        "description": "At the intersection of Baxter and Valentine Street is a staircase. Go up the staircase to Park Drive.",
         "length": 0.20,
         "vertical": 190,
         "strava_link": "https://strava.app.link/kFd7uuuIHNb",
@@ -31,7 +31,7 @@
 
     {
         "name": "Baxter Street",
-        "description": "At the intersection of Baxter and North Alvarado, go down and then up to Lemoyne Street. Turn around and head back to where you came. That is one. It's a November Project LAX classic.",
+        "description": "This is a November Project LAX classic!! At the intersection of Baxter and North Alvarado, go down and then up to Lemoyne Street. Turn around and head back to where you came. That is one rep.",
         "length": 0.33,
         "vertical": 174,
         "strava_link": "https://strava.app.link/1uNsJEzIHNb",
@@ -42,7 +42,7 @@
 
     {
         "name": "California Incline",
-        "description": "A Santa Monica classic. Start by the sign near the stairs and head up the California Incline.",
+        "description": "Start at the base of the Incline and head all the way up until you hit Ocean Ave. Enjoy the view of the ocean and watch out for bikes.",
         "length": 0.21,
         "vertical": 56,
         "strava_link": "https://strava.app.link/4Pu33hwFHNb",
@@ -52,7 +52,7 @@
 
     {
         "name": "Culver City Stairs",
-        "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or up the Hillside Trail.",
+        "description": "From the Baldwin Hills Scenic Overlook Trailhead, head to the top! You can go up the steps or zig zag up the Hillside Trail to the top.",
         "length": 0.31,
         "vertical": 289,
         "strava_link": "https://strava.app.link/hrarP5EvHNb",
@@ -72,7 +72,7 @@
 
     {
         "name": "Eldred Street Steps",
-        "description": "Start at the intersection of Avenue 50 and Eldred Steet. Go up the steep street and then go up the steps to the top. Congratulations you warrior.",
+        "description": "This is one of the steepest streets in Los Angeles. Start at the intersection of Avenue 50 and Eldred Steet. Go up the steep street and then, when you're out of breath feeling like regret, go up the steps to the top. Congratulations! You are a warrior.",
         "length": 0.28,
         "vertical": 223,
         "strava_link": "https://strava.app.link/TCj1Xv3HHNb",
@@ -82,7 +82,7 @@
 
     {
         "name": "Griffith Across The Greek",
-        "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top.",
+        "description": "Across the Greek, start at the trailhead of Vermont Canyon Road. Go up the trail until you pass a trashcan at the top and it looks level.",
         "length": 0.11,
         "vertical": 69,
         "strava_link": "https://strava.app.link/7FwNTtGOFNb",
@@ -102,7 +102,7 @@
 
     {
         "name": "Griffith Berlin Forest",
-        "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest'",
+        "description": "From the Griffith Parking lot away from the observatory, go up the trail until you see a sign that says 'Berlin Forest.' This is not to be confused with Berlin the city.",
         "length": 0.11,
         "vertical": 39,
         "strava_link": "https://strava.app.link/ahKfVQLOFNb",
@@ -112,7 +112,7 @@
 
     {
         "name": "Griffith Bin To Bench",
-        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. From here, go up back to the bench. This is part of the Boy Scout Trail",
+        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then left until you get to a paved road and bin. This is the starting point. From here, go up to the bench. This is part of the Boy Scout Trail.",
         "length": 0.20,
         "vertical": 72,
         "strava_link": "https://strava.app.link/73De5lPOFNb",
@@ -122,7 +122,7 @@
     
     {
         "name": "Griffith Nasty Hill",
-        "description": "Off W Observatory road and accross the S-Curve, from the road go up the steep climb To Mt. Hollywood Trail",
+        "description": "This starts off W Observatory road and where the the S-Curve route ends. From the road, go up the steep climb To Mt. Hollywood Trail.",
         "length": 0.16,
         "vertical": 108,
         "strava_link": "https://strava.app.link/0UaIahKOFNb",
@@ -132,7 +132,7 @@
 
     {
         "name": "Griffth S-Curve",
-        "description": "On the W trail, start at a tree on a little bridge and head up the S curve towards the road. If you keep going from the road, you'll start the Nasty Hill section.",
+        "description": "On the W trail, start at a tree on a little bridge and head up the 'S' style curve towards the road. If you keep going from the road, you'll start the Nasty Hill section and cover two locations at once.",
         "length": 0.09,
         "vertical": 58,
         "strava_link": "https://strava.app.link/cEfjydIOFNb",
@@ -142,7 +142,7 @@
 
     {
         "name": "Griffith Sign to Bench",
-        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench and then right until you see a sign. For this segment, go up until you make it back to the bench.",
+        "description": "Go down the path near the Griffith observatory entrance for 3 hills. Go down to the bench. Go down on your right until you see a sign. This sign is the starting point. Go up until you make it back to the bench.",
         "length": 0.17,
         "vertical": 138,
         "strava_link": "https://strava.app.link/JwqetTNOFNb",
@@ -152,7 +152,7 @@
 
     {
         "name": "Hidden Stairways of Silver Lake",
-        "description": "There are 3 hidden stairways in this spot of Silver Lake. Start at Silver Lake Blvf net to Botanica Restaurant, go up the steps to N Occidental Blvd, turn right. On your left go up the steps past Easterly Tier to Silverwood Tier.",
+        "description": "Start at Silver Lake Blvd next to the Botanica Restaurant. Go up the steps to N Occidental Blvd. Turn right. On your left, go up the steps past Easterly Tier to Silverwood Tier.",
         "length": 0.10,
         "vertical": 108,
         "strava_link": "https://strava.app.link/Yagr87lIHNb",
@@ -163,7 +163,7 @@
     {
 
         "name": "Hollywood Bowl B Parking Lot B1-B7-B1",
-        "description": "In the Hollywood Bowl B parking lot, go to either side of B1, head up to B7 and back to B1. It'll be a U shape. You can start from either side of B1 and head to the other side as 1 rep.",
+        "description": "In the Hollywood Bowl B parking lot, start on either side of B1, head up to B7 and down to B1. That is one rep. It'll be a U-shape.",
         "length": 0.26,
         "vertical": 39,
         "strava_link": "https://strava.app.link/sZj4xnxyRNb",
@@ -173,7 +173,7 @@
 
     {
         "name": "Hollywood Bowl Entrance to Picnic Area 7",
-        "description": "At the entrance to the Hollywood Bowl, instead of going inside the bowl, you'll go up as if you were heading to the top. Keep going up until you see a sign that says Picnic Area 7 on your right. You'll end there.",
+        "description": "At the entrance to the Hollywood Bowl, instead of going inside the bowl, you'll go up as if you have tickets at the top. Keep going up until you see a sign that says Picnic Area 7 on your right. Take that right to the picnic area and you mastered this location.",
         "length": 0.17,
         "vertical": 150,
         "strava_link": "https://strava.app.link/sCel7MUHHNb",
@@ -183,7 +183,7 @@
 
     {
         "name": "Hollywood Bowl Steps",
-        "description": "Inside the Hollywood Bowl, head up the steps. Alternatively, if you go all the way to the other side, you can go up that hill to the top of the Bowl.",
+        "description": "You are inside the Hollywood Bowl! Once you are inside, head up the steps all the way to the top. You can see the Hollywood Sign. Alternatively, if you go the other side of the Hollywood Bowl, you can go up that ramp to the top of the Bowl as a rep instead.",
         "length": 0.11,
         "vertical": 200,
         "strava_link": "https://strava.app.link/qxDMTUNHHNb",
@@ -203,7 +203,7 @@
 
     {
         "name": "Idaho Steps and Incline",
-        "description": "Near the Santa Monica Beach Path and California Incline is a circular base ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
+        "description": "Near the Santa Monica Beach Path and California Incline is a circular base ramp. As you go up the Incline, you'll instead go up the staircase. Follow this to the top until you make it to Ocean Avenue. Here's a strategy tip. If you head back down the way you came, you can then go up the rest California Incline and also knock out a California Incline rep.",
         "length": 0.21,
         "vertical": 98,
         "strava_link": "https://strava.app.link/SIr7d6CFHNb",
@@ -223,7 +223,7 @@
 
     {
         "name": "La Loma to Cherry Steps to Top of Sequoia Light Post",
-        "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost.",
+        "description": "Near the intersection of La Loma road and Juniper Dr are two staircases. Go up the steps to Cherry Drive. Keep going up the street on Sequioa Drive until you get to the lightpost at the top.",
         "length": 0.21,
         "vertical": 154,
         "strava_link": "https://strava.app.link/GYugSr7qHNb",
@@ -233,7 +233,7 @@
 
     {
         "name": "Los Feliz Heights Steps",
-        "description": "Near Cromwell and North Berendo Street is a staircase. Go up the staircase. Keep going up a hill on Bonvue Avenue until you see a staircase on your left before Glendower Avenue. Go up the staircase to Bryn Mawr Road. Go up another staircase to Glendower Ave.",
+        "description": "You will go up 3 staircases. Near Cromwell and North Berendo Street is a staircase. This is the first one to go up. Then keep going up a hill on Bonvue Avenue until you see a staircase on your left. This is before Glendower Avenue. Go up the staircase to Bryn Mawr Road. That's two. Then go up another staircase to Glendower Ave. Way to go!!!",
         "length": 0.26,
         "vertical": 269,
         "strava_link": "https://strava.app.link/xs3hDlEHHNb",
@@ -243,7 +243,7 @@
 
     {
         "name": "Mattachine Steps",
-        "description": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps.",
+        "description": "Start at the intersection of Cove and Rockford. Go up the hill and up the Mattachine Steps. Great job STEPPING up!!",
         "length": 0.15,
         "vertical": 118,
         "strava_link": "https://strava.app.link/EFnVmD3FHNb",
@@ -273,7 +273,7 @@
 
     {
         "name": "Montana Steps",
-        "description": "Near the Santa Monica Beach Path and California Incline is a circular ramp. Go up that. Instead of going up the California Incline, go up the steps on your right and follow the incline to the top. If you back down and get to the start of the California Incline, this is an opportunity to knock out a rep of two locations.",
+        "description": "Off Palisades Beach road is a circular ramp followed by a set of steps. Go up this to Ocean Avenue.",
         "length": 0.12,
         "vertical": 102,
         "strava_link": "https://strava.app.link/4cUBDLLFHNb",
@@ -303,7 +303,7 @@
 
     {
         "name": "Paramount Stairway",
-        "description": "Near the Hollywood Bowl, go up the steps to the top",
+        "description": "At the end of High Tower Drive is a set of staircases. Go up to Paramount Drive.",
         "length": 0.07,
         "vertical": 108,
         "strava_link": "https://strava.app.link/0E5rTppyHNb",
@@ -313,7 +313,7 @@
 
     {
         "name": "Piano Steps",
-        "description": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way.",
+        "description": "On West Sunset near Micheltorena Steps is a set of Steps that look like a Piano. Go up those steps to Hamilton Way. Let us know what scale you played when you ran up the steps.",
         "length": 0.04,
         "vertical": 49,
         "strava_link": "https://strava.app.link/l9ZtMcaIHNb",
@@ -333,7 +333,7 @@
 
     {
         "name": "Radio Walk Steps",
-        "description": "At the intersection of Deloz Avenue and Prospect Avenue is the Radio walk steps. Go up all the way passed Hollyvista Avenue to Franklin.",
+        "description": "At the intersection of Deloz Avenue and Prospect Avenue is the Radio Walk steps. Go up all the way passed Hollyvista Avenue to Franklin.",
         "length": 0.07,
         "vertical": 118,
         "strava_link": "https://strava.app.link/eLTlMiKHHNb",
@@ -353,7 +353,7 @@
 
     {
         "name": "Santa Monica Beach Path to Cannon Steps",
-        "description": "Off the Santa Monica Beach Path is a set of steps. Go up it until you see the Cannon. Don't fire the cannon.",
+        "description": "Off the Santa Monica Beach Path is a set of steps. Go up it until you see the Cannon on Ocean Avenue. Don't fire the cannon.",
         "length": 0.07,
         "vertical": 49,
         "strava_link": "https://strava.app.link/CKsVpJhFHNb",
@@ -363,7 +363,7 @@
 
     {
         "name": "Santa Monica Pier Ramp",
-        "description": "At the base of the Santa Monica Pier ramp, head up.",
+        "description": "At the base of the Santa Monica Pier ramp, head up to Ocean Avenue.",
         "length": 0.11,
         "vertical": 39,
         "strava_link": "https://strava.app.link/gYuR39eFHNb",
@@ -373,7 +373,7 @@
 
     {
         "name": "Santa Monica Stairs",
-        "description": "At the intersection of Amalfi and Entrada is the Santa Monica Stairs. Go up to Adelaide Drive.",
+        "description": "At the intersection of Amalfi and Entrada is the Santa Monica Stairs. Go up the stairs to Adelaide Drive.",
         "length": 0.05,
         "vertical": 102,
         "strava_link": "https://strava.app.link/yLKtGgYFHNb",
@@ -383,7 +383,7 @@
 
     {
         "name": "Secret Stairs of Pasadena",
-        "description": "Near the intersection of Elmwood Drive and Laurel Bay Drive is a staircase. Go through the Elmwood Secret Stairs until you get to Cherry Drive.",
+        "description": "Near the intersection of Elmwood Drive and Laurel Bay Drive is a staircase that might seem hidden. Go through the all of the Elmwood Secret Stairs passed Redwood, Tamarac, and Glenullen until you get to Cherry Drive.",
         "length": 0.20,
         "vertical": 161,
         "strava_link": "https://strava.app.link/CKR6fQ2qHNb",
@@ -393,7 +393,7 @@
 
     {
         "name": "Swan Stairway (Parts 1, 2, & 3)",
-        "description": "Start at the intersection of Swan and W Silver Lake. Go up all 3 sets of stairs.",
+        "description": "Start at the intersection of Swan and W Silver Lake. You have 3 staircases to up. Go up all 3 and feel like the incredible champion that you are.",
         "length": 0.11,
         "vertical": 157,
         "strava_link": "https://strava.app.link/gtmad8BHHNb",
