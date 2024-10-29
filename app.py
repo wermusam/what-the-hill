@@ -52,7 +52,7 @@ class Application:
                     dbc.NavItem(dbc.NavLink("Map of All Hill Yeah Locations", href="#map")),
                     dbc.NavItem(dbc.NavLink("Hill Yeah Submission Form", href="#form")),
                 ],
-                brand="HILL YEAH HILLVEMBER",
+                brand="Robo-Adam Hill Yeah Resource Portal",
                 brand_href="#",
                 color="primary",
                 dark=True,
@@ -357,7 +357,10 @@ class Application:
         # Paragraph explaining the rules
         return [
             # Introductory Paragraph
-            html.P("Welcome to November Project's Hill Yeah Challenge! From November 1-November 24, your goals are for you and your team to:"),
+            html.P("Welcome to November Project's Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021," 
+            " you and a team of 6 are going to explore running/walking up 40 elevation based locations scattered across Santa Monica, West Hollywood, Culver City, Hollywood Bowl," 
+            " Los Feliz, Griffith Park, Highland Park, Pasadena, Echo Park, and Silver Lake. They are staircases, steep streets, and hills. There are 3 categories" 
+            " to win for you and your team. They are:"),
 
             # Row with three images and bullet points
             dbc.Row([
@@ -382,35 +385,30 @@ class Application:
             dbc.Row([
                 dbc.Col([
                     html.Ul([
-                        html.Li("Go to as many of the 40 listed locations as you can."),
-                        html.Li("Get as many repetitions for each location as you can."),
-                        html.Li("Get the most vertical feet you can for you and your team."),
+                        html.Li("EXPLORER: Go to as many of the 40 listed locations as you can."),
+                        html.Li("LOCAL BADASS: Get as many repetitions for each location as you can."),
+                        html.Li("WHAT THE HILL: Getting the most vertical feet you can for you and your team."),
                     ]),
                 ], width=12)
             ]),
 
             # Additional Paragraph
             html.P(
-                "This challenge is inspired by November Project San Francisco's Hill Climb Challenge in 2021. "
-                "Below is a table of all 40 locations showing their names, descriptions, length, vertical feet, and a link to their Strava segments. "
-                "There is also a map where clicking on the pins will take you to Google Maps so you know where each location starts."
-                "At the bottom of the page is a form where you will submit your name, e-mail, select the location you did, enter the number of reps, and an optional Strava link as proof that you completed the route."
+                "All 40 locations are listed below in the data table that shows name, description, length, vertical feet, and a strava link that"
+                " shows you the segment. There is also a map with pins that give you directions to the start of all 40 locations. When you are done"
+                " with a location, you submit your score using the form below where you enter your name, e-mail, select the location, number of reps,"
+                " and an optional strava/tracking link. Once you submit your score, 'Robo-Adam' will keep track of the locations you have done,"
+                " repetitions of each location, and your total vertical feet for yourself and the team you are on. You can see this in the"
+                " 'Robo-Adam Resource Portal.' When you submit your first score, you will have the option to select a team you want to join."
             ),
 
             # Unordered List
             html.Ul([
-                html.Li("Locations you've completed"),
-                html.Li("Repetitions of each location"),
-                html.Li("Your total vertical feet"),
+                html.Li("Use this as an opportunity to explore new parts of LA you haven't been to"),
+                html.Li("Bond with your team!!! Support each other! You can e-mail, Whatsapp, text, Marco Polo, or whatever creates your team spirit"),
+                html.Li("Have fun! Also win."),
             ]),
 
-            # Final Paragraph
-            html.P(
-                "When you submit your first score, you will be randomly assigned to a team of up to 6 people. "
-                "If you'd like to be on a team with other people, please let leadership know when you submit, and we will try to accommodate you. "
-                "This is an honor system. We trust you. Please don't break that trust. "
-                "If there are any issues with the form or data, please contact Adam Wermus at amwermus@gmail.com"
-            ),
 
             # Row with three images and bullet points
             dbc.Row([
@@ -432,7 +430,7 @@ class Application:
             ], className="mb-3"),  # Adds margin-bottom for spacing
 
             # Let's Go
-            html.P("LET'S GOOOOOOO", style={'fontSize': '20px', 'fontWeight': 'bold'})
+            html.P("LET'S GOOOOOOO!!! HIll Yeah!!", style={'fontSize': '20px', 'fontWeight': 'bold'})
         ]
 
     def submission_form_response(self):
