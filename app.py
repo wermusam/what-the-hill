@@ -62,29 +62,37 @@ class Application:
                 }
             ),
 
-            # Header and Subtitle
-            #dbc.Row(dbc.Col(html.H1("Hill Yeah!!!", style={'color': '#FF6F61'}), width={"size": 8, "offset": 2})),
-            # Main Heading with Gradient Effect
+            # Updated "November Project's Exploration Elevation Challenge Across LA" Section
             dbc.Row(
                 dbc.Col(
-                    html.H1(
-                        "Hill Yeah!!!",
+                    html.Div(
+                        html.H2(
+                            "November Project's Exploration Elevation Challenge Hill Yeah",
+                            style={
+                                'background': 'linear-gradient(to right, #00C9FF, #92FE9D)',  # Blue to green gradient
+                                'WebkitBackgroundClip': 'text',  # Makes the gradient text
+                                'color': 'transparent',  # Text is transparent to show the gradient
+                                'fontWeight': 'bold',  # Bold text
+                                'textAlign': 'center',  # Center align the text
+                                'fontSize': '32px',  # Larger font size for emphasis
+                                'padding': '10px',  # Adds padding around the text
+                                'border': '2px solid #92FE9D',  # Green border for emphasis
+                                'borderRadius': '8px',  # Rounds the corners
+                                'boxShadow': '0px 4px 8px rgba(0, 0, 0, 0.2)',  # Adds a soft shadow
+                                'marginBottom': '20px'  # Adds spacing below the heading
+                            }
+                        ),
                         style={
-                            'background': 'linear-gradient(to right, #007bff, #FF6F61)',  # Blue to orange gradient
-                            'WebkitBackgroundClip': 'text',  # Gradient text effect
-                            'color': 'transparent',  # Makes the text transparent to show gradient
-                            'textAlign': 'center',
-                            'marginTop': '20px',
-                            'marginBottom': '20px'
+                            'padding': '15px',  # Adds padding inside the box
+                            'backgroundColor': '#f0f0f0',  # Light gray background
+                            'borderRadius': '12px',  # Extra rounded corners for a softer look
+                            'boxShadow': '0px 6px 12px rgba(0, 0, 0, 0.1)',  # Slightly stronger shadow for contrast
+                            'marginBottom': '20px'  # Adds spacing below the entire div
                         }
                     ),
                     width={"size": 8, "offset": 2}
                 ),
             ),
-
-            dbc.Row(dbc.Col(html.H2("November Project's Hill, Steps, and Steep Street Exploration Challenge Across LA", 
-                                    style={'color': '#2C3E50'}), width={"size": 8, "offset": 2})),
-
 
             # Divider
             html.Hr(),
@@ -255,11 +263,11 @@ class Application:
             if item["name"] == name:
                 return item["vertical"]
 
-    def image_placer(self):
-        """Used for image in assets dir"""
+    def image_placer(self, image_path="/assets/hill_yeah_img.jpg"):
+        """Used for placing images in assets directory"""
         return html.Img(
-            src = "/assets/hill_yeah_img.jpg",
-            style={"width": "100%", "max-width": "300px"}
+            src=image_path,
+            style={"width": "100%", "max-width": "250px", "margin": "10px auto"}
         )
 
     def layout_submission_form(self):
@@ -350,36 +358,43 @@ class Application:
         return [
             # Introductory Paragraph
             html.P("Welcome to November Project's Hill Yeah Challenge! From November 1-November 24, your goals are for you and your team to:"),
-            
-            # Row with two columns: one for the image, one for bullet points
-            dbc.Row([
 
-                # Column for the image
+            # Row with three images and bullet points
+            dbc.Row([
+                # First Image
                 dbc.Col(
-                    self.image_placer(), width=4
+                    self.image_placer("/assets/hill_yeah_img1.jpg"), 
+                    width=4
                 ),
-                # Column for the bullet poitns
+                # Second Image
                 dbc.Col(
-                    [
-                        # Unordered list of Rules:
-                        html.Ul([
+                    self.image_placer("/assets/hill_yeah_img2.jpg"), 
+                    width=4
+                ),
+                # Third Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img3.jpg"), 
+                    width=4
+                ),
+            ], className="mb-3"),  # Adds margin-bottom for spacing
+
+            # Row with bullet points
+            dbc.Row([
+                dbc.Col([
+                    html.Ul([
                         html.Li("Go to as many of the 40 listed locations as you can."),
                         html.Li("Get as many repetitions for each location as you can."),
                         html.Li("Get the most vertical feet you can for you and your team."),
-                        ]),
-
-                    ],
-                    width=8 # width ratio for the bullet points colum
-                )
+                    ]),
+                ], width=12)
             ]),
-            
-            # Additional paragraph of rules
+
+            # Additional Paragraph
             html.P(
-                "This challenge is inspired by November Project San Francisco's Hill Climb Challenge in 2021." 
-                "Below is a table of all 40 locations showing their names, descriptions, lenght, vertical feet, and a link to their strava segments." 
-                "There is also a map where clicking on the pins will take you to google maps so you know where each location starts."
-                "At the bottom of the page is a form where you will submit your name, e-mail, select the location you did, enter number of reps, and an optional strava link as proof that you completed the route."
-                "When you hit submit, 'RoboAdam' will calculate and keep track of your score for you and the team you are on. You can find that data in the Hill Data Portal."
+                "This challenge is inspired by November Project San Francisco's Hill Climb Challenge in 2021. "
+                "Below is a table of all 40 locations showing their names, descriptions, length, vertical feet, and a link to their Strava segments. "
+                "There is also a map where clicking on the pins will take you to Google Maps so you know where each location starts."
+                "At the bottom of the page is a form where you will submit your name, e-mail, select the location you did, enter the number of reps, and an optional Strava link as proof that you completed the route."
             ),
 
             # Unordered List
@@ -389,24 +404,35 @@ class Application:
                 html.Li("Your total vertical feet"),
             ]),
 
-            # Additional Paragraph
+            # Final Paragraph
             html.P(
-                "When you submit your first score, you will be randomly assigned to a team of up to 6 people. If you'd like to be on a team with other people, please let leadership know when you submit and we will try to accomodate you." 
-                "This is an honor system. We trust you. Please don't break that trust." 
-                "If there any issues with the form or data, please contact Adam Wermus at amwermus@gmail.com"
+                "When you submit your first score, you will be randomly assigned to a team of up to 6 people. "
+                "If you'd like to be on a team with other people, please let leadership know when you submit, and we will try to accommodate you. "
+                "This is an honor system. We trust you. Please don't break that trust. "
+                "If there are any issues with the form or data, please contact Adam Wermus at amwermus@gmail.com"
             ),
 
-            # Unordered List
-                html.Ul([
-                html.Li("Use the map to strategize how to best go to each location"),
-                html.Li("Use the Hill Data Portal by 'RoboAdam'"),
-                html.Li("Support your team. This is fun. Use e-mail, Marco Polo, Whatsapp, anything to support each other to win."),
-            ]),
+            # Row with three images and bullet points
+            dbc.Row([
+                # First Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img4.jpg"), 
+                    width=4
+                ),
+                # Second Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img5.jpg"), 
+                    width=4
+                ),
+                # Third Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img6.jpg"), 
+                    width=4
+                ),
+            ], className="mb-3"),  # Adds margin-bottom for spacing
 
-            # Let's go
-                html.P(
-                    "LET'S GOOOOOOO"
-            )
+            # Let's Go
+            html.P("LET'S GOOOOOOO", style={'fontSize': '20px', 'fontWeight': 'bold'})
         ]
 
     def submission_form_response(self):
