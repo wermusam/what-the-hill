@@ -34,7 +34,10 @@ class Application:
         # initial dash app
         self.hill_data_loader = self.load_json()
         self.db = robo_adam.RoboAdam()
-        self._app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+        self._app = dash.Dash(__name__, external_stylesheets=[
+                                        dbc.themes.BOOTSTRAP,
+                                        "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                                    ])
 
     def create_layout(self):
         dropdown_options = self.dropdown_name_options()
@@ -42,50 +45,94 @@ class Application:
 
             dcc.Location(id="url", refresh=False),
 
-            # Navigation Bar
+            # Navigation Bar with Rounded Corners
             dbc.NavbarSimple(
                 children=[
                     dbc.NavItem(dbc.NavLink("Hill Yeah Locations and Descriptions", href="#locations")),
                     dbc.NavItem(dbc.NavLink("Map of All Hill Yeah Locations", href="#map")),
                     dbc.NavItem(dbc.NavLink("Hill Yeah Submission Form", href="#form")),
-
                 ],
                 brand="HILL YEAH HILLVEMBER",
                 brand_href="#",
                 color="primary",
                 dark=True,
+                style={
+                    'borderRadius': '8px',  # Rounds the corners
+                    'marginBottom': '10px'  # Adds some space below
+                }
             ),
 
             # Header and Subtitle
-            dbc.Row(dbc.Col(html.H1("Hill Yeah!!!"), width={"size": 8, "offset": 2})),
-            dbc.Row(dbc.Col(html.H2("November Project's Hill, Steps, and Steep Street Exploration Challenge Across LA"), width={"size": 8, "offset": 2})),
-
-            # Divider
-            html.Hr(),
-
-            # Rules
+            #dbc.Row(dbc.Col(html.H1("Hill Yeah!!!", style={'color': '#FF6F61'}), width={"size": 8, "offset": 2})),
+            # Main Heading with Gradient Effect
             dbc.Row(
                 dbc.Col(
-                        self.paragraph_rules(), width={"size": 8, "offset": 2}
-                       )
+                    html.H1(
+                        "Hill Yeah!!!",
+                        style={
+                            'background': 'linear-gradient(to right, #007bff, #FF6F61)',  # Blue to orange gradient
+                            'WebkitBackgroundClip': 'text',  # Gradient text effect
+                            'color': 'transparent',  # Makes the text transparent to show gradient
+                            'textAlign': 'center',
+                            'marginTop': '20px',
+                            'marginBottom': '20px'
+                        }
                     ),
+                    width={"size": 8, "offset": 2}
+                ),
+            ),
+
+            dbc.Row(dbc.Col(html.H2("November Project's Hill, Steps, and Steep Street Exploration Challenge Across LA", 
+                                    style={'color': '#2C3E50'}), width={"size": 8, "offset": 2})),
+
 
             # Divider
             html.Hr(),
 
-            # Data Table
+
+            # Rules Section with Light Gray Background
             dbc.Row(
                 dbc.Col(
-                    [
-                        html.Div(id="locations", children=[
-                            html.H1("Hill Yeah Locations and Descriptions"),
-                            self.generate_hill_table(),
-                    ],style={"marginTop": "100px","textAlign": "center"}),
-                        
-                    ],
+                    html.Div(
+                        children=self.paragraph_rules(),
+                        style={
+                            'backgroundColor': '#e8e8e8',  # Light gray background
+                            'padding': '15px',  # Adds padding inside the box
+                            'borderRadius': '8px',  # Rounds the corners
+                            'marginBottom': '20px'  # Adds spacing below the section
+                        }
+                    ),
+                    width={"size": 8, "offset": 2}  # Center the column
+                ),
+            ), 
+
+            # Divider
+            html.Hr(),
+
+            # Data Table with Shadow and Rounded Corners
+            dbc.Row(
+                dbc.Col(
+                    html.Div(
+                        id="locations",
+                        children=[
+                            html.H1(
+                                "Hill Yeah Locations and Descriptions",
+                                style={'marginBottom': '20px'}
+                            ),
+                            self.generate_hill_table()
+                        ],
+                        style={
+                            'marginTop': '100px',
+                            'textAlign': 'center',
+                            'boxShadow': '0px 4px 8px rgba(0, 0, 0, 0.1)',  # Soft shadow
+                            'borderRadius': '8px',  # Rounded corners
+                            'padding': '15px',  # Adds padding inside the box
+                            'backgroundColor': '#fff'  # White background for contrast
+                        }
+                    ),
                     width={"size": 8, "offset": 2}
-                )
-            ),
+                ),
+            ), 
 
             # Divider
             html.Hr(),
@@ -121,7 +168,40 @@ class Application:
             # Output Container For Results
             html.Div(id="output-container", className="mt-4"),
 
-        ], fluid=True)
+            # Add a footer at the bottom
+            dbc.Row(
+                dbc.Col(
+                    html.Div(
+                        children=[
+                            html.P(
+                                "© 2024 Hill Yeah Challenge.",
+                                style={'color': '#6c757d', 'margin': '0'}
+                            ),
+                            html.P(
+                                "Developed by Adam Wermus",
+                                style={'color': '#6c757d', 'margin': '0'}
+                            ),
+                        ],
+                        style={
+                            'background': 'linear-gradient(to right, #dcdcdc, #e8e8e8)',  # Light gradient
+                            'padding': '10px',
+                            'textAlign': 'center',
+                            'borderTop': '1px solid #ccc',  # Light border on top
+                            'marginTop': '20px'
+                        }
+                    ),
+                    width={"size": 12}  # Full width of the container
+                )
+            )
+
+        ],
+
+        style={
+            'background': 'linear-gradient(to bottom, #f0f0f0, #dcdcdc)',
+            'padding': '20px',
+            'fontFamily': 'Roboto, sans-serif'  # Apply the font family
+        },
+        fluid=True)
 
         # Form Submission Response
         self.submission_form_response()
@@ -229,12 +309,27 @@ class Application:
                         ], className="mb-3"),
 
                         # Submit Button
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Button("Submit", id="submit-button", color="primary", className="mt-3"),
-                            ], width={"size": 6, "offset": 3}, className="text-center")
-                        ])
+                        dbc.Row(
+                            dbc.Col(
+                                dbc.Button(
+                                    "Submit",
+                                    id="submit-button",
+                                    style={
+                                        'background': 'linear-gradient(to right, #FF6F61, #007bff)',  # Gradient from orange to blue
+                                        'color': 'white',
+                                        'border': 'none',
+                                        'padding': '10px 20px',
+                                        'borderRadius': '8px'
+                                    },
+                                    className="mt-3"
+                                ),
+                                width={"size": 6, "offset": 3},
+                                className="text-center"
+                            ),
+                        ),
+
                 ], id="input-form"),
+                
             ], xs=12, sm=10, md=8, lg=6, xl=6, className="mx-auto") # Set the width and use "mx-auto" for centering
         ]) 
 
