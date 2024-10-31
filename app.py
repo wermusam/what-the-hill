@@ -270,7 +270,14 @@ class Application:
             'margin': '10px auto',  # Centers and adds spacing for smaller screens
         }
 
-        return dl.Map(center=[34.0522, -118.2437], zoom=10, children=[
+        # Find the center for all locations
+        latitudes = [loc['lat'] for loc in locations]
+        longitudes = [loc['lon'] for loc in locations]
+        # Calculate the center by averaging the latitude and longitude
+        center_lat = sum(latitudes) / len(latitudes) if latitudes else 34.0522
+        center_lon = sum(longitudes) / len(longitudes) if longitudes else -118.2437
+
+        return dl.Map(center=[center_lat, center_lon], zoom=10, children=[
             dl.TileLayer(), # Base map layer
             *markers
         ],style=map_style)
