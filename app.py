@@ -68,7 +68,7 @@ class Application:
                 dbc.Col(
                     html.Div(
                         html.H2(
-                            "November Project's Exploration Elevation Challenge Hill Yeah",
+                            "November Project and Saturday Stairs\nExploration Elevation Challenge\nHill Yeah",
                             style={
                                 'background': 'linear-gradient(to right, #00C9FF, #92FE9D)',  # Blue to green gradient
                                 'WebkitBackgroundClip': 'text',  # Makes the gradient text
@@ -80,6 +80,7 @@ class Application:
                                 'border': '2px solid #92FE9D',  # Green border for emphasis
                                 'borderRadius': '8px',  # Rounds the corners
                                 'boxShadow': '0px 4px 8px rgba(0, 0, 0, 0.2)',  # Adds a soft shadow
+                                'whiteSpace': 'pre-line',
                                 'marginBottom': '20px'  # Adds spacing below the heading
                             }
                         ),
@@ -473,10 +474,12 @@ class Application:
         # Paragraph explaining the rules
         return [
             # Introductory Paragraph
-            html.P("Welcome to a collaboration between Novemeber Project and Saturday Stairs of the Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021," 
-            " you are going to explore running/walking (use only your body without motorized help) up 40 elevation based locations scattered across Santa Monica, West Hollywood, Culver City, Hollywood Bowl," 
-            " Los Feliz, Griffith Park, Highland Park, Pasadena, Echo Park, and Silver Lake. They are staircases, steep streets, and hills. There are 3 categories" 
-            " to win:"),
+            html.P(
+                "Welcome to a collaboration between November Project and Saturday Stairs for the Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021, "
+                "this adventure will have you exploring 40 elevation-based locations across Santa Monica, West Hollywood, Culver City, Hollywood Bowl, Los Feliz, Griffith Park, Highland Park, Pasadena, Echo Park, and Silver Lake. "
+                "The routes include staircases, steep streets, and hills, which you’ll conquer using only your own body power—no motorized assistance allowed. "
+                "There are three categories to win:"
+            ),
 
             # Row with three images and bullet points
             dbc.Row([
@@ -501,28 +504,29 @@ class Application:
             dbc.Row([
                 dbc.Col([
                     html.Ul([
-                        html.Li("HILLS YEAH: Go to as many of the 40 listed locations."),
-                        html.Li("REPSertoire REPSresentative: Get as many repetitions for each location (winner for each location)."),
-                        html.Li("WHAT THE HILL: Get the most vertical feet."),
+                        html.Li("HILLS YEAH: Visit as many of the 40 listed locations as possible."),
+                        html.Li("REPSertoire REPSresentative: Complete as many repetitions as possible for each location."),
+                        html.Li("WHAT THE HILL: Achieve the most vertical feet."),
                     ]),
                 ], width=12)
             ]),
 
             # Additional Paragraph
             html.P(
-                "All 40 locations are listed below in the data table that shows name, description, length, vertical feet, and a strava link that"
-                " shows you the segment. Only repetitions completed between November 1 - November 24 count. We've calculated the vertical feet for each location in advance."
-                " There is also a map with pins that give you directions to the start of all 40 locations. When you are done with a location, you submit your score using the"
-                " form below where you enter your name, e-mail, select the location, number of reps, and an optional strava/tracking link. Once you submit your score," 
-                " 'Robo-Adam' will keep track of the locations you have done, repetitions of each location, and your total vertical feet for yourself and the team you are on. You can see this in the"
-                " 'Robo-Adam Resource Portal at the bottom.'"
+                "The data table below lists all 40 locations, including their name, description, length, vertical feet, and a Strava link to the segment. "
+                "Only repetitions completed between November 1 and November 24 count toward the challenge. We've pre-calculated the vertical feet for each location. "
+                "You’ll also find a map with pins showing directions to the start of each location. After completing a location, submit your score using the form at the bottom, "
+                "where you can enter your name, email, selected location, number of reps, and an optional Strava/tracking link. "
+                "Once submitted, 'Robo-Adam' will track the locations you’ve completed, your repetitions per location, and your total vertical feet. "
+                "You can view all of this information in the 'Robo-Adam Resource Portal.'"
             ),
 
             # Unordered List
             html.Ul([
-                html.Li("Use this as an opportunity to explore new parts of LA you haven't been to"),
-                html.Li("Join other run groups that have these locations like Mikkeller Run Club, NPLA, NPWLA, Struggle Bus, and DHRC"),
-                html.Li("Have fun! Also win."),
+                html.Li("Discover new parts of LA you’ve never explored before!"),
+                html.Li("Connect with other running groups at these locations, like Mikkeller Run Club, NPLA, NPWLA, Struggle Bus, and DHRC."),
+                html.Li("Got questions or need support? Reach out to NPLA, NPWLA, Saturday Stairs, or email Adam at amwermus@gmail.com."),
+                html.Li("Above all—have fun, push yourself, support each other, and aim to conquer the challenge!"),
             ]),
 
 
