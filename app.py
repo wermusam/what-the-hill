@@ -555,6 +555,7 @@ class Application:
             [Output("output-container", "children"),
             Output("location-table-portal", "data"),
             Output("top-reps-table", "data"),
+            Output("total-vertical-bar-graph", "figure"),
             Output("total-vertical-table", "data")],
            [Input("submit-button", "n_clicks")],
             [State("name", "value"),
@@ -633,8 +634,32 @@ class Application:
             # Update DataTable location count with latest information
             updated_location_count = self.db.get_unique_location_counts().to_dict('records')
             updated_reps_count = self.db.get_top_reps_per_location().to_dict('records')
-            updated_total_vert = self.db.get_total_vertical_per_person().to_dict('records')
-            return result, updated_location_count, updated_reps_count, updated_total_vert
+            updated_total_vert_table = self.db.get_total_vertical_per_person().to_dict('records')
+
+            # Update bar graph
+            # Top 10 for the bar graph
+            top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
+    
+            # Create figure for the bar graph
+            updated_total_vert_bar = {
+                'data': [
+                    go.Bar(
+                        x=top_10_df['Name'],
+                        y=top_10_df['Total Vertical Feet'],
+                        marker=dict(color='#FFA07A')
+                    )
+                ],
+                'layout': go.Layout(
+                    title="Top 10 Vert (Feet)",
+                    xaxis=dict(title="", tickangle=-45, automargin=True),
+                    yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    margin=dict(l=60, r=20, t=40, b=120),
+                )
+            }
+
+            return result, updated_location_count, updated_reps_count, updated_total_vert_bar, updated_total_vert_table
 
 
 
