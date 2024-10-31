@@ -247,11 +247,18 @@ class Application:
                              ]
                              ) for loc in locations
                 ]
+        # Responsive style for all devices
+        map_style = {
+            'width': '100%',
+            'height': '50vh',  # Adapts height based on viewport
+            'max-height': '500px',  # Ensures it doesn’t grow too large on larger screens
+            'margin': '10px auto',  # Centers and adds spacing for smaller screens
+        }
 
         return dl.Map(center=[34.0522, -118.2437], zoom=10, children=[
             dl.TileLayer(), # Base map layer
             *markers
-        ],style={'width': '100%', 'height': '500px'})
+        ],style=map_style)
 
     def create_resource_portal_layout(self):
         # Mock data for testing
