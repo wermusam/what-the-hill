@@ -573,17 +573,36 @@ class Application:
             
             # Check each field individually
             if not name:
-                return html.Div("Please enter a name!", style={"color": "red", 'textAlign': 'center'})
+                return (
+                    html.Div("Please enter a name!", style={"color": "red", 'textAlign': 'center'}),
+                    [],  # Placeholder for location-table-portal.data
+                    [],  # Placeholder for top-reps-table.data
+                    {},  # Placeholder for total-vertical-bar-graph.figure
+                    []   # Placeholder for total-vertical-table.data
+                )
             if not email:
-                return html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'})
+                return (
+                    html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'}),
+                    [], [], {}, []
+                )
             if not location:
-                return html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'})
+                return (
+                    html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'}),
+                     [], [], {}, []
+                )
             if not num_repetitions:
-                return html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'})
+                return (
+                    html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'}),
+                    [], [], {}, []
+                )
             
             # Check if any fields were missed (might be redundant)
             if not (name and email and location and num_repetitions):
-                return html.Div("Please fill out all required fields.", style={"color": "red"})
+                return (
+                    html.Div("Please fill out all required fields.", style={"color": "red"}),
+                    [], [], {}, []
+                )
+
 
             # Validate number of repetitions
             if not isinstance(num_repetitions, int) or num_repetitions <= 0:
