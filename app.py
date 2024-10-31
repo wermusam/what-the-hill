@@ -278,6 +278,19 @@ class Application:
             style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
         )
 
+        # Generate a DataTable from the sample data
+        wth_table = DataTable(
+            id='total-vertical-table',
+            columns=[
+                {"name": "Name", "id": "Name"},
+                {"name": "Total Vert (Feet)", "id": "Total Vertical Feet"}
+            ],
+            data=self.db.get_total_vertical_per_person().to_dict('records'),
+            style_table={'overflowX': 'auto'},
+            style_cell={'textAlign': 'left'},
+            style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
+        )
+
         # Generate a bar graph showing repetitions per location
         bar_graph = dcc.Graph(
             figure=go.Figure(
@@ -319,9 +332,9 @@ class Application:
                 total_hill_count
             ], className="mb-4"),
             html.Div([
-                html.H4("What The Hill", className="mt-4"),
-                bar_graph
-            ]),
+                html.H4("What The Hill", className="mt-4", style={"textAlign": "center"}),
+                wth_table
+            ], className="mb-4"),
             html.Div([
                 html.H4("REPSertoire REPSresentative", className="mt-4", style={"textAlign": "center"}),
                 reps_represent
@@ -531,7 +544,8 @@ class Application:
         @self._app.callback(
             [Output("output-container", "children"),
             Output("location-table-portal", "data"),
-            Output("top-reps-table", "data")],
+            Output("top-reps-table", "data"),
+            Output("total-vertical-table", "data")],
            [Input("submit-button", "n_clicks")],
             [State("name", "value"),
             State("email", "value"),
@@ -609,7 +623,8 @@ class Application:
             # Update DataTable location count with latest information
             updated_location_count = self.db.get_unique_location_counts().to_dict('records')
             updated_reps_count = self.db.get_top_reps_per_location().to_dict('records')
-            return result, updated_location_count, updated_reps_count
+            updated_total_vert = self.db.get_total_vertical_per_person().to_dict('records')
+            return result, updated_location_count, updated_reps_count, updated_total_vert
 
 
 
