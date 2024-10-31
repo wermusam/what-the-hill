@@ -50,9 +50,10 @@ class Application:
                 children=[
                     dbc.NavItem(dbc.NavLink("Hill Yeah Locations and Descriptions", href="#locations")),
                     dbc.NavItem(dbc.NavLink("Map of All Hill Yeah Locations", href="#map")),
+                    dbc.NavItem(dbc.NavLink("Robo-Adam Resource Portal", href="#scores")),
                     dbc.NavItem(dbc.NavLink("Hill Yeah Submission Form", href="#form")),
                 ],
-                brand="Robo-Adam Hill Yeah Resource Portal",
+                brand="Hill Yeah",
                 brand_href="#",
                 color="primary",
                 dark=True,
@@ -161,6 +162,22 @@ class Application:
             # Divider
             html.Hr(),
 
+            # Robo Adam Resource Portal
+            dbc.Row(
+                dbc.Col(
+                    [
+                        html.Div(id="scores"),
+                        html.H2("Robo-Adam Resource Portal", className='text-center mt-4'),
+                        html.P("Dashboard of Scores", className='text-center'),
+                        self.create_resource_portal_layout(),
+                    ],
+                    width={"size": 8, "offset":2}
+                )
+            ),
+
+            # Divider
+            html.Hr(),
+
              # Submission Form
             dbc.Row(
                 dbc.Col(
@@ -234,6 +251,60 @@ class Application:
             dl.TileLayer(), # Base map layer
             *markers
         ],style={'width': '100%', 'height': '500px'})
+
+    def create_resource_portal_layout(self):
+        # Mock data for testing
+        sample_data = {
+            "name": ["Alice", "Bob", "Charlie", "David"],
+            "email": ["alice@example.com", "bob@example.com", "charlie@example.com", "david@example.com"],
+            "location": ["Hill 1", "Hill 2", "Hill 1", "Hill 3"],
+            "repetitions": [5, 3, 2, 7],
+            "vertical_gain": [150, 200, 150, 300],
+            "strava_link": ["https://example.com/1", "https://example.com/2", "https://example.com/3", "https://example.com/4"],
+            "date": ["2024-10-01", "2024-10-02", "2024-10-03", "2024-10-04"]
+        }
+        submission_data = pd.DataFrame(sample_data)
+
+        # Generate a DataTable from the sample data
+        data_table = DataTable(
+            columns=[{"name": i, "id": i} for i in submission_data.columns],
+            data=submission_data.to_dict("records"),
+            style_table={'overflowX': 'auto'},
+            style_cell={'textAlign': 'left'},
+            style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
+        )
+
+        # Generate a bar graph showing repetitions per location
+        bar_graph = dcc.Graph(
+            figure=go.Figure(
+                data=[
+                    go.Bar(
+                        x=submission_data["location"],
+                        y=submission_data["repetitions"],
+                        text=submission_data["repetitions"],
+                        textposition='auto'
+                    )
+                ],
+                layout=go.Layout(
+                    title="Repetitions by Location",
+                    xaxis={"title": "Location"},
+                    yaxis={"title": "Repetitions"}
+                )
+            )
+        )
+
+        # Return the Resource Portal layout with the DataTable and Bar Graph only
+        return dbc.Container([
+            html.H2("Robo-Adam's Resource Portal", className="text-center mt-4"),
+            html.Div([
+                html.H4("Submitted Data Table", className="mt-4"),
+                data_table
+            ], className="mb-4"),
+            html.Div([
+                html.H4("Repetitions by Location", className="mt-4"),
+                bar_graph
+            ])
+        ], fluid=True)
 
     def dropdown_name_options(self, data=None):
         """Returns the dropdown options from the json data"""
@@ -357,10 +428,10 @@ class Application:
         # Paragraph explaining the rules
         return [
             # Introductory Paragraph
-            html.P("Welcome to November Project's Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021," 
-            " you and a team of 6 are going to explore running/walking up 40 elevation based locations scattered across Santa Monica, West Hollywood, Culver City, Hollywood Bowl," 
+            html.P("Welcome to a collaboration between Novemeber Project and Saturday Stairs of the Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021," 
+            " you are going to explore running/walking (use only your body without motorized help) up 40 elevation based locations scattered across Santa Monica, West Hollywood, Culver City, Hollywood Bowl," 
             " Los Feliz, Griffith Park, Highland Park, Pasadena, Echo Park, and Silver Lake. They are staircases, steep streets, and hills. There are 3 categories" 
-            " to win for you and your team. They are:"),
+            " to win:"),
 
             # Row with three images and bullet points
             dbc.Row([
@@ -385,9 +456,9 @@ class Application:
             dbc.Row([
                 dbc.Col([
                     html.Ul([
-                        html.Li("EXPLORER: Go to as many of the 40 listed locations as you can."),
-                        html.Li("LOCAL BADASS: Get as many repetitions for each location as you can."),
-                        html.Li("WHAT THE HILL: Getting the most vertical feet you can for you and your team."),
+                        html.Li("HILLS YEAH: Go to as many of the 40 listed locations."),
+                        html.Li("REPSertoire REPSresentative: Get as many repetitions for each location (winner for each location)."),
+                        html.Li("WHAT THE HILL: Get the most vertical feet."),
                     ]),
                 ], width=12)
             ]),
@@ -395,17 +466,17 @@ class Application:
             # Additional Paragraph
             html.P(
                 "All 40 locations are listed below in the data table that shows name, description, length, vertical feet, and a strava link that"
-                " shows you the segment. There is also a map with pins that give you directions to the start of all 40 locations. When you are done"
-                " with a location, you submit your score using the form below where you enter your name, e-mail, select the location, number of reps,"
-                " and an optional strava/tracking link. Once you submit your score, 'Robo-Adam' will keep track of the locations you have done,"
-                " repetitions of each location, and your total vertical feet for yourself and the team you are on. You can see this in the"
-                " 'Robo-Adam Resource Portal.' When you submit your first score, you will have the option to select a team you want to join."
+                " shows you the segment. Only repetitions completed between November 1 - November 24 count. We've calculated the vertical feet for each location in advance."
+                " There is also a map with pins that give you directions to the start of all 40 locations. When you are done with a location, you submit your score using the"
+                " form below where you enter your name, e-mail, select the location, number of reps, comment, and an optional strava/tracking link. Once you submit your score," 
+                " 'Robo-Adam' will keep track of the locations you have done, repetitions of each location, and your total vertical feet for yourself and the team you are on. You can see this in the"
+                " 'Robo-Adam Resource Portal at the bottom.'"
             ),
 
             # Unordered List
             html.Ul([
                 html.Li("Use this as an opportunity to explore new parts of LA you haven't been to"),
-                html.Li("Bond with your team!!! Support each other! You can e-mail, Whatsapp, text, Marco Polo, or whatever creates your team spirit"),
+                html.Li("Join other run groups that have these locations like Mikkeller Run Club, NPLA, NPWLA, Struggle Bus, and DHRC"),
                 html.Li("Have fun! Also win."),
             ]),
 
