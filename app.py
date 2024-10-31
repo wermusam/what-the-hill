@@ -167,8 +167,8 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="scores"),
-                        html.H2("Robo-Adam Resource Portal", className='text-center mt-4'),
-                        html.P("Dashboard of Scores", className='text-center'),
+                        html.H2("HILLS YEAH, REPSertoire REPSresentative, and WHAT THE HILL Scores", className='text-center mt-4'),
+                        html.P("More metrics will update as the challenge progresses", className='text-center'),
                         self.create_resource_portal_layout(),
                     ],
                     width={"size": 8, "offset":2}
@@ -293,17 +293,21 @@ class Application:
             )
         )
 
-        # Return the Resource Portal layout with the DataTable and Bar Graph only
+        # Return the Resource Portal layout with the DataTables and Bar Graph only
         return dbc.Container([
-            html.H2("Robo-Adam's Resource Portal", className="text-center mt-4"),
+            html.H2("Scoreboard", className="text-center mt-4"),
             html.Div([
-                html.H4("Submitted Data Table", className="mt-4"),
+                html.H4("HILLS YEAH", className="mt-4"),
                 data_table
             ], className="mb-4"),
             html.Div([
-                html.H4("Repetitions by Location", className="mt-4"),
+                html.H4("What The Hill", className="mt-4"),
                 bar_graph
-            ])
+            ]),
+            html.Div([
+                html.H4("REPSertoire REPSresentative", className="mt-4"),
+                data_table
+            ], className="mb-4"),
         ], fluid=True)
 
     def dropdown_name_options(self, data=None):
@@ -468,7 +472,7 @@ class Application:
                 "All 40 locations are listed below in the data table that shows name, description, length, vertical feet, and a strava link that"
                 " shows you the segment. Only repetitions completed between November 1 - November 24 count. We've calculated the vertical feet for each location in advance."
                 " There is also a map with pins that give you directions to the start of all 40 locations. When you are done with a location, you submit your score using the"
-                " form below where you enter your name, e-mail, select the location, number of reps, comment, and an optional strava/tracking link. Once you submit your score," 
+                " form below where you enter your name, e-mail, select the location, number of reps, and an optional strava/tracking link. Once you submit your score," 
                 " 'Robo-Adam' will keep track of the locations you have done, repetitions of each location, and your total vertical feet for yourself and the team you are on. You can see this in the"
                 " 'Robo-Adam Resource Portal at the bottom.'"
             ),
