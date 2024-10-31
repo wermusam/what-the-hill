@@ -3,18 +3,23 @@ Author: Adam Wermus
 Date: October 22, 2024
 Mongo DB 
 """
+
 import pandas as pd
 import pprint
+import os
 import sys
+
+from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 # Connection, Database, and Collections
-CONNECTION = "mongodb://localhost:27017/"
+load_dotenv()  # Loads variables from .env file
 DB_NAME = "wth"
 DB_TEST_NAME = "wth_test"
 COLLECTION_NAME = "submissions"
-URI = "mongodb+srv://amwermus:Whatis24!@cluster0.x3myy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+URI = os.getenv("MONGODB_URI")  # Fetches the MongoDB URI from an environment variable
+
 
 # Number of Locations
 TOTAL_LOCATION_COUNT = 40 
