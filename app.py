@@ -292,22 +292,29 @@ class Application:
         )
 
         # Generate a bar graph showing repetitions per location
-        bar_graph = dcc.Graph(
-            figure=go.Figure(
-                data=[
+        # Bar Graph component
+        total_vertical_df = self.db.get_total_vertical_per_person()
+        top_10_df = total_vertical_df.nlargest(10, 'Total Vertical Feet')
+        bar_graph_wth = dcc.Graph(
+            id='total-vertical-bar-graph',
+            figure={
+                'data': [
                     go.Bar(
-                        x=submission_data["location"],
-                        y=submission_data["repetitions"],
-                        text=submission_data["repetitions"],
-                        textposition='auto'
+                        x=top_10_df['Name'],
+                        y=top_10_df['Total Vertical Feet'],
+                        marker=dict(color='#FFA07A')  # Soft salmon color for the bars
                     )
                 ],
-                layout=go.Layout(
-                    title="Repetitions by Location",
-                    xaxis={"title": "Location"},
-                    yaxis={"title": "Repetitions"}
+                'layout': go.Layout(
+                    title="Top 10 Vert (Feet)",
+                    xaxis=dict(title="",tickangle=-45, automargin=True),
+                    yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
+                    plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    margin=dict(l=60, r=20, t=40, b=120),  # Increase bottom margin for x-axis labels
                 )
-            )
+            },
+            style={'width': '100%', 'padding': '10px'}
         )
 
         # Generate a DataTable from the sample data
@@ -326,18 +333,21 @@ class Application:
 
         # Return the Resource Portal layout with the DataTables and Bar Graph only
         return dbc.Container([
-            html.H2("Scoreboard", className="text-center mt-4"),
+            html.H2("", className="text-center mt-4"),
             html.Div([
                 html.H4("HILLS YEAH", className="mt-4", style={"textAlign": "center"}),
                 total_hill_count
             ], className="mb-4"),
             html.Div([
-                html.H4("What The Hill", className="mt-4", style={"textAlign": "center"}),
-                wth_table
-            ], className="mb-4"),
-            html.Div([
                 html.H4("REPSertoire REPSresentative", className="mt-4", style={"textAlign": "center"}),
                 reps_represent
+            ], className="mb-4"),
+            html.Div([
+                html.H4("What The Hill", className="mt-4", style={"textAlign": "center"}),
+                dbc.Row([
+                    dbc.Col(wth_table, width=6, style={'padding': '0 10px'}),  # DataTable on the left
+                    dbc.Col(bar_graph_wth, width=6, style={'padding': '0 10px'})  # Bar graph on the right
+                ], align="center")
             ], className="mb-4"),
         ], fluid=True)
 
