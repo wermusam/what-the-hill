@@ -167,8 +167,8 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="scores"),
-                        html.H2("HILLS YEAH, REPSertoire REPSresentative, and WHAT THE HILL Scores", className='text-center mt-4'),
-                        html.P("More metrics will update as the challenge progresses", className='text-center'),
+                        html.H2("Robo-Adam Resource Portal", className='text-center mt-4'),
+                        html.P("More metrics/visualizations will update as the challenge progresses", className='text-center'),
                         self.create_resource_portal_layout(),
                     ],
                     width={"size": 8, "offset":2}
@@ -265,10 +265,14 @@ class Application:
         }
         submission_data = pd.DataFrame(sample_data)
 
-        # Generate a DataTable from the sample data
-        data_table = DataTable(
-            columns=[{"name": i, "id": i} for i in submission_data.columns],
-            data=submission_data.to_dict("records"),
+        # Generate a DataTable of all hills
+        total_hill_count = DataTable(
+            id='location-table-portal',
+            columns=[
+            {"name": "Hills Yeah Leaderboard", "id": "Name"},
+            {"name": "Hills Count (40 Total)", "id": "Locations Covered"}
+            ],
+            data=self.db.get_unique_location_counts().to_dict('records'),
             style_table={'overflowX': 'auto'},
             style_cell={'textAlign': 'left'},
             style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
@@ -293,20 +297,34 @@ class Application:
             )
         )
 
+        # Generate a DataTable from the sample data
+        reps_represent = DataTable(
+            id='top-reps-table',
+            columns=[
+                {"name": "Location", "id": "Location"},
+                {"name": "Reps", "id": "Reps"},
+                {"name": "Name", "id": "Name"}
+            ],
+            data=self.db.get_top_reps_per_location().to_dict('records'),
+            style_table={'overflowX': 'auto'},
+            style_cell={'textAlign': 'left'},
+            style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
+        )
+
         # Return the Resource Portal layout with the DataTables and Bar Graph only
         return dbc.Container([
             html.H2("Scoreboard", className="text-center mt-4"),
             html.Div([
-                html.H4("HILLS YEAH", className="mt-4"),
-                data_table
+                html.H4("HILLS YEAH", className="mt-4", style={"textAlign": "center"}),
+                total_hill_count
             ], className="mb-4"),
             html.Div([
                 html.H4("What The Hill", className="mt-4"),
                 bar_graph
             ]),
             html.Div([
-                html.H4("REPSertoire REPSresentative", className="mt-4"),
-                data_table
+                html.H4("REPSertoire REPSresentative", className="mt-4", style={"textAlign": "center"}),
+                reps_represent
             ], className="mb-4"),
         ], fluid=True)
 
@@ -511,7 +529,9 @@ class Application:
     def submission_form_response(self):
         """Handles submission form response, updating data, and visualization"""
         @self._app.callback(
-            Output("output-container","children"),
+            [Output("output-container", "children"),
+            Output("location-table-portal", "data"),
+            Output("top-reps-table", "data")],
            [Input("submit-button", "n_clicks")],
             [State("name", "value"),
             State("email", "value"),
@@ -585,7 +605,11 @@ class Application:
 
                 }
             )
-            return result
+
+            # Update DataTable location count with latest information
+            updated_location_count = self.db.get_unique_location_counts().to_dict('records')
+            updated_reps_count = self.db.get_top_reps_per_location().to_dict('records')
+            return result, updated_location_count, updated_reps_count
 
 
 
