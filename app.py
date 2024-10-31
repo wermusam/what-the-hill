@@ -276,24 +276,13 @@ class Application:
         ],style=map_style)
 
     def create_resource_portal_layout(self):
-        # Mock data for testing
-        sample_data = {
-            "name": ["Alice", "Bob", "Charlie", "David"],
-            "email": ["alice@example.com", "bob@example.com", "charlie@example.com", "david@example.com"],
-            "location": ["Hill 1", "Hill 2", "Hill 1", "Hill 3"],
-            "repetitions": [5, 3, 2, 7],
-            "vertical_gain": [150, 200, 150, 300],
-            "strava_link": ["https://example.com/1", "https://example.com/2", "https://example.com/3", "https://example.com/4"],
-            "date": ["2024-10-01", "2024-10-02", "2024-10-03", "2024-10-04"]
-        }
-        submission_data = pd.DataFrame(sample_data)
 
         # Generate a DataTable of all hills
         total_hill_count = DataTable(
             id='location-table-portal',
             columns=[
             {"name": "Hills Yeah Leaderboard", "id": "Name"},
-            {"name": "Hills Count (40 Total)", "id": "Locations Covered"}
+            {"name": "Hills Count", "id": "Locations Covered"}
             ],
             data=self.db.get_unique_location_counts().to_dict('records'),
             style_table={'overflowX': 'auto'},
@@ -339,8 +328,7 @@ class Application:
             },
             style={'width': '100%', 'padding': '10px'}
         )
-
-        # Generate a DataTable from the sample data
+        # Generate a DataTable with adjusted mobile-friendly styles
         reps_represent = DataTable(
             id='top-reps-table',
             columns=[
@@ -349,9 +337,20 @@ class Application:
                 {"name": "Name", "id": "Name"}
             ],
             data=self.db.get_top_reps_per_location().to_dict('records'),
-            style_table={'overflowX': 'auto'},
-            style_cell={'textAlign': 'left'},
-            style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
+            style_table={'overflowX': 'auto'},  # Keeps horizontal scroll but minimizes it
+            style_cell={
+                'textAlign': 'left',
+                'padding': '5px',  # Smaller padding to reduce table width
+            },
+            style_cell_conditional=[
+                {'if': {'column_id': 'Location'}, 'whiteSpace': 'normal', 'minWidth': '100px', 'maxWidth': '200px'},
+                {'if': {'column_id': 'Reps'}, 'width': '50px'},
+                {'if': {'column_id': 'Name'}, 'whiteSpace': 'normal', 'minWidth': '100px', 'maxWidth': '200px'},  # Wraps text in Name
+            ],
+            style_header={
+                'backgroundColor': 'rgb(230, 230, 230)',
+                'fontWeight': 'bold'
+            }
         )
 
         # Return the Resource Portal layout with the DataTables and Bar Graph only
@@ -365,12 +364,13 @@ class Application:
                 html.H4("REPSertoire REPSresentative", className="mt-4", style={"textAlign": "center"}),
                 reps_represent
             ], className="mb-4"),
+             html.Div([
+                html.H4("What The Hill Table", className="mt-4", style={"textAlign": "center"}),
+                wth_table
+            ], className="mb-4"),
             html.Div([
-                html.H4("What The Hill", className="mt-4", style={"textAlign": "center"}),
-                dbc.Row([
-                    dbc.Col(wth_table, width=6, style={'padding': '0 10px'}),  # DataTable on the left
-                    dbc.Col(bar_graph_wth, width=6, style={'padding': '0 10px'})  # Bar graph on the right
-                ], align="center")
+                html.H4("What The Hill Top 10 Bar Chart", className="mt-4", style={"textAlign": "center"}),
+                bar_graph_wth
             ], className="mb-4"),
         ], fluid=True)
 
