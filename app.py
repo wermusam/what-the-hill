@@ -673,9 +673,15 @@ class Application:
     
 
 
+# Initialize and configure the application
+run_app = Application()
+run_app.create_layout()
+
+# Expose the server to Gunicorn
+server = run_app._app.server
+
+
 # Run the app
 if __name__ == "__main__":
-    run_app = Application()
-    run_app.create_layout()
     run_app.run()
 
