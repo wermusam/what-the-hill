@@ -92,7 +92,10 @@ class Application:
                             'marginBottom': '20px'  # Adds spacing below the entire div
                         }
                     ),
-                    width={"size": 8, "offset": 2}
+                    xs=12,  # Full width on extra small screens (e.g., iPhones)
+                    sm=12,  # Full width on small screens
+                    md={"size": 10, "offset": 1},  # Adjusted for medium screens
+                    lg={"size": 8, "offset": 2}  # Standard size and offset for large screens
                 ),
             ),
 
@@ -112,7 +115,10 @@ class Application:
                             'marginBottom': '20px'  # Adds spacing below the section
                         }
                     ),
-                    width={"size": 8, "offset": 2}  # Center the column
+                    xs=12,  # Full width on extra small screens (e.g., iPhones)
+                    sm=12,  # Full width on small screens
+                    md={"size": 10, "offset": 1},  # Adjusted for medium screens
+                    lg={"size": 8, "offset": 2}  # Standard size and offset for large screens
                 ),
             ), 
 
@@ -140,7 +146,10 @@ class Application:
                             'backgroundColor': '#fff'  # White background for contrast
                         }
                     ),
-                    width={"size": 8, "offset": 2}
+                    xs=12,  # Full width on extra small screens (e.g., iPhones)
+                    sm=12,  # Full width on small screens
+                    md={"size": 10, "offset": 1},  # Adjusted for medium screens
+                    lg={"size": 8, "offset": 2}  # Standard size and offset for large screens
                 ),
             ), 
 
@@ -156,7 +165,10 @@ class Application:
                         html.P("This map shows all of the locations for the challenge", className='text-center'),
                         self.create_map(),
                     ],
-                    width={"size": 8, "offset":2}
+                    xs=12,  # Full width on extra small screens (e.g., iPhones)
+                    sm=12,  # Full width on small screens
+                    md={"size": 10, "offset": 1},  # Adjusted for medium screens
+                    lg={"size": 8, "offset": 2}  # Standard size and offset for large screens
                 )
             ),
 
@@ -172,7 +184,10 @@ class Application:
                         html.P("More metrics/visualizations will update as the challenge progresses", className='text-center'),
                         self.create_resource_portal_layout(),
                     ],
-                    width={"size": 8, "offset":2}
+                    xs=12,  # Full width on extra small screens (e.g., iPhones)
+                    sm=12,  # Full width on small screens
+                    md={"size": 10, "offset": 1},  # Adjusted for medium screens
+                    lg={"size": 8, "offset": 2}  # Standard size and offset for large screens
                 )
             ),
 
