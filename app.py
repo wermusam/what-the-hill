@@ -63,7 +63,7 @@ class Application:
 
         self._app = dash.Dash(__name__, external_stylesheets=[
                                         dbc.themes.BOOTSTRAP,
-                                        "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
+                                        "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;500;700&display=swap"
                                     ])
 
         # Create Layout
@@ -210,8 +210,30 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="scores"),
-                        html.H2("Robo-Adam Resource Portal", className='text-center mt-4'),
-                        html.P("More metrics/visualizations will update as the challenge progresses", className='text-center'),
+                        html.H2("Robo-Adam Resource Portal",
+                            className="mt-4", 
+                            style={
+                                "textAlign": "center", 
+                                "whiteSpace": "pre-line",
+                                "fontFamily": "'Montserrat', sans-serif",
+                                "fontWeight": "700",
+                                "fontSize": "24px",
+                                "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                                "color": "#007bff"  # Blue accent
+                            }, 
+                        ),
+                        html.P("Summary of Hill Count, Reps Count, and Total Vert", 
+                            className='text-center',
+                            style={
+                                "textAlign": "center", 
+                                "whiteSpace": "pre-line",
+                                "fontFamily": "'Montserrat', sans-serif",
+                                "fontWeight": "700",
+                                "fontSize": "13px",
+                                "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                                "color": "#007bff"  # Blue accent
+                            }, 
+                        ),
                         self.create_resource_portal_layout(),
                     ],
                     xs=12,  # Full width on extra small screens (e.g., iPhones)
@@ -390,25 +412,78 @@ class Application:
             }
         )
 
-        # Return the Resource Portal layout with the DataTables and Bar Graph only
+        # Return the Resource Portal layout with improved font styles
         return dbc.Container([
             html.H2("", className="text-center mt-4"),
+            
             html.Div([
-                html.H4("HILLS YEAH", className="mt-4", style={"textAlign": "center"}),
+                html.H4(
+                    "HILLS YEAH", 
+                    className="mt-4", 
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "24px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }
+                ),
                 total_hill_count
             ], className="mb-4"),
+            
             html.Div([
-                html.H4("REPSertoire REPSresentative", className="mt-4", style={"textAlign": "center"}),
+                html.H4(
+                    "REPSertoire REPSresentative", 
+                    className="mt-4", 
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "24px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }
+                ),
                 reps_represent
             ], className="mb-4"),
-             html.Div([
-                html.H4("What The Hill Table", className="mt-4", style={"textAlign": "center"}),
+            
+            html.Div([
+                html.H4(
+                    "What The Hill", 
+                    className="mt-4", 
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "24px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }
+                ),
                 wth_table
             ], className="mb-4"),
+            
             html.Div([
-                html.H4("What The Hill Top 10 Bar Chart", className="mt-4", style={"textAlign": "center"}),
+                html.H4(
+                    "What The Hill Top 10", 
+                    className="mt-4", 
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "24px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }
+                ),
                 bar_graph_wth
             ], className="mb-4"),
+            
         ], fluid=True)
 
     def dropdown_name_options(self, data=None):
@@ -564,9 +639,18 @@ class Application:
             dbc.Row([
                 dbc.Col([
                     html.Ul([
-                        html.Li("HILLS YEAH: Visit as many of the 40 listed locations as possible."),
-                        html.Li("REPSertoire REPSresentative: Complete as many repetitions as possible for each location."),
-                        html.Li("WHAT THE HILL: Achieve the most vertical feet."),
+                        html.Li([
+                            html.B("HILLS YEAH: "), 
+                            "Visit as many of the 40 listed locations as possible."
+                        ]),
+                        html.Li([
+                            html.B("REPSertoire REPSresentative: "), 
+                            "Complete as many repetitions as possible for each location."
+                        ]),
+                        html.Li([
+                            html.B("WHAT THE HILL: "), 
+                            "Achieve the most vertical feet."
+                        ]),
                     ]),
                 ], width=12)
             ]),
@@ -575,20 +659,9 @@ class Application:
             html.P(
                 "The data table below lists all 40 locations, including their name, description, length, vertical feet, and a Strava link to the segment. "
                 "Only repetitions completed between November 1 and November 24 count toward the challenge. We've pre-calculated the vertical feet for each location. "
-                "You’ll also find a map with pins showing directions to the start of each location. After completing a location, submit your score using the form at the bottom, "
-                "where you can enter your name, email, selected location, number of reps, and an optional Strava/tracking link. "
-                "Once submitted, 'Robo-Adam' will track the locations you’ve completed, your repetitions per location, and your total vertical feet. "
-                "You can view all of this information in the 'Robo-Adam Resource Portal.'"
+                "You’ll also find a map with pins showing directions to the start of each location.",
+                className="intro-paragraph"
             ),
-
-            # Unordered List
-            html.Ul([
-                html.Li("Discover new parts of LA you’ve never explored before!"),
-                html.Li("Connect with other running groups at these locations, like Mikkeller Run Club, NPLA, NPWLA, Struggle Bus, and DHRC."),
-                html.Li("Got questions or need support? Reach out to NPLA, NPWLA, Saturday Stairs, or email Adam at amwermus@gmail.com."),
-                html.Li("Above all—have fun, push yourself, support each other, and aim to conquer the challenge!"),
-            ]),
-
 
             # Row with three images and bullet points
             dbc.Row([
@@ -609,8 +682,52 @@ class Application:
                 ),
             ], className="mb-3"),  # Adds margin-bottom for spacing
 
+                        # Additional Paragraph
+            html.P(
+                "After completing a location, submit your score using the form at the bottom, "
+                "where you can enter your name, email, selected location, number of reps, and an optional Strava/tracking link. "
+                "Once submitted, 'Robo-Adam' will track the locations you’ve completed, your repetitions per location, and your total vertical feet. "
+                "You can view all of this information in the 'Robo-Adam Resource Portal.'",
+                className="intro-paragraph"
+            ),
+
+                        # Row with three images and bullet points
+
+            # Unordered List
+            html.Ul([
+                html.Li("Discover new parts of LA you’ve never explored before!"),
+                html.Li("Connect with other running groups at these locations. Ex: MRC, NPLA, NPWLA, Struggle Bus, and DHRC."),
+                html.Li("Got questions or need support? Reach out to leadership or email Adam at amwermus@gmail.com."),
+                html.Li("Above all—have fun, push yourself, support each other, and aim to conquer the challenge!"),
+            ]),
+
+
+            # Row with three images and bullet points
+            dbc.Row([
+                # First Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img7.jpg"), 
+                    width=4
+                ),
+                # Second Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img8.jpg"), 
+                    width=4
+                ),
+                # Third Image
+                dbc.Col(
+                    self.image_placer("/assets/hill_yeah_img9.jpg"), 
+                    width=4
+                ),
+            ], className="mb-3"),  # Adds margin-bottom for spacing
+
             # Let's Go
-            html.P("LET'S GOOOOOOO!!! HIll Yeah!!", style={'fontSize': '20px', 'fontWeight': 'bold'})
+            html.P("LET'S GOOOOOOO!!! HILL Yeah!!!!", 
+            style={
+                    'fontSize': '20px', 
+                    'fontWeight': 'bold',
+                    'textAlign': 'center',
+                })
         ]
 
     def combined_callback(self):
@@ -730,13 +847,6 @@ class Application:
 
             else:
                 result = None
-
-            # Update DataTable location count with latest information
-            """
-            updated_location_count = self.db.get_unique_location_counts().to_dict('records')
-            updated_reps_count = self.db.get_top_reps_per_location().to_dict('records')
-            updated_total_vert_table = self.db.get_total_vertical_per_person().to_dict('records')
-            """
             
             # Load data once during app initialization
             self.location_data = self.db.get_unique_location_counts().to_dict('records')
@@ -757,9 +867,9 @@ class Application:
                     )
                 ],
                 'layout': go.Layout(
-                    title="Top 10 Vert (Feet)",
+                    title="Top 10 Vert<br>(Feet)",
                     xaxis=dict(title="", tickangle=-45, automargin=True),
-                    yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
+                    yaxis=dict(title="Total Vert<br>(Feet)", title_standoff=10),
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)',
                     margin=dict(l=60, r=20, t=40, b=120),
