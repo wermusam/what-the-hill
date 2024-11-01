@@ -34,10 +34,40 @@ class Application:
         # initial dash app
         self.hill_data_loader = self.load_json()
         self.db = robo_adam.RoboAdam()
+
+        # Load data once during app initialization
+        self.location_data = self.db.get_unique_location_counts().to_dict('records')
+        self.reps_data = self.db.get_top_reps_per_location().to_dict('records')
+        self.total_vertical_data = self.db.get_total_vertical_per_person().to_dict('records')
+        top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
+
+        # Create figure for the bar graph
+        self.bar_vert_graph = {
+                'data': [
+                    go.Bar(
+                        x=top_10_df['Name'],
+                        y=top_10_df['Total Vertical Feet'],
+                        marker=dict(color='#FFA07A')
+                    )
+                ],
+                'layout': go.Layout(
+                    title="Top 10 Vert (Feet)",
+                    xaxis=dict(title="", tickangle=-45, automargin=True),
+                    yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    margin=dict(l=60, r=20, t=40, b=120),
+                )
+            }
+
+
         self._app = dash.Dash(__name__, external_stylesheets=[
                                         dbc.themes.BOOTSTRAP,
                                         "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
                                     ])
+
+        # Create Layout
+        self.create_layout()
 
     def create_layout(self):
         dropdown_options = self.dropdown_name_options()
@@ -291,7 +321,7 @@ class Application:
             {"name": "Hills Yeah Leaderboard", "id": "Name"},
             {"name": "Hills Count", "id": "Locations Covered"}
             ],
-            data=self.db.get_unique_location_counts().to_dict('records'),
+            data= self.location_data,
             style_table={'overflowX': 'auto'},
             style_cell={'textAlign': 'left'},
             style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
@@ -304,7 +334,7 @@ class Application:
                 {"name": "Name", "id": "Name"},
                 {"name": "Total Vert (Feet)", "id": "Total Vertical Feet"}
             ],
-            data=self.db.get_total_vertical_per_person().to_dict('records'),
+            data=self.total_vertical_data,
             style_table={'overflowX': 'auto'},
             style_cell={'textAlign': 'left'},
             style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'}
@@ -343,7 +373,7 @@ class Application:
                 {"name": "Reps", "id": "Reps"},
                 {"name": "Name", "id": "Name"}
             ],
-            data=self.db.get_top_reps_per_location().to_dict('records'),
+            data=self.reps_data,
             style_table={'overflowX': 'auto'},  # Keeps horizontal scroll but minimizes it
             style_cell={
                 'textAlign': 'left',
@@ -699,16 +729,23 @@ class Application:
                 result = None
 
             # Update DataTable location count with latest information
+            """
             updated_location_count = self.db.get_unique_location_counts().to_dict('records')
             updated_reps_count = self.db.get_top_reps_per_location().to_dict('records')
             updated_total_vert_table = self.db.get_total_vertical_per_person().to_dict('records')
+            """
+            
+            # Load data once during app initialization
+            self.location_data = self.db.get_unique_location_counts().to_dict('records')
+            self.reps_data = self.db.get_top_reps_per_location().to_dict('records')
+            self.total_vertical_data = self.db.get_total_vertical_per_person().to_dict('records')
 
             # Update bar graph
             # Top 10 for the bar graph
             top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
     
             # Create figure for the bar graph
-            updated_total_vert_bar = {
+            self.bar_vert_graph = {
                 'data': [
                     go.Bar(
                         x=top_10_df['Name'],
@@ -726,7 +763,7 @@ class Application:
                 )
             }
 
-            return result, updated_location_count, updated_reps_count, updated_total_vert_bar, updated_total_vert_table
+            return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data
 
 
 
@@ -738,7 +775,6 @@ class Application:
 
 # Initialize and configure the application
 run_app = Application()
-run_app.create_layout()
 
 # Expose the server to Gunicorn
 server = run_app._app.server
