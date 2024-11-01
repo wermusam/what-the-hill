@@ -63,7 +63,7 @@ class Application:
 
         self._app = dash.Dash(__name__, external_stylesheets=[
                                         dbc.themes.BOOTSTRAP,
-                                        "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                                        "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
                                     ])
 
         # Create Layout
@@ -537,7 +537,8 @@ class Application:
                 "Welcome to a collaboration between November Project and Saturday Stairs for the Hill Yeah Challenge! Inspired by November Project San Francisco's Hill Climb Challenge in 2021, "
                 "this adventure will have you exploring 40 elevation-based locations across Santa Monica, West Hollywood, Culver City, Hollywood Bowl, Los Feliz, Griffith Park, Highland Park, Pasadena, Echo Park, and Silver Lake. "
                 "The routes include staircases, steep streets, and hills, which you’ll conquer using only your own body power—no motorized assistance allowed. "
-                "There are three categories to win:"
+                "There are three categories to win:",
+                className="intro-paragraph"
             ),
 
             # Row with three images and bullet points
@@ -685,6 +686,7 @@ class Application:
 
                 # Date
                 date = pd.Timestamp.now().strftime("%Y-%m-%d")
+                date_time = date = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
 
                 # Handle optional link
                 link_text = optional_link if optional_link else "No link provided"
@@ -698,6 +700,7 @@ class Application:
                     "vertical_gain": vertical_value,
                     "strava_link": link_text,
                     "date": date,
+                    "date_time": date_time,
                 }
 
                 # insert the submission data into MongoDB
