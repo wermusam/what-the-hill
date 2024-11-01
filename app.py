@@ -97,26 +97,13 @@ class Application:
             dbc.Row(
                 dbc.Col(
                     html.Div(
-                        html.H2(
-                            "November Project and Saturday Stairs\nExploration Elevation Challenge\nHill Yeah",
-                            style={
-                                'background': 'linear-gradient(to right, #00C9FF, #92FE9D)',  # Blue to green gradient
-                                'WebkitBackgroundClip': 'text',  # Makes the gradient text
-                                'color': 'transparent',  # Text is transparent to show the gradient
-                                'fontWeight': 'bold',  # Bold text
-                                'textAlign': 'center',  # Center align the text
-                                'fontSize': '32px',  # Larger font size for emphasis
-                                'padding': '10px',  # Adds padding around the text
-                                'border': '2px solid #92FE9D',  # Green border for emphasis
-                                'borderRadius': '8px',  # Rounds the corners
-                                'boxShadow': '0px 4px 8px rgba(0, 0, 0, 0.2)',  # Adds a soft shadow
-                                'whiteSpace': 'pre-line',
-                                'marginBottom': '20px'  # Adds spacing below the heading
-                            }
+                         html.H2(
+                            html.Span("HILL YEAH\nAn Exploration Elevation Challenge Across LA\n40 Hills\nNovember 1 - November 24\n LET'S GOOO!!!!", className="gradient-text"),
+                            className="resource-portal-title mt-4"
                         ),
                         style={
                             'padding': '15px',  # Adds padding inside the box
-                            'backgroundColor': '#f0f0f0',  # Light gray background
+                            'background-color': '#e6f2ff',
                             'borderRadius': '12px',  # Extra rounded corners for a softer look
                             'boxShadow': '0px 6px 12px rgba(0, 0, 0, 0.1)',  # Slightly stronger shadow for contrast
                             'marginBottom': '20px'  # Adds spacing below the entire div
@@ -191,8 +178,24 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="map"),
-                        html.H2("Map of All Hill Yeah Locations", className='text-center mt-4'),
-                        html.P("This map shows all of the locations for the challenge", className='text-center'),
+                        html.H2(
+                            html.Span("Map of All Hill Yeah Locations", className="gradient-text"),
+                            className="resource-portal-title mt-4"
+                        ),
+                        html.P("Double click a pin and google maps will give you directions to the starting location", 
+                        className='text-center',
+                        style=
+                            {
+                                "textAlign": "center", 
+                                "whiteSpace": "pre-line",
+                                "fontFamily": "'Montserrat', sans-serif",
+                                "fontWeight": "700",
+                                "fontSize": "15px",
+                                "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                                "color": "#007bff"  # Blue accent
+                            }, 
+                        
+                        ),
                         self.create_map(),
                     ],
                     xs=12,  # Full width on extra small screens (e.g., iPhones)
@@ -210,29 +213,21 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="scores"),
-                        html.H2("Robo-Adam Resource Portal",
-                            className="mt-4", 
-                            style={
-                                "textAlign": "center", 
-                                "whiteSpace": "pre-line",
-                                "fontFamily": "'Montserrat', sans-serif",
-                                "fontWeight": "700",
-                                "fontSize": "24px",
-                                "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
-                                "color": "#007bff"  # Blue accent
-                            }, 
+                        html.H2(
+                            html.Span("Robo-Adam Resource Portal", className="gradient-text"),
+                            className="resource-portal-title mt-4"
                         ),
-                        html.P("Summary of Hill Count, Reps Count, and Total Vert", 
-                            className='text-center',
-                            style={
-                                "textAlign": "center", 
-                                "whiteSpace": "pre-line",
-                                "fontFamily": "'Montserrat', sans-serif",
-                                "fontWeight": "700",
-                                "fontSize": "13px",
-                                "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
-                                "color": "#007bff"  # Blue accent
-                            }, 
+                            html.P("Summary of Hill Count, Reps Count, and Total Vert", 
+                                className='text-center',
+                                style={
+                                    "textAlign": "center", 
+                                    "whiteSpace": "pre-line",
+                                    "fontFamily": "'Montserrat', sans-serif",
+                                    "fontWeight": "700",
+                                    "fontSize": "15px",
+                                    "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                                    "color": "#007bff"  # Blue accent
+                                }, 
                         ),
                         self.create_resource_portal_layout(),
                     ],
@@ -251,7 +246,11 @@ class Application:
                 dbc.Col(
                     [
                         html.Div(id="form"),                    
-                        html.H3("Hill Yeah Submission Form", style={"textAlign": "center"}),    
+                        html.H3(
+                            html.Span("Hill Yeah Submission Form", className="gradient-text"),
+                            className="resource-portal-title mt-4"
+                        ),
+
                         self.layout_submission_form(),
                     ],
                     width={"size": 8, "offset":2}
@@ -722,12 +721,10 @@ class Application:
             ], className="mb-3"),  # Adds margin-bottom for spacing
 
             # Let's Go
-            html.P("LET'S GOOOOOOO!!! HILL Yeah!!!!", 
-            style={
-                    'fontSize': '20px', 
-                    'fontWeight': 'bold',
-                    'textAlign': 'center',
-                })
+            html.H2(
+                    html.Span("LET'S GOOOOOOO!!! HILL Yeah!!!!", className="gradient-text"),
+                    className="resource-portal-title mt-4"
+                    )
         ]
 
     def combined_callback(self):
@@ -843,7 +840,7 @@ class Application:
                         'textAlign': 'center',
 
                     }
-                )
+                ),
 
             else:
                 result = None
