@@ -16,7 +16,7 @@ import dash_bootstrap_components as dbc
 import dash_leaflet as dl
 import pandas as pd
 import pymongo
-from dash import dcc, html
+from dash import dcc, html, callback_context
 from dash.dash_table import DataTable
 from dash.dependencies import Input, Output, State
 
@@ -244,8 +244,8 @@ class Application:
         },
         fluid=True)
 
-        # Form Submission Response
-        self.submission_form_response()
+        # Form Submission Response and Page Refresh
+        self.combined_callback()
 
     def create_map(self, locations=None):
         """Filter hill data json and create a map"""
@@ -582,106 +582,121 @@ class Application:
             html.P("LET'S GOOOOOOO!!! HIll Yeah!!", style={'fontSize': '20px', 'fontWeight': 'bold'})
         ]
 
-    def submission_form_response(self):
-        """Handles submission form response, updating data, and visualization"""
+    def combined_callback(self):
+        """Handles submission form response, updating data, and visualization and a page refresh"""
         @self._app.callback(
-            [Output("output-container", "children"),
-            Output("location-table-portal", "data"),
-            Output("top-reps-table", "data"),
-            Output("total-vertical-bar-graph", "figure"),
-            Output("total-vertical-table", "data")],
-           [Input("submit-button", "n_clicks")],
-            [State("name", "value"),
-            State("email", "value"),
-            State("location-dropdown", "value"),
-            State("num-repetitions", "value"),
-            State("optional-link", "value")],
+            [
+                Output("output-container", "children"),
+                Output("location-table-portal", "data"),
+                Output("top-reps-table", "data"),
+                Output("total-vertical-bar-graph", "figure"),
+                Output("total-vertical-table", "data")
+            ],
+            [
+                Input("submit-button", "n_clicks"),
+                Input("url", "pathname")
+            ],
+            [
+                State("name", "value"),
+                State("email", "value"),
+                State("location-dropdown", "value"),
+                State("num-repetitions", "value"),
+                State("optional-link", "value")
+            ],
             prevent_initial_call=True
         )
-        def handle_submission_form(n_clicks, name, email, location, num_repetitions, optional_link):
-            
-            # Check each field individually
-            if not name:
-                return (
-                    html.Div("Please enter a name!", style={"color": "red", 'textAlign': 'center'}),
-                    [],  # Placeholder for location-table-portal.data
-                    [],  # Placeholder for top-reps-table.data
-                    {},  # Placeholder for total-vertical-bar-graph.figure
-                    []   # Placeholder for total-vertical-table.data
-                )
-            if not email:
-                return (
-                    html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'}),
-                    [], [], {}, []
-                )
-            if not location:
-                return (
-                    html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'}),
-                     [], [], {}, []
-                )
-            if not num_repetitions:
-                return (
-                    html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'}),
-                    [], [], {}, []
-                )
-            
-            # Check if any fields were missed (might be redundant)
-            if not (name and email and location and num_repetitions):
-                return (
-                    html.Div("Please fill out all required fields.", style={"color": "red"}),
-                    [], [], {}, []
-                )
+        def handle_submission_form(n_clicks, pathname, name, email, location, num_repetitions, optional_link):
+            trigger = callback_context.triggered[0]["prop_id"].split(".")[0]
 
 
-            # Validate number of repetitions
-            if not isinstance(num_repetitions, int) or num_repetitions <= 0:
-                return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
+            # Determine if this callback was triggered by the form submission or by the page load
+            if trigger == "submit-button" and n_clicks:
 
-            # Get the vertical value from the selected location and date
-            vertical_value = self.get_vertical_value(location)
-            total_submitted_feet = num_repetitions * vertical_value
-
-            # Date
-            date = pd.Timestamp.now().strftime("%Y-%m-%d")
-
-            # Handle optional link
-            link_text = optional_link if optional_link else "No link provided"
-
-            # submission data to insert to database
-            submission_data = {
-                "name": name,
-                "email": email,
-                "location": location,
-                "repetitions": num_repetitions,
-                "vertical_gain": vertical_value,
-                "strava_link": link_text,
-                "date": date,
-            }
-
-            # insert the submission data into MongoDB
-            self.db.insert_submitted_data(submission_data)
-
-            result = html.Div(
-                [
-                    html.H4("Form Submission Results"),
-                    html.P(f"Name: {submission_data['name']}"),
-                    html.P(f"Email: {submission_data['email']}"),
-                    html.P(f"Location: {submission_data['location']}"),
-                    html.P(f"Number of Repetitions:  {submission_data['repetitions']}"),
-                    html.P(f"Vertical Value: {vertical_value}"),
-                    html.P(f"Total Feet: {total_submitted_feet}"),
-                    html.P(f"Optional Link: {submission_data['strava_link']}"),
+                # Check each field individually
+                if not name:
+                    return (
+                        html.Div("Please enter a name!", style={"color": "red", 'textAlign': 'center'}),
+                        [],  # Placeholder for location-table-portal.data
+                        [],  # Placeholder for top-reps-table.data
+                        {},  # Placeholder for total-vertical-bar-graph.figure
+                        []   # Placeholder for total-vertical-table.data
+                    )
+                if not email:
+                    return (
+                        html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'}),
+                        [], [], {}, []
+                    )
+                if not location:
+                    return (
+                        html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'}),
+                        [], [], {}, []
+                    )
+                if not num_repetitions:
+                    return (
+                        html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'}),
+                        [], [], {}, []
+                    )
                 
-                ],
-                style={
-                    "display": 'flex',
-                    'flexDirection': 'column',
-                    'justifyContent': 'center',
-                    'alignItems': 'center',
-                    'textAlign': 'center',
+                # Check if any fields were missed (might be redundant)
+                if not (name and email and location and num_repetitions):
+                    return (
+                        html.Div("Please fill out all required fields.", style={"color": "red"}),
+                        [], [], {}, []
+                    )
 
+
+                # Validate number of repetitions
+                if not isinstance(num_repetitions, int) or num_repetitions <= 0:
+                    return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
+
+                # Get the vertical value from the selected location and date
+                vertical_value = self.get_vertical_value(location)
+                total_submitted_feet = num_repetitions * vertical_value
+
+                # Date
+                date = pd.Timestamp.now().strftime("%Y-%m-%d")
+
+                # Handle optional link
+                link_text = optional_link if optional_link else "No link provided"
+
+                # submission data to insert to database
+                submission_data = {
+                    "name": name,
+                    "email": email,
+                    "location": location,
+                    "repetitions": num_repetitions,
+                    "vertical_gain": vertical_value,
+                    "strava_link": link_text,
+                    "date": date,
                 }
-            )
+
+                # insert the submission data into MongoDB
+                self.db.insert_submitted_data(submission_data)
+
+                result = html.Div(
+                    [
+                        html.H4("Form Submission Results"),
+                        html.P(f"Name: {submission_data['name']}"),
+                        html.P(f"Email: {submission_data['email']}"),
+                        html.P(f"Location: {submission_data['location']}"),
+                        html.P(f"Number of Repetitions:  {submission_data['repetitions']}"),
+                        html.P(f"Vertical Value: {vertical_value}"),
+                        html.P(f"Total Feet: {total_submitted_feet}"),
+                        html.P(f"Optional Link: {submission_data['strava_link']}"),
+                    
+                    ],
+                    style={
+                        "display": 'flex',
+                        'flexDirection': 'column',
+                        'justifyContent': 'center',
+                        'alignItems': 'center',
+                        'textAlign': 'center',
+
+                    }
+                )
+
+            else:
+                result = None
 
             # Update DataTable location count with latest information
             updated_location_count = self.db.get_unique_location_counts().to_dict('records')
