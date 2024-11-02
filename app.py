@@ -217,18 +217,6 @@ class Application:
                             html.Span("Robo-Adam Resource Portal", className="gradient-text"),
                             className="resource-portal-title mt-4"
                         ),
-                            html.P("Summary of Hill Count, Reps Count, and Total Vert", 
-                                className='text-center',
-                                style={
-                                    "textAlign": "center", 
-                                    "whiteSpace": "pre-line",
-                                    "fontFamily": "'Montserrat', sans-serif",
-                                    "fontWeight": "700",
-                                    "fontSize": "15px",
-                                    "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
-                                    "color": "#007bff"  # Blue accent
-                                }, 
-                        ),
                         self.create_resource_portal_layout(),
                     ],
                     xs=12,  # Full width on extra small screens (e.g., iPhones)
@@ -429,6 +417,18 @@ class Application:
                         "color": "#007bff"  # Blue accent
                     }
                 ),
+                html.P("Total Number of Hills Leaderboard", 
+                        className='text-center',
+                        style={
+                            "textAlign": "center", 
+                            "whiteSpace": "pre-line",
+                            "fontFamily": "'Montserrat', sans-serif",
+                            "fontWeight": "700",
+                            "fontSize": "15px",
+                            "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                            "color": "#007bff"  # Blue accent
+                        }, 
+                ),
                 total_hill_count
             ], className="mb-4"),
             
@@ -446,6 +446,19 @@ class Application:
                         "color": "#007bff"  # Blue accent
                     }
                 ),
+                html.P("Top Number of Reps at Each Location", 
+                    className='text-center',
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "15px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }, 
+                ),
+                
                 reps_represent
             ], className="mb-4"),
             
@@ -462,6 +475,18 @@ class Application:
                         "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
                         "color": "#007bff"  # Blue accent
                     }
+                ),
+                html.P("Vertical Feet Leaderboard", 
+                    className='text-center',
+                    style={
+                        "textAlign": "center", 
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "15px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",  # Add text shadow here
+                        "color": "#007bff"  # Blue accent
+                    }, 
                 ),
                 wth_table
             ], className="mb-4"),
