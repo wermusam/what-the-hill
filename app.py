@@ -784,7 +784,8 @@ class Application:
                 Output("location-table-portal", "data"),
                 Output("top-reps-table", "data"),
                 Output("total-vertical-bar-graph", "figure"),
-                Output("total-vertical-table", "data")
+                Output("total-vertical-table", "data"),
+                Output("submit-button", "style")
             ],
             [
                 Input("submit-button", "n_clicks"),
@@ -800,8 +801,15 @@ class Application:
             prevent_initial_call=True
         )
         def handle_submission_form(n_clicks, pathname, name, email, location, num_repetitions, optional_link):
+            
+            # Button Color
+            default_button_style = {'background': 'linear-gradient(to right, #FF6F61, #007bff)', 'color': 'white', 'borderRadius': '8px'}
+            successful_button_style = {'background': 'green', 'color': 'white', 'borderRadius': '8px'}
+            error_button_style = {'background': 'red', 'color': 'white', 'borderRadius': '8px'}
+            button_style = default_button_style
+            
+            # Trigger
             trigger = callback_context.triggered[0]["prop_id"].split(".")[0]
-
 
             # Determine if this callback was triggered by the form submission or by the page load
             if trigger == "submit-button" and n_clicks:
@@ -813,36 +821,44 @@ class Application:
                         [],  # Placeholder for location-table-portal.data
                         [],  # Placeholder for top-reps-table.data
                         {},  # Placeholder for total-vertical-bar-graph.figure
-                        []   # Placeholder for total-vertical-table.data
+                        [],   # Placeholder for total-vertical-table.data
+                        error_button_style
+                        
                     )
                 if not email:
                     return (
                         html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, []
+                        [], [], {}, [], error_button_style
                     )
                 if not location:
                     return (
                         html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, []
+                        [], [], {}, [], error_button_style
                     )
                 if not num_repetitions:
                     return (
                         html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, []
+                        [], [], {}, [], error_button_style
                     )
                 
                 # Check if any fields were missed (might be redundant)
                 if not (name and email and location and num_repetitions):
                     return (
                         html.Div("Please fill out all required fields.", style={"color": "red"}),
-                        [], [], {}, []
+                        [], [], {}, [], error_button_style
                     )
 
 
                 # Validate number of repetitions
                 if not isinstance(num_repetitions, int) or num_repetitions <= 0:
-                    return html.Div("Number of repetitions must be a positive integer.", style={"color": "red"})
+                    return (
+                        html.Div("Number of repetitions must be a positive integer.", style={"color": "red"}),
+                        [], [], {}, [], error_button_style
+                    )
 
+                # Good submission
+                button_style = successful_button_style
+                
                 # Get the vertical value from the selected location and date
                 vertical_value = self.get_vertical_value(location)
                 total_submitted_feet = num_repetitions * vertical_value
@@ -934,7 +950,7 @@ class Application:
                 )
             }
 
-            return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data
+            return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data, button_style
 
 
 
