@@ -42,19 +42,31 @@ class Application:
         top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
 
         # Create figure for the bar graph
+        colors = [
+                    '#FFA07A',  # Salmon
+                    '#87CEFA',  # Light sky blue
+                    '#FFD700',  # Gold
+                    '#90EE90',  # Light green
+                    '#FF69B4',  # Hot pink
+                    '#8A2BE2',  # Blue violet
+                    '#FF6347',  # Tomato
+                    '#4682B4',  # Steel blue
+                    '#32CD32',  # Lime green
+                    '#DAA520'   # Goldenrod
+                ]
         self.bar_vert_graph = {
                 'data': [
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color='#FFA07A')
+                        marker=dict(color=colors)
                     )
                 ],
                 'layout': go.Layout(
-                    title="Top 10 Vert (Feet)",
+                    title="",
                     xaxis=dict(title="", tickangle=-45, automargin=True),
                     yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
-                    plot_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='#e6f2ff',
                     paper_bgcolor='rgba(0,0,0,0)',
                     margin=dict(l=60, r=20, t=40, b=120),
                 )
@@ -351,6 +363,18 @@ class Application:
 
         # Generate a bar graph showing repetitions per location
         # Bar Graph component
+        colors = [
+                    '#FFA07A',  # Salmon
+                    '#87CEFA',  # Light sky blue
+                    '#FFD700',  # Gold
+                    '#90EE90',  # Light green
+                    '#FF69B4',  # Hot pink
+                    '#8A2BE2',  # Blue violet
+                    '#FF6347',  # Tomato
+                    '#4682B4',  # Steel blue
+                    '#32CD32',  # Lime green
+                    '#DAA520'   # Goldenrod
+                ]
         total_vertical_df = self.db.get_total_vertical_per_person()
         top_10_df = total_vertical_df.nlargest(10, 'Total Vertical Feet')
         bar_graph_wth = dcc.Graph(
@@ -360,7 +384,7 @@ class Application:
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color='#FFA07A')  # Soft salmon color for the bars
+                        marker=dict(color=colors)  # Soft salmon color for the bars
                     )
                 ],
                 'layout': go.Layout(
@@ -446,7 +470,7 @@ class Application:
                         "color": "#007bff"  # Blue accent
                     }
                 ),
-                html.P("Top Number of Reps at Each Location", 
+                html.P("Highest Number of Reps at Each Location", 
                     className='text-center',
                     style={
                         "textAlign": "center", 
@@ -493,7 +517,7 @@ class Application:
             
             html.Div([
                 html.H4(
-                    "What The Hill Top 10", 
+                    "Top 10 Vert", 
                     className="mt-4", 
                     style={
                         "textAlign": "center", 
@@ -880,19 +904,31 @@ class Application:
             top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
     
             # Create figure for the bar graph
+            colors = [
+                    '#FFA07A',  # Salmon
+                    '#87CEFA',  # Light sky blue
+                    '#FFD700',  # Gold
+                    '#90EE90',  # Light green
+                    '#FF69B4',  # Hot pink
+                    '#8A2BE2',  # Blue violet
+                    '#FF6347',  # Tomato
+                    '#4682B4',  # Steel blue
+                    '#32CD32',  # Lime green
+                    '#DAA520'   # Goldenrod
+                ]
             self.bar_vert_graph = {
                 'data': [
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color='#FFA07A')
+                        marker=dict(color=colors)
                     )
                 ],
                 'layout': go.Layout(
-                    title="Top 10 Vert<br>(Feet)",
+                    title="",
                     xaxis=dict(title="", tickangle=-45, automargin=True),
                     yaxis=dict(title="Total Vert<br>(Feet)", title_standoff=10),
-                    plot_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='#e6f2ff',
                     paper_bgcolor='rgba(0,0,0,0)',
                     margin=dict(l=60, r=20, t=40, b=120),
                 )
