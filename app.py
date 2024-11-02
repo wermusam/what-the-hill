@@ -148,10 +148,10 @@ class Application:
                     html.Div(
                         id="locations",
                         children=[
-                            html.H1(
-                                "Hill Yeah Locations and Descriptions",
-                                style={'marginBottom': '20px'}
-                            ),
+                            html.H2(
+                                html.Span("Hill Yeah Locations and Descriptions", className="gradient-text"),
+                                className="resource-portal-title mt-4"
+                        ),
                             self.generate_hill_table()
                         ],
                         style={
@@ -160,7 +160,7 @@ class Application:
                             'boxShadow': '0px 4px 8px rgba(0, 0, 0, 0.1)',  # Soft shadow
                             'borderRadius': '8px',  # Rounded corners
                             'padding': '15px',  # Adds padding inside the box
-                            'backgroundColor': '#fff'  # White background for contrast
+                            'backgroundColor': '#e6f2ff'
                         }
                     ),
                     xs=12,  # Full width on extra small screens (e.g., iPhones)
