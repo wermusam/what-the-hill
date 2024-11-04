@@ -72,7 +72,7 @@ class RoboAdam():
         return df, locations_completed, locations_percentage
 
     def get_top_reps_per_location(self):
-        """Retrieve the person with the most repetitions for each location, reporting the name by email."""
+        """Retrieve the top 3 people with the most repetitions for each location, displaying the location once."""
         pipeline = [
             # Group by location and email to calculate total repetitions per person per location
             {'$group': {
@@ -80,26 +80,43 @@ class RoboAdam():
                 'total_reps': {'$sum': '$repetitions'},
                 'name': {'$first': '$name'}  # Take the first name encountered for this email
             }},
-            # Sort each grouped result to get the person with the highest repetitions per location
-            {'$sort': {'total_reps': -1}},
-            # Group by location to keep only the top result for each location
+            # Sort each grouped result by total repetitions in descending order
+            {'$sort': {'_id.location': 1, 'total_reps': -1}},
+            # Group by location to create an array of top performers per location
             {'$group': {
                 '_id': '$_id.location',
-                'name': {'$first': '$name'},
-                'reps': {'$first': '$total_reps'}
+                'top_performers': {
+                    '$push': {
+                        'name': '$name',
+                        'reps': '$total_reps'
+                    }
+                }
             }},
-            # Rename fields for the final output
+            # Limit each location's top performers array to the top 3 entries
             {'$project': {
                 'Location': '$_id',
-                'Reps': '$reps',
-                'Name': '$name',
+                'TopPerformers': {'$slice': ['$top_performers', 3]},
                 '_id': 0
             }},
             # Sort the output by Location alphabetically
             {'$sort': {'Location': 1}}
         ]
+
         result = list(self.collection_test.aggregate(pipeline))
-        return pd.DataFrame(result)
+
+        # Flatten the results for a cleaner DataFrame format with Rank and Location shown once
+        formatted_result = []
+        for entry in result:
+            location = entry['Location']
+            for rank, performer in enumerate(entry['TopPerformers'], start=1):
+                formatted_result.append({
+                    'Location': location if rank == 1 else "",  # Show location only once
+                    'Rank': rank,
+                    'Name': performer['name'],
+                    'Reps': performer['reps']
+                })
+
+        return pd.DataFrame(formatted_result)
 
     def get_total_vertical_per_person(self):
         """Calculate total vertical feet for each person, grouped by email."""
@@ -172,6 +189,7 @@ robo_adam = RoboAdam()
 top_reps_df = robo_adam.get_top_reps_per_location()
 print(top_reps_df)
 """
+
 
 """
 robo_adam = RoboAdam()
