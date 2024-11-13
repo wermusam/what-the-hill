@@ -58,18 +58,18 @@ class RoboAdam():
         ]
         return list(self.collection_test.aggregate(pipeline))
 
-    def data_frame_location_complete(self, data):
-        # Create DataFrame
-        df = pd.DataFrame(data)
-        df.columns = ['Location', 'Repetitions']
+    def get_locations_covered(self):
+        """Returns a df of locations completed and locations left"""
+        completed_locations = len(self.collection_test.distinct("location"))
+        remaining_locations = TOTAL_LOCATION_COUNT - completed_locations
 
-        # Count locations with at least 1 repetition
-        locations_completed = df[df['Repetitions'] > 0].shape[0]
+        completed_location_data = {
+            "Status": ["Completed", "Not Completed"],
+            "Count":[completed_locations, remaining_locations]
+        }
+        df = pd.DataFrame(completed_location_data)
+        return df
 
-        # Percentage of Locations Completed
-        locations_percentage = (locations_completed / TOTAL_LOCATION_COUNT) * 100
-
-        return df, locations_completed, locations_percentage
 
     def get_top_reps_per_location(self):
         """Retrieve the top 3 people with the most repetitions for each location, displaying the location once."""
@@ -92,10 +92,10 @@ class RoboAdam():
                     }
                 }
             }},
-            # Limit each location's top performers array to the top 3 entries
+            # Limit each location's top performers array to the top 20 entries
             {'$project': {
                 'Location': '$_id',
-                'TopPerformers': {'$slice': ['$top_performers', 3]},
+                'TopPerformers': {'$slice': ['$top_performers', 20]},
                 '_id': 0
             }},
             # Sort the output by Location alphabetically
@@ -195,4 +195,9 @@ print(top_reps_df)
 robo_adam = RoboAdam()
 total_vert_df = robo_adam.get_total_vertical_per_person()
 print(total_vert_df)
+"""
+"""
+robo_adam = RoboAdam()
+locations_coverage = robo_adam.get_locations_covered()
+print(locations_coverage)
 """

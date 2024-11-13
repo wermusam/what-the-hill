@@ -40,37 +40,31 @@ class Application:
         self.reps_data = self.db.get_top_reps_per_location().to_dict('records')
         self.total_vertical_data = self.db.get_total_vertical_per_person().to_dict('records')
         top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
+        self.locations_covered = self.db.get_locations_covered()
 
-        # Create figure for the bar graph
-        colors = [
-                    '#FFA07A',  # Salmon
-                    '#87CEFA',  # Light sky blue
-                    '#FFD700',  # Gold
-                    '#90EE90',  # Light green
-                    '#FF69B4',  # Hot pink
-                    '#8A2BE2',  # Blue violet
-                    '#FF6347',  # Tomato
-                    '#4682B4',  # Steel blue
-                    '#32CD32',  # Lime green
-                    '#DAA520'   # Goldenrod
-                ]
-        self.bar_vert_graph = {
+        self.bar_vert_graph = dcc.Graph(
+            id='total-vertical-bar-graph',
+            figure={
                 'data': [
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color=colors)
+                        marker=dict(color=self.get_colors())  # Soft salmon color for the bars
                     )
                 ],
                 'layout': go.Layout(
-                    title="",
-                    xaxis=dict(title="", tickangle=-45, automargin=True),
+                    title="Top 10 Vert (Feet)",
+                    xaxis=dict(title="",tickangle=-45, automargin=True),
                     yaxis=dict(title="Total Vert (Feet)", title_standoff=10),
-                    plot_bgcolor='#e6f2ff',
+                    plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
                     paper_bgcolor='rgba(0,0,0,0)',
-                    margin=dict(l=60, r=20, t=40, b=120),
+                    margin=dict(l=60, r=20, t=40, b=120),  # Increase bottom margin for x-axis labels
                 )
-            }
+            },
+            style={'width': '100%', 'padding': '10px'}
+        )
+
+        self.pie_chart = self.generate_pie_chart()
 
 
         self._app = dash.Dash(__name__, external_stylesheets=[
@@ -363,18 +357,6 @@ class Application:
 
         # Generate a bar graph showing repetitions per location
         # Bar Graph component
-        colors = [
-                    '#FFA07A',  # Salmon
-                    '#87CEFA',  # Light sky blue
-                    '#FFD700',  # Gold
-                    '#90EE90',  # Light green
-                    '#FF69B4',  # Hot pink
-                    '#8A2BE2',  # Blue violet
-                    '#FF6347',  # Tomato
-                    '#4682B4',  # Steel blue
-                    '#32CD32',  # Lime green
-                    '#DAA520'   # Goldenrod
-                ]
         total_vertical_df = self.db.get_total_vertical_per_person()
         top_10_df = total_vertical_df.nlargest(10, 'Total Vertical Feet')
         bar_graph_wth = dcc.Graph(
@@ -384,7 +366,7 @@ class Application:
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color=colors)  # Soft salmon color for the bars
+                        marker=dict(color=self.get_colors())  # Soft salmon color for the bars
                     )
                 ],
                 'layout': go.Layout(
@@ -555,6 +537,38 @@ class Application:
             ],
             bordered=True, striped=True, hover=True, responsive=True, className="table-class"
         )
+
+    def generate_pie_chart(self):
+        """Create a pie chart using the dataframe"""
+        self.locations_covered = self.db.get_locations_covered()
+        fig = go.Figure(
+            data = [
+                go.Pie(
+                    labels=self.locations_covered["Status"],
+                    values=self.locations_covered["Count"],
+                    hole=0.3
+                )]    
+        )
+        fig.update_layout(
+            title="Locations Completed vs Locations Remaining",
+            showlegend=True
+        )
+        return fig
+
+
+    def get_colors(self):
+        return [
+                    '#FFA07A',  # Salmon
+                    '#87CEFA',  # Light sky blue
+                    '#FFD700',  # Gold
+                    '#90EE90',  # Light green
+                    '#FF69B4',  # Hot pink
+                    '#8A2BE2',  # Blue violet
+                    '#FF6347',  # Tomato
+                    '#4682B4',  # Steel blue
+                    '#32CD32',  # Lime green
+                    '#DAA520'   # Goldenrod
+                ]
 
     def get_vertical_value(self, name=""):
         """Calculates the vertical feet by multiplying reps and feet"""
@@ -914,30 +928,19 @@ class Application:
             self.location_data = self.db.get_unique_location_counts().to_dict('records')
             self.reps_data = self.db.get_top_reps_per_location().to_dict('records')
             self.total_vertical_data = self.db.get_total_vertical_per_person().to_dict('records')
+            self.locations_covered = self.db.get_locations_covered()
 
             # Update bar graph
             # Top 10 for the bar graph
             top_10_df = self.db.get_total_vertical_per_person().nlargest(10, 'Total Vertical Feet')
     
             # Create figure for the bar graph
-            colors = [
-                    '#FFA07A',  # Salmon
-                    '#87CEFA',  # Light sky blue
-                    '#FFD700',  # Gold
-                    '#90EE90',  # Light green
-                    '#FF69B4',  # Hot pink
-                    '#8A2BE2',  # Blue violet
-                    '#FF6347',  # Tomato
-                    '#4682B4',  # Steel blue
-                    '#32CD32',  # Lime green
-                    '#DAA520'   # Goldenrod
-                ]
             self.bar_vert_graph = {
                 'data': [
                     go.Bar(
                         x=top_10_df['Name'],
                         y=top_10_df['Total Vertical Feet'],
-                        marker=dict(color=colors)
+                        marker=dict(color=self.get_colors())
                     )
                 ],
                 'layout': go.Layout(
@@ -949,6 +952,9 @@ class Application:
                     margin=dict(l=60, r=20, t=40, b=120),
                 )
             }
+
+            # Update pie chart
+            # self.pie_chart = self.generate_pie_chart()
 
             return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data, button_style
 
