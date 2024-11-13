@@ -64,7 +64,7 @@ class RoboAdam():
         remaining_locations = TOTAL_LOCATION_COUNT - completed_locations
 
         completed_location_data = {
-            "Status": ["Completed", "Not Completed"],
+            "Status": ["Hilled", "Not Hilled"],
             "Count":[completed_locations, remaining_locations]
         }
         df = pd.DataFrame(completed_location_data)
