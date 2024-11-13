@@ -63,10 +63,6 @@ class Application:
             },
             style={'width': '100%', 'padding': '10px'}
         )
-
-        # self.pie_chart = self.generate_pie_chart()
-
-
         self._app = dash.Dash(__name__, external_stylesheets=[
                                         dbc.themes.BOOTSTRAP,
                                         "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;500;700&display=swap"
@@ -581,24 +577,6 @@ class Application:
             ],
             bordered=True, striped=True, hover=True, responsive=True, className="table-class"
         )
-
-    def generate_pie_chart(self):
-        """Create a pie chart using the dataframe"""
-        self.locations_covered = self.db.get_locations_covered()
-        fig = go.Figure(
-            data = [
-                go.Pie(
-                    labels=self.locations_covered["Status"],
-                    values=self.locations_covered["Count"],
-                    hole=0.3
-                )]    
-        )
-        fig.update_layout(
-            title="Locations Completed vs Locations Remaining",
-            showlegend=True
-        )
-        return fig
-
 
     def get_colors(self):
         return [
