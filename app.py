@@ -64,7 +64,7 @@ class Application:
             style={'width': '100%', 'padding': '10px'}
         )
 
-        self.pie_chart = self.generate_pie_chart()
+        # self.pie_chart = self.generate_pie_chart()
 
 
         self._app = dash.Dash(__name__, external_stylesheets=[
@@ -380,6 +380,31 @@ class Application:
             },
             style={'width': '100%', 'padding': '10px'}
         )
+
+        # Create a Pie chart showing other statistics (e.g., total vertical feet distribution)
+        self.locations_covered = self.db.get_locations_covered()
+        pie_chart = dcc.Graph(
+            id='vertical-feet-pie-chart',
+            figure={
+                'data': [
+                    go.Pie(
+                        labels=self.locations_covered["Status"],
+                        values=self.locations_covered["Count"],
+                        hoverinfo='label+percent+value',
+                        textinfo='label+percent+value',
+                        marker=dict(colors=['#66cc66', '#ff9966'])  # Custom colors for pie sections
+                    )
+                ],
+                'layout': go.Layout(
+                    title="",
+                    plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
+                    paper_bgcolor='rgba(0,0,0,0)',
+                )
+            },
+            style={'width': '100%', 'padding': '10px'}
+        )
+
+
         # Generate a DataTable with adjusted mobile-friendly styles
         reps_represent = DataTable(
             id='top-reps-table',
@@ -512,6 +537,25 @@ class Application:
                     }
                 ),
                 bar_graph_wth
+            ], className="mb-4"),
+
+
+            # Add the Pie chart below the bar graph
+            html.Div([
+                html.H4(
+                    "Locations Covered",
+                    className="mt-4",
+                    style={
+                        "textAlign": "center",
+                        "whiteSpace": "pre-line",
+                        "fontFamily": "'Montserrat', sans-serif",
+                        "fontWeight": "700",
+                        "fontSize": "24px",
+                        "textShadow": "1px 1px 2px rgba(0, 0, 0, 0.2)",
+                        "color": "#007bff"
+                    }
+                ),
+                pie_chart
             ], className="mb-4"),
             
         ], fluid=True)
@@ -799,6 +843,7 @@ class Application:
                 Output("top-reps-table", "data"),
                 Output("total-vertical-bar-graph", "figure"),
                 Output("total-vertical-table", "data"),
+                Output("vertical-feet-pie-chart", "figure"),
                 Output("submit-button", "style")
             ],
             [
@@ -835,31 +880,32 @@ class Application:
                         [],  # Placeholder for location-table-portal.data
                         [],  # Placeholder for top-reps-table.data
                         {},  # Placeholder for total-vertical-bar-graph.figure
-                        [],   # Placeholder for total-vertical-table.data
+                        [],  # Placeholder for total-vertical-table.data
+                        {}, # Placeholder for pie chart
                         error_button_style
                         
                     )
                 if not email:
                     return (
                         html.Div("Please enter a valid e-mail!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, [], error_button_style
+                        [], [], {}, [], {}, error_button_style
                     )
                 if not location:
                     return (
                         html.Div("Please select a location!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, [], error_button_style
+                        [], [], {}, [], {}, error_button_style
                     )
                 if not num_repetitions:
                     return (
                         html.Div("Please enter number of repetitions!", style={"color": "red", 'textAlign': 'center'}),
-                        [], [], {}, [], error_button_style
+                        [], [], {}, [], {}, error_button_style
                     )
                 
                 # Check if any fields were missed (might be redundant)
                 if not (name and email and location and num_repetitions):
                     return (
                         html.Div("Please fill out all required fields.", style={"color": "red"}),
-                        [], [], {}, [], error_button_style
+                        [], [], {}, [], {}, error_button_style
                     )
 
 
@@ -867,7 +913,7 @@ class Application:
                 if not isinstance(num_repetitions, int) or num_repetitions <= 0:
                     return (
                         html.Div("Number of repetitions must be a positive integer.", style={"color": "red"}),
-                        [], [], {}, [], error_button_style
+                        [], [], {}, [], {}, error_button_style
                     )
 
                 # Good submission
@@ -954,9 +1000,24 @@ class Application:
             }
 
             # Update pie chart
-            # self.pie_chart = self.generate_pie_chart()
+            pie_chart = {
+                'data': [
+                    go.Pie(
+                        labels=self.locations_covered["Status"],
+                        values=self.locations_covered["Count"],
+                        hoverinfo='label+percent+value',
+                        textinfo='label+percent+value',
+                        marker=dict(colors=['#66cc66', '#ff9966']),  # You can customize colors
+                    )
+                ],
+                'layout': go.Layout(
+                    title="",
+                    plot_bgcolor='#e6f2ff',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                )
+            }
 
-            return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data, button_style
+            return result, self.location_data, self.reps_data, self.bar_vert_graph, self.total_vertical_data, pie_chart, button_style
 
 
 
