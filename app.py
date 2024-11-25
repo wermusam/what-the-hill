@@ -894,6 +894,20 @@ class Application:
                         [], [], {}, [], {}, error_button_style
                     )
 
+                # Prevent submission starting 11/24/2024
+                # Date
+                date = pd.Timestamp.now().strftime("%Y-%m-%d")
+                date_time = date = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+                # Define a target date for comparison
+                target_date = pd.Timestamp('2024-11-25')
+                # Convert current date to a Timestamp for comparison
+                current_date = pd.Timestamp(date)
+                if current_date >= target_date:
+                    return (
+                        html.Div("Challenge ended. Thank you for participating!", style={"color": "red"}),
+                        [], [], {}, [], {}, error_button_style
+                    )
+
                 # Good submission
                 button_style = successful_button_style
                 
